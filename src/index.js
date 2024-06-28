@@ -5,7 +5,7 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
 
-import '../node_modules/normalize.css'
+import 'normalize.css'
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);

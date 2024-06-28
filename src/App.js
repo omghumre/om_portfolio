@@ -1,12 +1,12 @@
 import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./globalStyles"
-import { lightTheme } from "./components/Themes"
+import { DarktTheme, lightTheme } from "./components/Themes"
 
 function App() {
   return <>
     
   <GlobalStyle/>
-  <ThemeProvider theme={lightTheme}>
+  <ThemeProvider theme={DarktTheme}>
   App File
   </ThemeProvider>
     
