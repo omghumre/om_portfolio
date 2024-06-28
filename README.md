@@ -3,11 +3,7 @@
 This repository contains starter code for Portfolio Website in ReactJS. <br />
 
 View Demo👇: <br />
-https://react-portfolio-sigma.vercel.app/ <br />
-
-If you want to learn how to create it please follow below tutorial👇: <br />
-
-https://youtu.be/jcohAIaSy2M <br />
+ <br />
 
 ----------------------------------------------------------------------------------------------
 ### NOTE: 
