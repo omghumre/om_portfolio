@@ -35,7 +35,7 @@ export const Work = [
         
         demo:"https://react-sidebar.vercel.app/",
         github:"https://github.com/codebucks27/react-sidebar"
-       
+
     },{
         id:5,
         name:"Todo App(React + Redux)",
@@ -57,5 +57,5 @@ export const Work = [
         
     },
     
-  
+
 ] 
