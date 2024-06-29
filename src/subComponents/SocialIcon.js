@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import {Facebook, Github, Twitter, YouTube} from '../components/Allsvg'
+import {Instagram, Github, Twitter, Linkedin, Email} from '../components/Allsvg'
 import styled from 'styled-components'
 
 const Icons = styled.div`
@@ -11,8 +11,12 @@ const Icons = styled.div`
     position: fixed;
     bottom: 0;
     left: 2rem;
-
     z-index: 3;
+    
+    &>*:not(:last-child){
+        margin: 0.5rem 0;
+    }
+
 `
 const Line = styled.span`
   width: 2px;
@@ -20,28 +24,32 @@ const Line = styled.span`
   background-color: ${props => props.theme.text};
 
 `
-
 const SocialIcon = () => {
   return (
     <Icons>
         <div>
-            <NavLink to="/">
-                <Github width={30} height={30} fill='currentColor' />
+            <NavLink style={{color:'inherit'}} href="mailto:omghumre74@gmail.com">
+                <Email width={30} height={30} fill='currentColor' />
             </NavLink>
         </div>
         <div>
-            <NavLink to="/">
-                <Twitter width={30} height={30} fill='currentColor' />
+            <NavLink style={{color:'inherit'}} target="_blank" to="https://github.com/omghumre">
+                <Github width={28} height={28} fill='currentColor' />
             </NavLink>
         </div>
         <div>
-            <NavLink to="/">
-                <YouTube width={30} height={30} fill='currentColor' />
+            <NavLink style={{color:'inherit'}} target="_blank" to="https://x.com/omghumre">
+                <Twitter width={26} height={26} fill='currentColor' />
             </NavLink>
         </div>
         <div>
-            <NavLink to="/">
-                <Facebook width={30} height={30} fill='currentColor' />
+            <NavLink style={{color:'inherit', marginLeft:'5px'}} target="_blank" to="https://linkedin.com/in/omghumre">
+                <Linkedin width={30} height={30} fill='currentColor' />
+            </NavLink>
+        </div>
+        <div>
+            <NavLink style={{color:'inherit'}} target="_blank" to="https://instagram.com/omghumre.in/">
+                <Instagram width={28} height={28} fill='currentColor' />
             </NavLink>
         </div>
         <Line/>
