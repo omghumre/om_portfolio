@@ -16,6 +16,7 @@ function App() {
   <GlobalStyle/>
   <ThemeProvider theme={lightTheme}>
   
+ <switch> 
 <Router>
   <Routes>
     <Route path="/" element={<Main/>} />
@@ -26,7 +27,7 @@ function App() {
 
   </Routes>
 </Router>
-    
+</switch>
 
   </ThemeProvider>
     
