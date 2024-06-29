@@ -9,6 +9,7 @@ const Logo = styled.h1`
     left: 2rem;
     right: 2rem;
     z-index: 3;
+    cursor:pointer;
 `
 
 const LogoComponent = () => {

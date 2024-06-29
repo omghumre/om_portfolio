@@ -38,7 +38,7 @@ cursor: pointer;
 const PowerButton = () => {
   return (
     <Power>
-        <NavLink to="/">
+        <NavLink style={{color:'inherit'}} to="/">
         <PowerBtn width={30} height={30} fill='currentColor'/>            
         </NavLink>
     </Power>
