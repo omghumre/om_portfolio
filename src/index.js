@@ -6,14 +6,23 @@ import App from './App';
 import { createRoot } from 'react-dom/client';
 
 import 'normalize.css'
+// import { BrowserRouter } from 'react-router-dom';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // ReactDOM.render(
 //   <React.StrictMode>
-//     <App />
+
+//   <BrowserRouter>
+//       <App />  
+//   </BrowserRouter>
+
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
