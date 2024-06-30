@@ -4,6 +4,7 @@ import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import { NavLink } from 'react-router-dom'
+import { Omg } from './Allsvg'
 import { YinYang } from './Allsvg'
 import Intro from './intro'
 
