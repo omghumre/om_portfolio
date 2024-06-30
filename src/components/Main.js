@@ -20,7 +20,7 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
-  padding: 2rem;
+  padding: 0rem;
 `
 const Contact = styled(NavLink)`
   color: ${props => props.theme.text};
@@ -75,7 +75,7 @@ const SKILLS = styled(NavLink)`
 
 const TopBar = styled.div`
     position: absolute;
-    top: 3rem;
+    top: 2.2rem;
     left: 0;
     right: 0;
     width: 100%;

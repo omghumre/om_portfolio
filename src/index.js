@@ -6,14 +6,16 @@ import App from './App';
 import { createRoot } from 'react-dom/client';
 
 import 'normalize.css'
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  
+    <BrowserRouter>
+        <App />  
+    </BrowserRouter>
+  
 );
 
 // ReactDOM.render(

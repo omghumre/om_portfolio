@@ -18,8 +18,8 @@ function App() {
   <GlobalStyle/>
   <ThemeProvider theme={lightTheme}>
   
- <switch> 
-<Router>
+ 
+
   <Routes>
     <Route path="/" element={<Main/>} />
     <Route path="/about" element={<AboutPage/>} />
@@ -31,8 +31,8 @@ function App() {
 
 
   </Routes>
-</Router>
-</switch>
+
+
 
   </ThemeProvider>
     
