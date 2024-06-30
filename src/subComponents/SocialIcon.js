@@ -29,7 +29,7 @@ const SocialIcon = () => {
   return (
     <Icons>
         <div>
-            <NavLink style={{color:'inherit' }} href="mailto:omghumre74@gmail.com">
+            <NavLink style={{color:'inherit' }} to="mailto:omghumre74@gmail.com">
                 <Email width={30} height={30} fill='currentColor' />
             </NavLink>
         </div>

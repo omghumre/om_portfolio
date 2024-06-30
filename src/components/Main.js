@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import { NavLink } from 'react-router-dom'
+import { YinYang } from './Allsvg'
 
 
 const MainContainer = styled.div`
@@ -17,7 +18,11 @@ const MainContainer = styled.div`
     font-family: 'Karla', sans-serif;
     font-weight:500;
   }
+
+
 `
+
+
 
 const Container = styled.div`
   padding: 0rem;
@@ -94,7 +99,49 @@ const PROJECTS = styled(NavLink)`
   z-index: 1; 
 `
 
+const rotate = keyframes`
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+`
+
+const Center = styled.button`
+    position: absolute;
+    top: ${props => props.click ? '85%' : '50%' };
+    left: ${props => props.click ? '92%' : '50%' };
+    transform: translate(-50%,-50%);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    transition: all 1s ease;
+
+    &>:first-child{
+      animation: ${rotate} infinite 1.5s linear
+    }
+
+    &>:last-child{
+      display: ${props => props.click ? 'none' : 'inline-block' };
+      padding-top: 1rem;
+    }
+    `
+
+
+
 const Main = () => {
+
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
     <MainContainer>
       <Container>
@@ -102,15 +149,20 @@ const Main = () => {
       <LogoComponent/>
       <SocialIcon/>
 
-      <Contact target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
-        <h2  target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
+      <Center click={click}>
+        <YinYang onClick={() => handleClick()}  width={click ? 120:200} height={click ? 120:200} fill='currentColor' />
+        <span>Click here</span>
+      </Center>
+
+      <Contact target="_blank" to="mailto:omghumre74@gmail.com">
+        <h2  target="_blank" to="mailto:omghumre74@gmail.com">
           Say hello..
         </h2>
       </Contact>
 
       <BLOG to="/blog">
         <h2>
-          Blog
+          Blogs
         </h2>
       </BLOG>
 
