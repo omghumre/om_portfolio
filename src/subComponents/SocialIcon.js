@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {Instagram, Github, Twitter, Linkedin, Email} from '../components/Allsvg'
 import styled from 'styled-components'
+import {DarkTheme} from '../components/Themes'
 
 const Icons = styled.div`
     display: flex;
@@ -21,39 +22,39 @@ const Icons = styled.div`
 const Line = styled.span`
   width: 2px;
   height: 6rem;
-  background-color: ${props => props.theme.text};
+  background-color:${props => props.color === "dark" ? DarkTheme.text : DarkTheme.body };
   transform: translate(-2px)
 
 `
-const SocialIcon = () => {
+const SocialIcon = (props) => {
   return (
     <Icons>
         <div>
             <NavLink style={{color:'inherit' }} to="mailto:omghumre74@gmail.com">
-                <Email width={30} height={30} fill='currentColor' />
+                <Email width={30} height={30} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
         <div>
             <NavLink style={{color:'inherit'}} target="_blank" to="https://github.com/omghumre">
-                <Github width={28} height={28} fill='currentColor' />
+                <Github width={28} height={28} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
         <div>
             <NavLink style={{color:'inherit'}} target="_blank" to="https://x.com/omghumre">
-                <Twitter width={26} height={26} fill='currentColor' />
+                <Twitter width={26} height={26} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
         <div>
             <NavLink style={{color:'inherit', marginLeft:'5px'}} target="_blank" to="https://linkedin.com/in/omghumre">
-                <Linkedin width={30} height={30} fill='currentColor' />
+                <Linkedin width={30} height={30} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
         <div>
             <NavLink style={{color:'inherit'}} target="_blank" to="https://instagram.com/omghumre.in/">
-                <Instagram width={28} height={28} fill='currentColor' />
+                <Instagram width={28} height={28} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
-        <Line/>
+        <Line color = {props.theme}/>
     </Icons>
     )
 }

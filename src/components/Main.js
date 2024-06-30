@@ -47,7 +47,7 @@ const BLOG = styled(NavLink)`
 `
 
 const WORK = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   position:absolute;
   top: 50%;
   transform: translate(-50%,-50%) rotate(-90deg) ;
@@ -67,7 +67,7 @@ const BottomBar = styled.div`
 `
 
 const ABOUT = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1; 
 `
@@ -88,7 +88,7 @@ const TopBar = styled.div`
     justify-content: space-evenly;
 `
 const EDUCATION = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1; 
 `
@@ -134,7 +134,17 @@ const Center = styled.button`
     }
     `
 
-
+const DarkDiv = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    right: 50%;
+    width: ${props => props.click ? '50%' : '0%' };
+    height: ${props => props.click ? '100%' : '0%' };
+    z-index: 1;
+    transition: height 0.5s ease, width 1s ease 0.5s;
+`
 
 const Main = () => {
 
@@ -144,11 +154,14 @@ const Main = () => {
 
   return (
     <MainContainer>
+      <DarkDiv click={click}/>
+
       <Container>
       <PowerButton/>
-      <LogoComponent/>
-      <SocialIcon/>
+      <LogoComponent theme = {click ? 'dark' : 'light'}/>
+      <SocialIcon theme = {click ? 'dark' : 'light'}/>
 
+      
       <Center click={click}>
         <YinYang onClick={() => handleClick()}  width={click ? 120:200} height={click ? 120:200} fill='currentColor' />
         <span>Click here</span>
@@ -166,14 +179,14 @@ const Main = () => {
         </h2>
       </BLOG>
 
-      <WORK to="/work">
+      <WORK click={click} to="/work">
         <h2>
           Work
         </h2>
       </WORK>
 
       <TopBar>
-      <ABOUT to="/about">
+      <ABOUT click={click} to="/about">
         <h2>
           About.
         </h2>
@@ -189,7 +202,7 @@ const Main = () => {
       </TopBar>
 
       <BottomBar>
-      <EDUCATION to="/education">
+      <EDUCATION click={click} to="/education">
         <h2>
           Education.
         </h2>
