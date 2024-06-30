@@ -4,6 +4,7 @@ import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import { NavLink } from 'react-router-dom'
+import {motion} from 'framer-motion'
 import { Omg } from './Allsvg'
 import { YinYang } from './Allsvg'
 import Intro from './intro'
@@ -169,34 +170,49 @@ const Main = () => {
       </Center>
 
       <Contact target="_blank" to="mailto:omghumre74@gmail.com">
-        <h2  target="_blank" to="mailto:omghumre74@gmail.com">
+        <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Say hello..
-        </h2>
+        </motion.h2>
       </Contact>
 
       <BLOG to="/blog">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Blogs
-        </h2>
+        </motion.h2>
       </BLOG>
 
       <WORK click={click} to="/work">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Work
-        </h2>
+        </motion.h2>
       </WORK>
 
       <TopBar>
       <ABOUT click={click} to="/about">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           About.
-        </h2>
+        </motion.h2>
       </ABOUT>
       
       <SKILLS to="/skills">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Skills.
-        </h2>
+        </motion.h2>
       </SKILLS>
 
       
@@ -204,15 +220,21 @@ const Main = () => {
 
       <BottomBar>
       <EDUCATION click={click} to="/education">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Education.
-        </h2>
+        </motion.h2>
       </EDUCATION>
       
       <PROJECTS to="/projects">
-        <h2>
+      <motion.h2
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+        >
           Projects.
-        </h2>
+        </motion.h2>
       </PROJECTS>
       </BottomBar>
 
