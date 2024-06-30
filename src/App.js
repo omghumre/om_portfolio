@@ -9,6 +9,8 @@ import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";
 import MySkillsPage from "./components/MySkillsPage";
 import WorkPage from "./components/WorkPage";
+import Education from "./components/Education";
+import ProjectPage from "./components/ProjectPage";
 
 function App() {
   return <>
@@ -23,7 +25,10 @@ function App() {
     <Route path="/about" element={<AboutPage/>} />
     <Route path="/blog" element={<BlogPage/>} />
     <Route path="/work" element={<WorkPage/>} />
+    <Route path="/project" element={<ProjectPage/>} />
+    <Route path="/education" element={<Education/>} />
     <Route path="/skills" element={<MySkillsPage/>} />
+
 
   </Routes>
 </Router>

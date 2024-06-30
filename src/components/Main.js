@@ -31,6 +31,26 @@ const Contact = styled(NavLink)`
   z-index: 1;
   `
 
+const BLOG = styled(NavLink)`
+  color: ${props => props.theme.text};
+  position:absolute;
+  top: 50%;
+  transform: rotate(90deg) translate(-50%,-50%);
+  right: 3vw;
+  text-decoration: none;
+  z-index: 1; 
+`
+
+const WORK = styled(NavLink)`
+  color: ${props => props.theme.text};
+  position:absolute;
+  top: 50%;
+  transform: translate(-50%,-50%) rotate(-90deg) ;
+  left  : 2rem;
+  text-decoration: none;
+  z-index: 1; 
+`
+
 const Main = () => {
   return (
     <MainContainer>
@@ -39,11 +59,29 @@ const Main = () => {
       <LogoComponent/>
       <SocialIcon/>
 
-      <Contact target="_blank" href="mailto:omghumre74@gmail.com">
-        <h3>
-          Say hi..
+      <Contact target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
+        <h3  target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
+          Say hello..
         </h3>
       </Contact>
+
+      <BLOG to="/blog">
+        <h3>
+          Blog
+        </h3>
+      </BLOG>
+
+      <WORK to="/work">
+        <h3>
+          Work
+        </h3>
+      </WORK>
+
+      <WORK to="/work">
+        <h3>
+          Work
+        </h3>
+      </WORK>
 
       </Container>
     </MainContainer>

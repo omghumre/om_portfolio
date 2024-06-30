@@ -14,21 +14,22 @@ const Icons = styled.div`
     z-index: 3;
     
     &>*:not(:last-child){
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
     }
 
 `
 const Line = styled.span`
   width: 2px;
-  height: 8rem;
+  height: 6rem;
   background-color: ${props => props.theme.text};
+  transform: translate(-2px)
 
 `
 const SocialIcon = () => {
   return (
     <Icons>
         <div>
-            <NavLink style={{color:'inherit'}} href="mailto:omghumre74@gmail.com">
+            <NavLink style={{color:'inherit' }} href="mailto:omghumre74@gmail.com">
                 <Email width={30} height={30} fill='currentColor' />
             </NavLink>
         </div>
