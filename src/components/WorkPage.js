@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ProjectPage = () => {
+const WorkPage = () => {
   return (
     <div>
-      Project Component/Page
+      Work Component/Page
     </div>
   )
 }
 
-export default ProjectPage
+export default WorkPage

@@ -46,7 +46,50 @@ const WORK = styled(NavLink)`
   position:absolute;
   top: 50%;
   transform: translate(-50%,-50%) rotate(-90deg) ;
-  left  : 2rem;
+  left  : 3rem;
+  text-decoration: none;
+  z-index: 1; 
+`
+
+const BottomBar = styled.div`
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+`
+
+const ABOUT = styled(NavLink)`
+  color: ${props => props.theme.text};
+  text-decoration: none;
+  z-index: 1; 
+`
+
+const SKILLS = styled(NavLink)`
+  color: ${props => props.theme.text};
+  text-decoration: none;
+  z-index: 1; 
+`
+
+const TopBar = styled.div`
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+`
+const EDUCATION = styled(NavLink)`
+  color: ${props => props.theme.text};
+  text-decoration: none;
+  z-index: 1; 
+`
+
+const PROJECTS = styled(NavLink)`
+  color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1; 
 `
@@ -60,28 +103,52 @@ const Main = () => {
       <SocialIcon/>
 
       <Contact target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
-        <h3  target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
+        <h2  target="_blank" to={{pathname:"mailto:omghumre74@gmail.com"}}>
           Say hello..
-        </h3>
+        </h2>
       </Contact>
 
       <BLOG to="/blog">
-        <h3>
+        <h2>
           Blog
-        </h3>
+        </h2>
       </BLOG>
 
       <WORK to="/work">
-        <h3>
+        <h2>
           Work
-        </h3>
+        </h2>
       </WORK>
 
-      <WORK to="/work">
-        <h3>
-          Work
-        </h3>
-      </WORK>
+      <TopBar>
+      <ABOUT to="/about">
+        <h2>
+          About.
+        </h2>
+      </ABOUT>
+      
+      <SKILLS to="/skills">
+        <h2>
+          Skills.
+        </h2>
+      </SKILLS>
+
+      
+      </TopBar>
+
+      <BottomBar>
+      <EDUCATION to="/education">
+        <h2>
+          Education.
+        </h2>
+      </EDUCATION>
+      
+      <PROJECTS to="/projects">
+        <h2>
+          Projects.
+        </h2>
+      </PROJECTS>
+      </BottomBar>
 
       </Container>
     </MainContainer>
