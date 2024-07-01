@@ -42,6 +42,7 @@ const Grid = styled.div`
 `
 
 
+
 const BlogPage = () => {
   return (
     <MainContainer>
@@ -57,7 +58,7 @@ const BlogPage = () => {
           })
         }
       </Grid>
-
+      
       </Center>
       </Container>
     </MainContainer>
