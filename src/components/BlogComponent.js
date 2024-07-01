@@ -33,6 +33,18 @@ const Title = styled.h3`
     border-bottom: 1px solid ${props => props.theme.text};
 `
 
+const HashTag = styled.div`
+    padding: 0.5rem 0;
+`
+
+const Tag = styled.span`
+    padding-right: 0.5rem;
+`
+
+const Date = styled.span`
+    padding: 0.5rem 0;
+`
+
 const BlogComponent = (props) => {
 
     const {name, tags, date, imgSrc, link} = props.blog;
@@ -41,6 +53,16 @@ const BlogComponent = (props) => {
     <Box target="_blank"  to={{pathname: link}}>
         <Image img={imgSrc} /> 
         <Title>{name}</Title>
+        <HashTag>
+            {
+                tags.map((t,id) => {
+                    return <Tag key={id}>#{t}</Tag>
+                })
+            }
+        </HashTag>
+        <Date>
+            {date}
+        </Date>
     </Box>
     )
 }
