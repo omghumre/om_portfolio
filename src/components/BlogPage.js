@@ -7,7 +7,7 @@ import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
 
 import {Blogs} from '../data/BlogData'
 import BlogComponent from './BlogComponent'
-import { Anchor } from './Allsvg'
+import AnchorComponent from '../subComponents/Anchor'
 
 const MainContainer = styled.div`
     background-image: url(${img}) ;
@@ -51,7 +51,7 @@ const BlogPage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcon/>
-        <Anchor/>
+        <AnchorComponent/>
       <Center>
       <Grid>
         {

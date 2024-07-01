@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
+import { Anchor, chain } from '../components/Allsvg'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     position: relative;
@@ -13,7 +15,7 @@ const Slider = styled.div`
 `
 
 
-const Anchor = () => {
+const AnchorComponent = () => {
 
     const ref = useRef(null); 
     const hiddenRef = useRef(null); 
@@ -23,13 +25,13 @@ const Anchor = () => {
         <Slider ref = {ref}>
             {
                 [...Array(25)].map((x,id) => {
-                    reutrn <Link key={id} width={25} height={25} fill='currentColor' className="chain" />
+                    return <Link key={id} width={25} height={25} fill='currentColor' className="chain" />
                 })
             }
-            
+            <Anchor width={70} height={70} fill='currentColor'  />
         </Slider>
     </Container>
   )
 }
 
-export default Anchor
+export default AnchorComponent
