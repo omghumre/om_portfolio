@@ -28,7 +28,7 @@ const PreDisplay = styled.div`
     right: 2rem;
 `
 
-const AnchorComponent = () => {
+const AnchorComponent = (props) => {
 
     const ref = useRef(null); 
     const hiddenRef = useRef(null); 
@@ -69,7 +69,7 @@ const AnchorComponent = () => {
 
         <Slider ref = {ref}>
             {
-                [...Array(25)].map((x,id) => {
+                [...Array(props.numbers)].map((x,id) => {
                     return <Link key={id} width={25} height={25} fill='black' className="chain" />
                 })
             }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
@@ -15,9 +15,6 @@ const MainContainer = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    
-    
-    
 `
 
 const Container = styled.div`
@@ -45,13 +42,21 @@ const Grid = styled.div`
 
 
 const BlogPage = () => {
+
+  const [numbers, setNumbers] = useState(0);
+
+  useEffect(() => {
+    let num = (window.innerHeight - 70)/30;
+    setNumbers(parseInt(num))
+  }, []);
+
   return (
     <MainContainer>
       <Container>
         <LogoComponent />
         <PowerButton />
         <SocialIcon/>
-        <AnchorComponent/>
+        <AnchorComponent numbers={numbers} />
       <Center>
       <Grid>
         {
