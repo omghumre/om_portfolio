@@ -14,7 +14,7 @@ const MainContainer = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    width: 100vw;
+    
     
     
 `
@@ -22,7 +22,8 @@ const MainContainer = styled.div`
 const Container = styled.div`
   background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`}; 
   width: 100%;
-  height: 100vh;
+  height: auto;
+
   position: relative;
   padding-bottom: 5rem;
 `

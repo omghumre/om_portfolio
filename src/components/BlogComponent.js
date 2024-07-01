@@ -10,12 +10,26 @@ const Box = styled(NavLink)`
     padding: 1rem;
 `
 
-const BlogComponent = () => {
-  return (
-    <Box to="/">
-        Blog Item
+const Image = styled.div`
+    background-image: ${props => `url(${props.img})`};
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    border: 1px solid transparent;
+    background-position: center center;
+}
+`
+
+
+const BlogComponent = (props) => {
+
+    const {name, tags, date, imgSrc, link} = props.blog;
+
+    return (
+    <Box target="_blank"  to={{pathname: link}}>
+        <Image img={imgSrc} /> 
     </Box>
-  )
+    )
 }
 
 export default BlogComponent
