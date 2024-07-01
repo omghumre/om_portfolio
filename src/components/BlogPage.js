@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import PowerButton from '../subComponents/PowerButton'
+import LogoComponent from '../subComponents/LogoComponent'
+import SocialIcon from '../subComponents/SocialIcon'
 import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
 
 const MainContainer = styled.div`
