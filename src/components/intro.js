@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
-import Me from '../assets/Images/profile-img.png'
+import Me from '../assets/Images/profile.png'
+import { Omg } from './Allsvg'
 
 
 const Box = styled(motion.div)`
@@ -40,11 +41,12 @@ const SubBox = styled.div`
 
     .pic {
         position: absolute;
-        bottom: 0;
+        bottom: 2px;
         left: 50%;
         transform: translate(-50%,0%);
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 25rem;
+        overflow: hidden;
     }
 `
 
@@ -87,6 +89,7 @@ const Intro = () => {
           animate={{opacity:1}}
           transition={{duration:1, delay:2 }}
           >
+            {/* <Omg className='pic'/> */}
             <img className='pic' src={Me} alt="Profile Pic"></img>
           </motion.div>
         </SubBox>
