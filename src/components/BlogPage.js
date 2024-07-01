@@ -24,6 +24,20 @@ const Container = styled.div`
   padding-bottom: 5rem;
 `
 
+const Center = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+`
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-gap: calc(1rem + 2vw);
+`
+
+
 const BlogPage = () => {
   return (
     <MainContainer>
@@ -31,7 +45,18 @@ const BlogPage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcon/>
+      <Center>
+      <Grid>
+        <h1>Blog</h1>
+        <h1>Blog</h1>
+        <h1>Blog</h1>
+        <h1>Blog</h1>
+        <h1>Blog</h1>
+        <h1>Blog</h1>
+        <h1>Blog</h1> 
+      </Grid>
 
+      </Center>
       </Container>
     </MainContainer>
   )
