@@ -15,6 +15,7 @@ const Box=styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
 `
 
 const Main = styled.div`
@@ -26,18 +27,36 @@ const Main = styled.div`
     height: 60vh;
     z-index: 3;
     line-height: 1.5;
-
+    cursor: pointer;
     font-family: 'Ubuntu Mono', monospace ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-`
+    
+    
+    &:hover{
+      color: ${props => props.theme.body};
+      background-color: ${props => props.theme.text};
+    }
+
+    `
 
 const Title = styled.h2`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: calc(1em + 1vw);
+
+    // do this when hover on main
+    ${Main}:hover &{
+      &>*{
+        fill: ${props => props.theme.body};
+      }
+    }
+
+    &>* : first-child{
+      margin-right: 1rem;
+    }
 `
 
 const Description = styled.div`
@@ -51,6 +70,12 @@ const Description = styled.div`
   }
   ul,p {
     margin-left: 2rem;
+  }
+
+  ${Main}:hover &{
+    
+      color: ${props => props.theme.body};
+    
   }
     
 `
