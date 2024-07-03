@@ -3,6 +3,10 @@ import styled, { ThemeProvider } from 'styled-components'
 import {lightTheme } from '../components/Themes'
 import {Design, Develope} from './Allsvg'
 
+import PowerButton from '../subComponents/PowerButton'
+import LogoComponent from '../subComponents/LogoComponent'
+import SocialIcon from '../subComponents/SocialIcon'
+
 const Box=styled.div`
     background-color: ${props => props.theme.body};
     width: 100%;
@@ -56,6 +60,9 @@ const MySkillsPage = () => {
 
     <ThemeProvider theme={lightTheme}> 
     <Box>
+      <LogoComponent />
+      <PowerButton />
+      <SocialIcon/>
       <Main>
         <Title>
           <Design width={40} height={40} /> Designer
