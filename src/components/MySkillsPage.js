@@ -6,6 +6,7 @@ import {Design, Develope} from './Allsvg'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
+import ParticleComponent from '../subComponents/ParticleComponent'
 
 const Box=styled.div`
     background-color: ${props => props.theme.body};
@@ -85,9 +86,10 @@ const MySkillsPage = () => {
 
     <ThemeProvider theme={lightTheme}> 
     <Box>
-      <LogoComponent />
-      <PowerButton />
-      <SocialIcon/>
+      <LogoComponent theme='light' />
+      <PowerButton theme='light' />
+      <SocialIcon theme='light' />
+      <ParticleComponent theme='light' />
       <Main>
         <Title>
           <Design width={40} height={40} /> Designer
