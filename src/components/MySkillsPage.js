@@ -29,18 +29,28 @@ const Main = styled.div`
     justify-content: space-between;
 `
 
+const Title = styled.h2`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1em + 1vw);
+`
+
 const MySkillsPage = () => {
   return (
 
     <ThemeProvider theme={lightTheme}> 
     <Box>
       <Main>
-    1
+        <Title>
+          <Design width={40} height={40} /> Designer
+        </Title>
       </Main>
       <Main>
-    2
+        <Title>
+          <Develope width={40} height={40} /> Frontend Developer
+        </Title>
       </Main>
-   
     </Box>
     </ThemeProvider>
 
