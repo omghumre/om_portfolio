@@ -25,7 +25,8 @@ const Box=styled.div`
 const Main = styled.div`
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
-    background-color: ${props => props.theme.body};
+    // background-color: ${props => props.theme.body};
+    background-color: transparent;
     padding: 2rem;
     width: 30vw;
     height: 60vh;
@@ -38,9 +39,22 @@ const Main = styled.div`
     justify-content: space-between;
     
     
-    &:hover{
-      color: ${props => props.theme.body};
-      background-color: ${props => props.theme.text};
+    // &:hover{
+    //   color: ${props => props.theme.body};
+    //   background-color: ${props => props.theme.text};
+    // }
+
+    &:hover {
+        transform: translateZ(50px);
+        background-color: transparent;
+        backdrop-filter: blur(2px); 
+        background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+        
+    );
+    // background-size: 10px ;
     }
 
     `
@@ -53,14 +67,14 @@ const Title = styled.h2`
 
     // do this when hover on main
     ${Main}:hover &{
-      &>*{
-        fill: ${props => props.theme.body};
-      }
-    }
+    
+    color: ${props => props.theme.body};
+  
+}
 
-    &>* : first-child{
-      margin-right: 1rem;
-    }
+    // &>* : first-child{
+    //   margin-right: 1rem;
+    // }
 `
 
 const Description = styled.div`
