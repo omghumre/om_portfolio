@@ -15,7 +15,7 @@ const Slider = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(-100%)
+    transform: translateY(-100%);
 
     .chain{
         transform: rotate(135deg);
@@ -32,7 +32,6 @@ const AnchorComponent = (props) => {
 
     const ref = useRef(null); 
     const hiddenRef = useRef(null); 
-
 
     useEffect(() => {
         
@@ -56,6 +55,9 @@ const AnchorComponent = (props) => {
 
         window.addEventListener('scroll', handleScroll)
 
+        // Trigger the scroll handler initially to set the correct transform value
+        handleScroll();
+
         return () => window.removeEventListener('scroll', handleScroll)
 
     }, []);
@@ -67,9 +69,9 @@ const AnchorComponent = (props) => {
             <Anchor width={70} height={70} fill='currentColor'  />
         </PreDisplay>
 
-        <Slider ref = {ref}>
+        <Slider ref={ref}>
             {
-                [...Array(props.numbers)].map((x,id) => {
+                [...Array(props.numbers)].map((x, id) => {
                     return <Link key={id} width={25} height={25} fill='black' className="chain" />
                 })
             }

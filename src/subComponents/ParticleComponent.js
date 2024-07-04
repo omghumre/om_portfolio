@@ -1,9 +1,9 @@
 import React from 'react'
-import Particles from 'react-tsparticles'
 import styled from 'styled-components'
 
 import configDark from "../config/particlesjs-config.json"
 import configLight from "../config/particlesjs-config-light.json"
+import SparklesPreview from '../test'
 
 const Box = styled.div`
     position: absolute;
@@ -14,10 +14,11 @@ const Box = styled.div`
     z-index: 0;
 `
 
+
 const ParticleComponent = (props) => {
   return (
     <Box>
-        <Particles params={props.theme === "light" ? configLight : configDark}  />
+        <SparklesPreview style={{position:'absolute', top:0 }} params={props.theme === "light" ? configLight : configDark}  />
     </Box>
   )
 }

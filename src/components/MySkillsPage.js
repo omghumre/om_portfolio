@@ -1,12 +1,15 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import {lightTheme } from '../components/Themes'
+import {lightTheme , DarkTheme} from '../components/Themes'
 import {Design, Develope} from './Allsvg'
 
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import ParticleComponent from '../subComponents/ParticleComponent'
+
+import SparklesPreview from '../test'
+
 
 const Box=styled.div`
     background-color: ${props => props.theme.body};
@@ -84,15 +87,20 @@ const Description = styled.div`
 const MySkillsPage = () => {
   return (
 
-    <ThemeProvider theme={lightTheme}> 
+    <ThemeProvider theme={DarkTheme}> 
+    
     <Box>
-      <LogoComponent theme='light' />
-      <PowerButton theme='light' />
-      <SocialIcon theme='light' />
-      <ParticleComponent theme='light' />
+
+      <LogoComponent theme='dark' />
+      <PowerButton theme='dark' />
+      <SocialIcon theme='dark' />
+      <ParticleComponent theme='dark'/>
+      {/* <SparklesPreview /> */}
+      {/* <auroraComponent /> */}
+      
       <Main>
         <Title>
-          <Design width={40} height={40} /> Designer
+          <Design width={40} height={40} fill="currentColor"  /> Designer
         </Title>
 
         <Description>
@@ -115,10 +123,10 @@ const MySkillsPage = () => {
         </Description>
 
       </Main>
-
+      
       <Main>
         <Title>
-          <Develope width={40} height={40} /> Frontend Developer
+          <Develope width={40} height={40} fill="currentColor"/> Frontend Developer
         </Title>
 
         <Description>
@@ -133,8 +141,8 @@ const MySkillsPage = () => {
           <strong>Tools</strong>
           <p>Github</p>
         </Description>
-
       </Main>
+      
     </Box>
     </ThemeProvider>
 

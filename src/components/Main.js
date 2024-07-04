@@ -8,6 +8,8 @@ import {motion} from 'framer-motion'
 import { Omg } from './Allsvg'
 import { YinYang } from './Allsvg'
 import Intro from './intro'
+// import auroraComponent from '../subComponents/auroraComponent'
+
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body}
@@ -156,9 +158,11 @@ const Main = () => {
 
   return (
     <MainContainer>
+      
       <DarkDiv click={click}/>
 
       <Container>
+      
       <PowerButton/>
       <LogoComponent theme = {click ? 'dark' : 'light'}/>
       <SocialIcon theme = {click ? 'dark' : 'light'}/>
