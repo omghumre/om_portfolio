@@ -21,6 +21,15 @@ const Box = styled.div`
 
     &:hover {
         transform: translateZ(50px);
+        background-color: transparent;
+        backdrop-filter: blur(20px); 
+        background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(0, 0, 0, 0.3)
+        
+    );
+    background-size: 10px ;
     }
 `;
 
