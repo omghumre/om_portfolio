@@ -8,6 +8,7 @@ import SocialIcon from '../subComponents/SocialIcon'
 import ParticleComponent from '../subComponents/ParticleComponent'
 
 import astronaut from '../assets/Images/spaceman.png'
+import LampDemo from '../LampComponent'
 
 
 const Box=styled.div`
@@ -65,15 +66,19 @@ const AboutPage = () => {
   return (
 
     <ThemeProvider theme={DarkTheme}> 
-    
+    < LampDemo />
     <Box>
-
+    {/* < LampDemo/> */}
       <LogoComponent theme='dark' />
       <PowerButton theme='dark' />
       <SocialIcon theme='dark' />
+
+      
+
       <Spaceman>
         <img src={astronaut} alt="spaceman" />
       </Spaceman>
+
       <Main>
         Labore aute nostrud occaecat eiusmod nulla ea mollit duis reprehenderit reprehenderit anim commodo Lorem dolore. Eiusmod pariatur Lorem tempor laboris est officia nostrud ullamco proident.
 <br/><br/>

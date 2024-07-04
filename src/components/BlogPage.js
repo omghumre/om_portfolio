@@ -8,7 +8,6 @@ import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
 import {Blogs} from '../data/BlogData'
 import BlogComponent from './BlogComponent'
 import AnchorComponent from '../subComponents/Anchor'
-import ThreeDCardDemo from '../blogcard'
 
 const MainContainer = styled.div`
     background-image: url(${img}) ;
