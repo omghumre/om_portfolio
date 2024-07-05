@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./globalStyles"
 import { DarktTheme, lightTheme } from "./components/Themes"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import './index.css';
 
 import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
@@ -11,6 +11,8 @@ import MySkillsPage from "./components/MySkillsPage";
 import WorkPage from "./components/WorkPage";
 import Education from "./components/Education";
 import ProjectPage from "./components/ProjectPage";
+
+
 
 function App() {
   return <>

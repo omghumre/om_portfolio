@@ -5,10 +5,11 @@ import {lightTheme , DarkTheme} from '../components/Themes'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
-import ParticleComponent from '../subComponents/ParticleComponent'
+
 
 import astronaut from '../assets/Images/spaceman.png'
-import LampDemo from '../LampComponent'
+
+import ParticleComponent from '../subComponents/ParticleComponent'
 
 
 const Box=styled.div`
@@ -66,13 +67,16 @@ const AboutPage = () => {
   return (
 
     <ThemeProvider theme={DarkTheme}> 
-    < LampDemo />
+    
+
+    
     <Box>
     {/* < LampDemo/> */}
-      <LogoComponent theme='dark' />
+    <LogoComponent theme='dark' />
       <PowerButton theme='dark' />
       <SocialIcon theme='dark' />
-
+      <ParticleComponent theme='dark'/>
+      
       
 
       <Spaceman>
