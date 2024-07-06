@@ -5,7 +5,6 @@ import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import { NavLink } from 'react-router-dom'
 import {motion} from 'framer-motion'
-import { Omg } from './Allsvg'
 import { YinYang } from './Allsvg'
 import Intro from './intro'
 // import auroraComponent from '../subComponents/auroraComponent'
@@ -20,10 +19,14 @@ const MainContainer = styled.div`
 
   h2,h3,h4,h5,h6 {
     font-family: 'Karla', sans-serif;
-    font-weight:500;
+    font-weight:600;
   }
 
-
+  // h2 {
+  //   font-family: 'Karla', sans-serif;
+  //   font-weight:500;
+  //   font-size: x-large;
+  // }
 `
 
 

@@ -44,8 +44,8 @@ const Main = styled.div`
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
     padding: 2rem;
-    width: 50vw;
-    height: 60vh;
+    width: 60vw;
+    height: 70vh;
     z-index: 3;
     line-height: 1.5;
 
@@ -53,7 +53,7 @@ const Main = styled.div`
     justify-content: center;
     align-items: center;
     font-size: calc(0.6rem + 1vw);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
 
     position: absolute;
     left: calc(5rem + 5vw);
@@ -88,7 +88,8 @@ const AboutPage = () => {
 <br/><br/>
 Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. Consectetur excepteur tempor adipisicing Lorem incididunt nisi do reprehenderit mollit.
 <br/><br/>
-Dolor nostrud nostrud reprehenderit laboris sunt dolore deserunt. Minim aliqua anim enim aliqua et irure esse. 
+Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. Consectetur excepteur tempor adipisicing Lorem incididunt nisi do reprehenderit mollit.
+
       </Main>
       
       

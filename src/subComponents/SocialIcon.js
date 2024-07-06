@@ -45,7 +45,7 @@ const SocialIcon = (props) => {
             </NavLink>
         </div>
         <div>
-            <NavLink style={{color:'inherit', marginLeft:'5px'}} target="_blank" to="https://linkedin.com/in/omghumre">
+            <NavLink style={{color:'inherit'}} target="_blank" to="https://linkedin.com/in/omghumre">
                 <Linkedin width={30} height={30} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </div>
