@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const Box = styled.li`
-    width: 16rem;
+    width: 20rem;
     height: 40vh;
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
@@ -36,10 +36,17 @@ const Description = styled.h2`
 
 const Tags = styled.div`
     border-top : 2px solid ${props => props.theme.body};
+    padding-top: 0.5rem
+    display: flex;
+    flex-wrap: wrap;
+    ${Box}:hover &{
+        border-top: 2px solid ${props => props.theme.text};
+    }
 `
 
 const Tag = styled.span`
-    margin-right: 1rem
+    margin-right: 1rem;
+    font-size: cals(0.8rem + 0.3vw);
 `
 
 const Card = (props) => {
@@ -59,6 +66,7 @@ const Card = (props) => {
                 })
             }
         </Tags>
+        <Footer></Footer>
     </Box>
   )
 }
