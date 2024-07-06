@@ -24,6 +24,24 @@ const Box = styled.li`
     }
 `
 
+const Title = styled.h2`
+    font-size: calc(1em + 0.5vw);
+`
+
+const Description = styled.h2`
+    font-size: calc(0.8em + 0.3vw);
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+`
+
+const Tags = styled.div`
+    border-top : 2px solid ${props => props.theme.body};
+`
+
+const Tag = styled.span`
+    margin-right: 1rem
+`
+
 const Card = (props) => {
   
   const {id, name, description, tags, demo, github} = props.data ;
@@ -31,6 +49,16 @@ const Card = (props) => {
     return (
     <Box key={id}>
         <Title>{name}</Title>
+        <Description>
+            {description}
+        </Description>
+        <Tags>
+            {
+                tags.map((t,id) => {
+                    return <Tag key={id}>#{t}</Tag>
+                })
+            }
+        </Tags>
     </Box>
   )
 }
