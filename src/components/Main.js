@@ -19,14 +19,17 @@ const MainContainer = styled.div`
 
   h2,h3,h4,h5,h6 {
     font-family: 'Karla', sans-serif;
-    font-weight:600;
+    font-weight:500;
+    
   }
 
-  // h2 {
-  //   font-family: 'Karla', sans-serif;
-  //   font-weight:500;
-  //   font-size: x-large;
-  // }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:500;
+    margin: 0; /* Reset default margin */
+    font-size: 1.2rem; /* Adjust font size as needed */
+    font-weight:600;
+  }
 `
 
 
