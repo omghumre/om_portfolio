@@ -9,7 +9,7 @@ import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";
 import MySkillsPage from "./components/MySkillsPage";
 import WorkPage from "./components/WorkPage";
-import Education from "./components/Education";
+import Certificates from "./components/Certificates";
 import ProjectPage from "./components/ProjectPage";
 
 
@@ -28,7 +28,7 @@ function App() {
     <Route path="/blog" element={<BlogPage/>} />
     <Route path="/work" element={<WorkPage/>} />
     <Route path="/projects" element={<ProjectPage/>} />
-    <Route path="/education" element={<Education/>} />
+    <Route path="/certificates" element={<Certificates/>} />
     <Route path="/skills" element={<MySkillsPage/>} />
 
 

@@ -8,6 +8,7 @@ import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import ParticleComponent from '../subComponents/ParticleComponent'
 
+import BigTitle from '../subComponents/BigTitle'
 import SparklesPreview from '../test'
 
 
@@ -157,6 +158,9 @@ const MySkillsPage = () => {
         </Description>
       </Main>
       
+
+      <BigTitle text="Skills" top='80%' right='30%' />
+
     </Box>
     </ThemeProvider>
 

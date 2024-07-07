@@ -5,7 +5,7 @@ import {lightTheme , DarkTheme} from '../components/Themes'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
-
+import BigTitle from '../subComponents/BigTitle'
 
 import astronaut from '../assets/Images/spaceman.png'
 
@@ -84,15 +84,16 @@ const AboutPage = () => {
       </Spaceman>
 
       <Main>
-        Labore aute nostrud occaecat eiusmod nulla ea mollit duis reprehenderit reprehenderit anim commodo Lorem dolore. Eiusmod pariatur Lorem tempor laboris est officia nostrud ullamco proident.
+        Labore aute nostrud occaecat eiusmod nulla ea mollit duis reprehenderit reprehenderit anim commodo Lorem dolore. 
 <br/><br/>
-Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. Consectetur excepteur tempor adipisicing Lorem incididunt nisi do reprehenderit mollit.
+Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. 
 <br/><br/>
-Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. Consectetur excepteur tempor adipisicing Lorem incididunt nisi do reprehenderit mollit.
+Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. 
 
       </Main>
       
-      
+      <BigTitle text="ABOUT" top='10%' right='65%' />
+      {/* <BigTitle text="ABOUT" top='70%' right='10%' /> */}
     </Box>
     </ThemeProvider>
 

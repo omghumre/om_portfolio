@@ -97,7 +97,7 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-evenly;
 `
-const EDUCATION = styled(NavLink)`
+const CERTIFICATES = styled(NavLink)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1; 
@@ -229,14 +229,14 @@ const Main = () => {
       </TopBar>
 
       <BottomBar>
-      <EDUCATION click={click} to="/education">
+      <CERTIFICATES click={click} to="/certificates">
       <motion.h2
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
-          Education.
+          Certificates.
         </motion.h2>
-      </EDUCATION>
+      </CERTIFICATES>
       
       <PROJECTS to="/projects">
       <motion.h2
