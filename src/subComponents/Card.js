@@ -23,6 +23,7 @@ const Box = styled.li`
         background-color: ${props => props.theme.body};
         color: ${props => props.theme.text};
         border: 1px solid ${props => props.theme.text};
+        transform: translateZ(-10px);
     }
 `
 

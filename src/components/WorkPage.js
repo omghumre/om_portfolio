@@ -61,6 +61,7 @@ const WorkPage = () => {
     let element = ref.current;
 
     const rotate = () => {
+      
         element.style.transform = `translateX(${-window.pageYOffset}px)`
       
     }
@@ -78,7 +79,7 @@ const WorkPage = () => {
       <PowerButton theme='dark' />
       <SocialIcon theme='dark' />
       
-      <Main>
+      <Main ref={ref}>
         {
           Work.map( d =>
             <Card key={d.id} data={d} >Work Data </Card>
