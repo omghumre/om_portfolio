@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-
+import { NavLink } from 'react-router-dom';
+// import Github from "../assets/svg/github-brands.svg"
+import {Github} from '../components/Allsvg'
 
 const Box = styled.li`
     width: 20rem;
@@ -49,6 +51,37 @@ const Tag = styled.span`
     font-size: cals(0.8rem + 0.3vw);
 `
 
+const Footer = styled.footer`
+    display: flex;
+    justify-content: space-between;
+`
+
+const Link = styled(NavLink)`
+    background-color: ${props => props.theme.body};
+    color: ${props => props.theme.text};
+    text-decoration: none;
+    padding: 0.5rem calc(2rem + 2vw);
+    border-radius: 0 0 0 50px;
+    font-size: calc(1em + 0.5vw);
+
+    ${Box}:hover &{
+        background-color: ${props => props.theme.text};
+        color: ${props => props.theme.body};
+    }
+`
+
+const Git = styled(NavLink)`
+    color: inherit;
+    text-decoration: none;
+
+    ${Box}:hover &{
+        &>*{
+            fill: ${props => props.theme.text};
+        }
+    }
+`
+
+
 const Card = (props) => {
   
   const {id, name, description, tags, demo, github} = props.data ;
@@ -66,7 +99,14 @@ const Card = (props) => {
                 })
             }
         </Tags>
-        {/* <Footer></Footer> */}
+        <Footer>
+            <Link to={{pathname: `${demo}`}} target="_blank">
+                Visit
+            </Link>
+            <Git to={{pathname: `${demo}`}} target="_blank">
+                <Github width={30} height={30} />
+            </Git>
+        </Footer>
     </Box>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import {lightTheme , DarkTheme} from '../components/Themes'
 
@@ -8,14 +8,16 @@ import SocialIcon from '../subComponents/SocialIcon'
 
 import {Work} from "../data/WorkData";
 import Card from "../subComponents/Card"
+import { useRef } from 'react'
 
 
 const Box=styled.div`
     background-color: ${props => props.theme.body};
-    width: 100%;
-    height: 100vh;
+    // width: 100%;
+    height: 400vh;
     position: relative;
     overflow: hidden;
+
 
 `
 
@@ -53,6 +55,21 @@ color: white;
 `
 
 const WorkPage = () => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    let element = ref.current;
+
+    const rotate = () => {
+        element.style.transform = `translateX(${-window.pageYOffset}px)`
+      
+    }
+
+    window.addEventListener('scroll', rotate)
+
+    return () => window.removeEventListener('scroll', rotate)
+  },[])
+
   return (
     <ThemeProvider theme={DarkTheme}> 
     <Box>
