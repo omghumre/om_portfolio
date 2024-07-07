@@ -11,6 +11,7 @@ import Card from "../subComponents/Card"
 import { useRef } from 'react'
 import { YinYang } from './Allsvg'
 import BigTitle from '../subComponents/BigTitle'
+import { motion } from 'framer-motion'
 
 
 const Box=styled.div`
@@ -23,7 +24,7 @@ const Box=styled.div`
 
 
 `
-const Main = styled.ul`
+const Main = styled(motion.ul)`
 position: fixed;
 top: 12rem;
 left: calc(10rem + 15vw);
@@ -42,6 +43,18 @@ const Rotate = styled.span`
   height: 80px;
   z-index: 1;
 `
+
+const Container = {
+  hidden: {opacity: 0},
+  show: {
+    opacity: 1,
+
+    transition:{
+      staggerChildren: 0.5,
+      duration: 0.5,
+    }
+  }
+}
 
 const ProjectPage = () => {
   const ref = useRef(null);
@@ -69,7 +82,7 @@ const ProjectPage = () => {
       <PowerButton theme='dark' />
       <SocialIcon theme='dark' />
       
-      <Main ref={ref}>
+      <Main ref={ref} variants={Container} initial='hidden' animate='show' >
         {
           Work.map( d =>
             <Card key={d.id} data={d} >Work Data </Card>
