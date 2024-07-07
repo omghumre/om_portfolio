@@ -9,6 +9,7 @@ import SocialIcon from '../subComponents/SocialIcon'
 import {Work} from "../data/WorkData";
 import Card from "../subComponents/Card"
 import { useRef } from 'react'
+import { YinYang } from './Allsvg'
 
 
 const Box=styled.div`
@@ -20,30 +21,6 @@ const Box=styled.div`
 
 
 `
-
-// const Main = styled.div`
-//     border: 2px solid ${props => props.theme.text};
-//     color: ${props => props.theme.text};
-//     padding: 2rem;
-//     width: 60vw;
-//     height: 70vh;
-//     z-index: 3;
-//     line-height: 1.5;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: calc(0.6rem + 1vw);
-//     backdrop-filter: blur(2px);
-
-//     position: absolute;
-//     left: calc(5rem + 5vw);
-//     top: 10rem;
-
-//     font-family: 'Ubutntu Mono', monospace;
-//     font-style: italic;
-// `
-
 const Main = styled.ul`
 position: fixed;
 top: 12rem;
@@ -54,8 +31,19 @@ display: flex;
 color: white;
 `
 
+const Rotate = styled.span`
+  display: block;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+`
+
 const WorkPage = () => {
   const ref = useRef(null);
+  const yinyang = useRef(null);
 
   useEffect(() => {
     let element = ref.current;
@@ -63,7 +51,7 @@ const WorkPage = () => {
     const rotate = () => {
       
         element.style.transform = `translateX(${-window.pageYOffset}px)`
-      
+        yinyang.current.style.transform = `rotate(`+ -window.pageYOffset + `deg)`
     }
 
     window.addEventListener('scroll', rotate)
@@ -86,6 +74,10 @@ const WorkPage = () => {
           )
         }
       </Main>
+
+      <Rotate ref={yinyang}>
+        <YinYang width={80} height={80} fill={DarkTheme.text} />
+      </Rotate>
       
     </Box>
     </ThemeProvider>
