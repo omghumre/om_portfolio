@@ -10,6 +10,7 @@ import {Work} from "../data/WorkData";
 import Card from "../subComponents/Card"
 import { useRef } from 'react'
 import { YinYang } from './Allsvg'
+import BigTitle from '../subComponents/BigTitle'
 
 
 const Box=styled.div`
@@ -79,6 +80,9 @@ const WorkPage = () => {
         <YinYang width={80} height={80} fill={DarkTheme.text} />
       </Rotate>
       
+        <BigTitle text="WORK" top='5%' right='10%' />
+        <BigTitle text="WORK" top='60%' right='60%' />
+
     </Box>
     </ThemeProvider>
 
