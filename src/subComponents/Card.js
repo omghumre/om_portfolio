@@ -66,7 +66,7 @@ const Card = (props) => {
                 })
             }
         </Tags>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
     </Box>
   )
 }

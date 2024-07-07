@@ -20,16 +20,12 @@ const Box = styled.div`
     transition: transform 0.3s ease;
 
     &:hover {
+        color: ${props => props.theme.body};
         transform: translateZ(50px);
-        background-color: transparent;
-        backdrop-filter: blur(20px); 
-        background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.4),
-        rgba(0, 0, 0, 0.3)
-        
+        background-color: ${props => props.theme.text};
+        border: 1px solid ${props => props.theme.body};
+        box-shadow: 5px 5px 10px ${props => props.theme.text};
     );
-    background-size: 10px ;
     }
 `;
 
@@ -42,9 +38,11 @@ const Image = styled.div`
     border-radius: 10px;
     background-position: center center;
     transition: transform 0.3s ease;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
     ${Box}:hover & {
-        transform: translateZ(50px);
+        border:1px solid ${props => props.theme.body};
     }
 `;
 
@@ -53,7 +51,8 @@ const HashTag = styled.div`
     transition: transform 0.3s ease;
 
     ${Box}:hover & {
-        transform: translateZ(50px);
+        // transform: translateZ(50px);
+        
     }
 `;
 
@@ -61,31 +60,26 @@ const Tag = styled.span`
     padding-right: 0.5rem;
     transition: transform 0.3s ease;
 
-    ${Box}:hover & {
-        transform: translateX(30px);
-    }
 `;
 
 const Date = styled.span`
     padding: 0.5rem 0;
     transition: transform 0.3s ease;
+    padding-bottom: 0.5rem;
 
-    ${Box}:hover & {
-        transform: translateZ(50px);
-    }
 `;
 
 const Title = styled.h3`
     color: inherit;
     padding: 0.5rem 0;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     font-family: 'Karla', sans-serif;
     font-weight: 700;    
     border-bottom: 1px solid ${props => props.theme.text};
     transition: transform 0.3s ease;
 
     ${Box}:hover & {
-        transform: translateZ(50px);
+        border-bottom:1px solid ${props => props.theme.body};
     }
 `;
 
@@ -114,12 +108,7 @@ function ThreeDCardDemo(props) {
             <Image img={imgSrc} className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl" alt="thumbnail" />
           </CardItem>
 
-          {/* Visit button */}
-          <div className="flex justify-between items-center mt-20">
-            <CardItem as="a" href={link} target="__blank" translateZ={50} className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white">
-              Try now →
-            </CardItem>
-          </div>
+          
         </CardBody>
       </Box>
     </CardContainer>
