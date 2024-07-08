@@ -1,8 +1,11 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import styled from 'styled-components';
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
+import { Container } from "postcss";
 
-const Box = styled.div`
+const Box = styled(motion(NavLink))`
     width: calc(10rem + 15vw);
     text-decoration: none;
     height: 20rem;
@@ -83,12 +86,32 @@ const Title = styled.h3`
     }
 `;
 
+const Ani = styled(motion.div)``;
+
+const Item = {
+  hidden: {
+      scale: 0
+  },
+  show:{
+      scale: 1,
+      transition: {
+          type: 'spring',
+          duration: 0.5
+      }
+  }
+}
+
 function ThreeDCardDemo(props) {
   const { name, tags, date, imgSrc, link } = props.blog;
 
   return (
     <CardContainer className="inter-var">
-      <Box>
+      <Ani 
+      
+        variants={Item}
+
+      >
+      <Box to={link}>
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
           {/* Title */}
           <CardItem translateZ={50} className="text-xl font-bold text-neutral-600 dark:text-white">
@@ -111,6 +134,7 @@ function ThreeDCardDemo(props) {
           
         </CardBody>
       </Box>
+      </Ani>
     </CardContainer>
   );
 }

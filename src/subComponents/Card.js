@@ -102,7 +102,7 @@ const Card = (props) => {
   const {id, name, description, tags, demo, github} = props.data ;
 
     return (
-    <Box key={id}  variants={Item}   >
+    <Box key={id}  variants={Item}>
         <Title>{name}</Title>
         <Description>
             {description}
