@@ -211,11 +211,11 @@ const Main = () => {
 
 initial={{
   y:-200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.1}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.1}
 }}
 
           whileHover={{scale:1.1}}
@@ -230,11 +230,11 @@ animate={{
 
 initial={{
   y:-200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.2}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.2}
 }}
 
           whileHover={{scale:1.1}}
@@ -250,11 +250,11 @@ animate={{
 
 initial={{
   y:-200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.3}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.3}
 }}
 
           whileHover={{scale:1.1}}
@@ -269,11 +269,11 @@ animate={{
 
 initial={{
   y:-200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.4}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.4}
 }}
 
           whileHover={{scale:1.1}}
@@ -292,11 +292,11 @@ animate={{
 
 initial={{
   y:200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.5}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.5}
 }}
 
           whileHover={{scale:1.1}}
@@ -311,11 +311,11 @@ animate={{
 
 initial={{
   y:200,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.6}
 }}
 animate={{
   y:0,
-  transition: {type:'spring', duration: 1.5, delay:1}
+  transition: {type:'spring', duration: 1.5, delay:1.6}
 }}
 
           whileHover={{scale:1.1}}
