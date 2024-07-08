@@ -30,6 +30,13 @@ const MainContainer = styled.div`
     font-size: 1.2rem; /* Adjust font size as needed */
     font-weight:600;
   }
+
+  h6 {
+  font-family: "Playwrite CO", cursive;
+  font-weight: 300;
+  font-style: normal;
+    font-size: 1.8rem;
+  }
 `
 
 
@@ -44,6 +51,7 @@ const Contact = styled(NavLink)`
   right: 3vw;
   text-decoration: none;
   z-index: 1;
+  font-size: 40px;
   `
 
 const BLOG = styled(NavLink)`
@@ -180,16 +188,36 @@ const Main = () => {
       </Center>
 
       <Contact target="_blank" to="mailto:omghumre74@gmail.com">
-        <motion.h2
+        <motion.h6
+
+          initial={{
+            y:-200,
+            transition: {type:'spring', duration: 1.5, delay:1}
+          }}
+          animate={{
+            y:0,
+            transition: {type:'spring', duration: 1.5, delay:1}
+          }}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
-          Say hello..
-        </motion.h2>
+          Hello..
+        </motion.h6>
       </Contact>
 
       <BLOG to="/blog">
       <motion.h2
+
+initial={{
+  y:-200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
@@ -199,6 +227,16 @@ const Main = () => {
 
       <WORK click={click} to="/work">
       <motion.h2
+
+initial={{
+  y:-200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
@@ -209,6 +247,16 @@ const Main = () => {
       <TopBar>
       <ABOUT click={click} to="/about">
       <motion.h2
+
+initial={{
+  y:-200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
@@ -218,6 +266,16 @@ const Main = () => {
       
       <SKILLS to="/skills">
       <motion.h2
+
+initial={{
+  y:-200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
@@ -231,6 +289,16 @@ const Main = () => {
       <BottomBar>
       <CERTIFICATES click={click} to="/certificates">
       <motion.h2
+
+initial={{
+  y:200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >
@@ -240,6 +308,16 @@ const Main = () => {
       
       <PROJECTS to="/projects">
       <motion.h2
+
+initial={{
+  y:200,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+animate={{
+  y:0,
+  transition: {type:'spring', duration: 1.5, delay:1}
+}}
+
           whileHover={{scale:1.1}}
           whileTap={{scale:0.9}}
         >

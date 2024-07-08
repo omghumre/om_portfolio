@@ -11,6 +11,7 @@ const Logo = styled.h1`
     top: 1.5rem;
     z-index: 3;
     cursor:pointer;
+    font-size: 40px;
 `
 
 const LogoComponent = (props) => {
