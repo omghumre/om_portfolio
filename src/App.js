@@ -13,6 +13,7 @@ import WorkPage from "./components/WorkPage";
 import Certificates from "./components/Certificates";
 import ProjectPage from "./components/ProjectPage";
 import { AnimatePresence } from "framer-motion";
+import SoundBar from "./subComponents/SoundBar";
 
 
 
@@ -24,6 +25,8 @@ function App() {
     
   <GlobalStyle/>
   <ThemeProvider theme={lightTheme}>
+
+    <SoundBar/>
   
  
 <AnimatePresence mode='wait'>
