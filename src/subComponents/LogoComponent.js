@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DarkTheme } from '../components/Themes'
+import {motion} from 'framer-motion'
 
-const Logo = styled.h1`
+const Logo = styled(motion.h1)`
     display: inline-block;
     color: ${props => props.color === "dark" ? DarkTheme.text : DarkTheme.body };
     font-family: 'Pacifico',cursive;
@@ -14,9 +15,25 @@ const Logo = styled.h1`
     font-size: 40px;
 `
 
+const Container = {
+  hidden: {opacity: 0},
+  show: {
+    opacity: 1,
+
+    transition:{
+      staggerChildren: 1,
+      duration: 1,
+    }
+  }
+}
+
 const LogoComponent = (props) => {
   return (
-    <Logo color={props.theme}>
+    <Logo color={props.theme}
+    
+    variants={Container} initial='hidden' animate='show'
+    
+    >
         OmG
     </Logo>
   )
