@@ -3,7 +3,7 @@ import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import styled from 'styled-components';
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import { Container } from "postcss";
+
 
 const Box = styled(motion(NavLink))`
     width: calc(10rem + 15vw);
@@ -24,7 +24,7 @@ const Box = styled(motion(NavLink))`
 
     &:hover {
         color: ${props => props.theme.body};
-        transform: translateZ(50px);
+        transform: translateZ(30px);
         background-color: ${props => props.theme.text};
         border: 1px solid ${props => props.theme.body};
         box-shadow: 5px 5px 10px ${props => props.theme.text};
@@ -44,8 +44,11 @@ const Image = styled.div`
     margin-top: 0.5rem;
     padding-bottom: 0.5rem;
 
+    transform-style: preserve-3d;
+
     ${Box}:hover & {
         border:1px solid ${props => props.theme.body};
+        
     }
 `;
 
@@ -53,15 +56,14 @@ const HashTag = styled.div`
     padding: 0.5rem 0;
     transition: transform 0.3s ease;
 
-    ${Box}:hover & {
-        // transform: translateZ(50px);
-        
-    }
+    transform-style: preserve-3d;
+    
 `;
 
 const Tag = styled.span`
     padding-right: 0.5rem;
     transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 
 `;
 
@@ -69,6 +71,7 @@ const Date = styled.span`
     padding: 0.5rem 0;
     transition: transform 0.3s ease;
     padding-bottom: 0.5rem;
+    transform-style: preserve-3d;
 
 `;
 
@@ -80,13 +83,13 @@ const Title = styled.h3`
     font-weight: 700;    
     border-bottom: 1px solid ${props => props.theme.text};
     transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 
     ${Box}:hover & {
         border-bottom:1px solid ${props => props.theme.body};
     }
 `;
 
-const Ani = styled(motion.div)``;
 
 const Item = {
   hidden: {
@@ -105,21 +108,17 @@ function ThreeDCardDemo(props) {
   const { name, tags, date, imgSrc, link } = props.blog;
 
   return (
-    <CardContainer className="inter-var">
-      <Ani 
+    <CardContainer className="inter-var" variants={Item}>
       
-        variants={Item}
-
-      >
       <Box to={link}>
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
           {/* Title */}
-          <CardItem translateZ={50} className="text-xl font-bold text-neutral-600 dark:text-white">
+          <CardItem translateZ={50} transformStyle="preserve-3d" className="text-xl font-bold text-neutral-600 dark:text-white">
             <Title>{name}</Title>
           </CardItem>
 
           {/* Hashtags and Date */}
-          <CardItem as="p" translateZ={50} className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+          <CardItem  translateZ={40} transformStyle="preserve-3d" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
             <HashTag>
               {tags.map((t, id) => <Tag key={id}>#{t}</Tag>)}
             </HashTag>
@@ -127,14 +126,14 @@ function ThreeDCardDemo(props) {
           </CardItem>
 
           {/* Image */}
-          <CardItem translateZ={50}>
+          <CardItem translateZ={60} transformStyle="preserve-3d">
             <Image img={imgSrc} className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl" alt="thumbnail" />
           </CardItem>
 
           
         </CardBody>
       </Box>
-      </Ani>
+      
     </CardContainer>
   );
 }

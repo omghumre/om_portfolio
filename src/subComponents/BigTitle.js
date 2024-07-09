@@ -11,6 +11,7 @@ const Text = styled.h1`
     font-size: calc(5rem + 5vw);
     z-index: 1;
     font-weight: 1000;
+    cursor: pointer;
 `
 
 

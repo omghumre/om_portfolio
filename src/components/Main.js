@@ -11,7 +11,7 @@ import Intro from './intro'
 
 
 const MainContainer = styled.div`
-  background: ${props => props.theme.body}
+  background: ${props => props.theme.body};
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -37,12 +37,25 @@ const MainContainer = styled.div`
   font-style: normal;
     font-size: 1.8rem;
   }
+
+  @media screen and (max-width: 700px){
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `
 
 
 
 const Container = styled.div`
   padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
 `
 const Contact = styled(NavLink)`
   color: ${props => props.theme.text};
@@ -52,7 +65,10 @@ const Contact = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
   font-size: 40px;
-  `
+  @media screen and (max-width: 700px){
+      font-size: 20px;
+  }
+`
 
 const BLOG = styled(NavLink)`
   color: ${props => props.theme.text};
@@ -82,18 +98,29 @@ const BottomBar = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    
+    @media screen and (max-width: 700px){
+      flex-direction: column;
+    }
 `
 
 const ABOUT = styled(NavLink)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1; 
+  @media screen and (max-width: 700px){
+      margin-bottom: 1rem;
+  }
 `
 
 const SKILLS = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1; 
+  @media screen and (max-width: 700px){
+      margin-bottom: 1rem;
+  }
 `
 
 const TopBar = styled.div`
@@ -104,6 +131,11 @@ const TopBar = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    
+    @media screen and (max-width: 700px){
+      flex-direction: column;
+    }
 `
 const CERTIFICATES = styled(NavLink)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
@@ -150,7 +182,12 @@ const Center = styled.button`
       display: ${props => props.click ? 'none' : 'inline-block' };
       padding-top: 1rem;
     }
-    `
+    
+    @media screen and (max-width: 700px){
+        
+      transform: translate(-50%,-50%) rotate(90deg);
+    }
+`
 
 const DarkDiv = styled.div`
     position: absolute;
@@ -162,6 +199,11 @@ const DarkDiv = styled.div`
     height: ${props => props.click ? '100%' : '0%' };
     z-index: 1;
     transition: height 0.5s ease, width 1s ease 0.5s;
+    
+    @media screen and (max-width: 700px){
+        width: ${props => props.click ? '100%' : '0%' };
+        height: ${props => props.click ? '100%' : '0%' };
+    }
 `
 
 const Main = () => {
