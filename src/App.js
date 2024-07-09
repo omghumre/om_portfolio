@@ -39,6 +39,7 @@ function App() {
     <Route path="/projects" element={<ProjectPage/>} />
     <Route path="/certificates" element={<Certificates/>} />
     <Route path="/skills" element={<MySkillsPage/>} />
+    <Route path="*" element={<Main />} />
   </Routes>
 
   </AnimatePresence>
