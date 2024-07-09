@@ -19,8 +19,15 @@ const Icons = styled.div`
         margin: 0.3rem 0;
     }
 
-    NavLink Twitter{
-        left: 5px;
+    @media screen and (max-width: 700px){
+        gap: 5px;
+        svg {
+      width: 20px;
+      height: 20px;
+      };
+
+      transform: translateY(40px);
+    
     }
 
 `
@@ -29,6 +36,10 @@ const Line = styled(motion.span)`
   height: 6rem;
   background-color:${props => props.color === "dark" ? DarkTheme.text : DarkTheme.body };
   transform: translate(-2px)
+
+  @media screen and (max-width: 700px){
+        transform: translateY(20px);
+    }
 `
 const SocialIcon = (props) => {
   return (
@@ -115,6 +126,7 @@ const SocialIcon = (props) => {
                 <Instagram width={28} height={28} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
             </NavLink>
         </motion.div>
+
         <Line color = {props.theme}
         
         initial={

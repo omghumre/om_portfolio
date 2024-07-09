@@ -13,6 +13,8 @@ const Logo = styled(motion.h1)`
     z-index: 3;
     cursor:pointer;
     font-size: 40px;
+
+    
 `
 
 const Container = {

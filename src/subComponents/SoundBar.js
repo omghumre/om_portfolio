@@ -26,6 +26,11 @@ const Box = styled.div`
         animation-delay: 0.8s;
     }
     
+     @media screen and (max-width: 700px){
+        transform: translate(1%, 60px);
+        // flex-direction: column;
+        align-items: center;
+    }
 `
 
 const play = keyframes`
@@ -49,6 +54,10 @@ const Line = styled.span`
     height: 1rem;
     width: 4px;
     margin: 0 0.1rem
+
+    //  @media screen and (max-width: 700px){
+    //     transform: translateY(20px);
+    // }
 `
 
 const SoundBar = () => {
