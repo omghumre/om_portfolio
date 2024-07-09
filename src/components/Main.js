@@ -32,7 +32,7 @@ const MainContainer = styled.div`
   }
 
   h6 {
-  font-family: "Playwrite CO", cursive;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-style: normal;
     font-size: 1.8rem;
@@ -41,6 +41,15 @@ const MainContainer = styled.div`
   @media screen and (max-width: 700px){
     h2 {
       font-size: 1rem;
+    }
+
+    h6{
+      font-size: 1.6rem;
+    }
+
+    h1{
+      font-size: 1.6rem;
+      transform: translateY(5px);
     }
   }
 `
@@ -78,6 +87,7 @@ const BLOG = styled(NavLink)`
   right: 3vw;
   text-decoration: none;
   z-index: 1; 
+  
 `
 
 const WORK = styled(NavLink)`
@@ -87,7 +97,12 @@ const WORK = styled(NavLink)`
   transform: translate(-50%,-50%) rotate(-90deg) ;
   left  : 3rem;
   text-decoration: none;
-  z-index: 1; 
+  z-index: 1;
+
+  @media screen and (max-width: 700px){
+      transform: translate(-50%,-20px) rotate(-90deg) ;
+      
+  } 
 `
 
 const BottomBar = styled.div`
@@ -100,9 +115,7 @@ const BottomBar = styled.div`
     justify-content: space-evenly;
     align-items: center;
     
-    @media screen and (max-width: 700px){
-      flex-direction: column;
-    }
+    
 `
 
 const ABOUT = styled(NavLink)`
@@ -110,7 +123,7 @@ const ABOUT = styled(NavLink)`
   text-decoration: none;
   z-index: 1; 
   @media screen and (max-width: 700px){
-      margin-bottom: 1rem;
+      transform: rotate(-90deg) ;
   }
 `
 
@@ -119,7 +132,7 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   z-index: 1; 
   @media screen and (max-width: 700px){
-      margin-bottom: 1rem;
+      transform: translateX(15px) rotate(90deg) ;
   }
 `
 
@@ -134,7 +147,8 @@ const TopBar = styled.div`
     align-items: center;
     
     @media screen and (max-width: 700px){
-      flex-direction: column;
+      transform: translate(0,20vh);
+      gap: 60vw;
     }
 `
 const CERTIFICATES = styled(NavLink)`
@@ -185,7 +199,9 @@ const Center = styled.button`
     
     @media screen and (max-width: 700px){
         
-      transform: translate(-50%,-50%) rotate(90deg);
+      transform: translate(-50%,-50%) ;
+      height: 120px;
+      width: 120px;
     }
 `
 
