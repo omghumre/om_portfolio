@@ -99,21 +99,30 @@ const WORK = styled(NavLink)`
 `;
 
 const ABOUT = styled(NavLink)`
-
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  color: ${props => (props.click ? '#FFF' : props.theme.text)};
   text-decoration: none;
-  z-index: 10;
+  z-index: 1;
 
   @media screen and (max-width: 700px) {
-  position: absolute;
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
-  top: 25%;
-  left: 1.3rem;
+    position: absolute;
+    top: 25%;
+    left: 1.3rem;
     transform: rotate(-90deg);
-    border: 1px solid ${props => props.theme.body};
+    // border: 1px solid ${props => props.theme.body};
+    color: ${props => (props.click ? '#FFF' : props.theme.text)};
   }
 `;
 
+const NavLinkStyled = styled(NavLink)`
+  color: ${props => (props.click ? '#FFF' : props.theme.text)};
+  text-decoration: none;
+  z-index: 1;
+
+  @media screen and (max-width: 700px) {
+    position: absolute;
+    color: ${props => (props.click ? '#FFF' : props.theme.text)};
+  }
+`;
 
 const BottomBar = styled.div`
   position: absolute;
@@ -128,15 +137,16 @@ const BottomBar = styled.div`
 
 
 const SKILLS = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: #000;
   text-decoration: none;
-  z-index: 1;
+  z-index: 10;
 
   @media screen and (max-width: 700px) {
-  position: absolute;
-  right: 1.3rem;
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
-  transform: translateX(15px) rotate(90deg);
+    position: absolute;
+    right: 1.3rem;
+    transform: translateX(15px) rotate(90deg) ;
+    z-index: 10;
+    color: ${props => (props.click ? '#FFF' : props.theme.text)};
   }
 `;
 
@@ -221,7 +231,7 @@ const DarkDiv = styled.div`
   right: 50%;
   width: ${props => (props.click ? '50%' : '0%')};
   height: ${props => (props.click ? '100%' : '0%')};
-  z-index: 1;
+  z-index: 0;
   transition: height 0.5s ease, width 1s ease 0.5s;
 
   @media screen and (max-width: 768px) {
@@ -309,7 +319,8 @@ const Main = () => {
         </WORK>
 
         <TopBar>
-          <ABOUT click={click} to="/about">
+          
+          <ABOUT  click={click} to="/about">
             <motion.h2
               initial={{
                 y: -200,

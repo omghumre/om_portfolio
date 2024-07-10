@@ -48,16 +48,18 @@ const SubBox = styled.div`
 
   .pic {
     width: auto;
-    height: 25rem;
+    height: auto;
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
       height: 15rem;
+      overflow: hidden;
     }
   }
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    overflow: hidden;
   }
 `;
 
