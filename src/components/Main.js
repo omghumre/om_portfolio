@@ -182,11 +182,12 @@ const Center = styled.button`
 
   & > :first-child {
     animation: ${rotate} infinite 1.5s linear;
+    width: ${props => props.click ? '80px' : '120px'};
   }
 
   & > :last-child {
     display: ${props => (props.click ? 'none' : 'inline-block')};
-    padding-top: 1rem;
+    
   }
 
   @media screen and (max-width: 700px) {

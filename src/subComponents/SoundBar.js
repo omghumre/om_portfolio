@@ -27,8 +27,9 @@ const Box = styled.div`
     }
     
      @media screen and (max-width: 700px){
-        transform: translate(1%, 60px);
-        // flex-direction: column;
+        transform: translateY(60px);
+        left: calc(50% - 17px);
+        position: fixed;
         align-items: center;
     }
 `

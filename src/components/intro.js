@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Me from '../assets/Images/profile.png';
+import Me from '../assets/Images/profile2.png';
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -70,11 +70,11 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
-  & > :last-child {
-    color: ${props => `rgba(${props.theme.bodyRgba}, 0.6)`};
-    font-size: calc(0.5rem + 1.5vw);
-    font-weight: 300;
-  }
+  // & > :last-child {
+  //   color: ${props => `rgba(${props.theme.bodyRgba}, 0.6)`};
+  //   font-size: calc(0.5rem + 1.5vw);
+  //   font-weight: 300;
+  // }
 
   @media screen and (max-width: 768px) {
     text-align: center;
