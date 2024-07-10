@@ -98,6 +98,23 @@ const WORK = styled(NavLink)`
   }
 `;
 
+const ABOUT = styled(NavLink)`
+
+  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  text-decoration: none;
+  z-index: 10;
+
+  @media screen and (max-width: 700px) {
+  position: absolute;
+  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  top: 25%;
+  left: 1.3rem;
+    transform: rotate(-90deg);
+    border: 1px solid ${props => props.theme.body};
+  }
+`;
+
+
 const BottomBar = styled.div`
   position: absolute;
   bottom: 1rem;
@@ -109,21 +126,17 @@ const BottomBar = styled.div`
   align-items: center;
 `;
 
-const ABOUT = styled(NavLink)`
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
-  text-decoration: none;
-  z-index: 1;
-  @media screen and (max-width: 700px) {
-    transform: rotate(-90deg);
-  }
-`;
 
 const SKILLS = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1;
+
   @media screen and (max-width: 700px) {
-    transform: translateX(15px) rotate(90deg);
+  position: absolute;
+  right: 1.3rem;
+  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  transform: translateX(15px) rotate(90deg);
   }
 `;
 
@@ -139,7 +152,7 @@ const TopBar = styled.div`
 
   @media screen and (max-width: 700px) {
     transform: translate(0, 20vh);
-    gap: 60vw;
+    border: 2px solid white;
   }
 `;
 
@@ -147,6 +160,9 @@ const CERTIFICATES = styled(NavLink)`
   color: ${props => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
+  @media screen and (max-width: 700px) {
+    color: black;
+  }
 `;
 
 const PROJECTS = styled(NavLink)`
@@ -254,7 +270,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Hello..
+            Hire Me
           </motion.h6>
         </Contact>
 
