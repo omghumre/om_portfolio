@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 const Logo = styled(motion.h1)`
     display: inline-block;
-    color: ${props => props.color === "dark" ? DarkTheme.text : DarkTheme.body };
+    mix-blend-mode: difference; filter: invert(1);
     font-family: 'Pacifico',cursive;
     position: fixed;
     left: 2rem;

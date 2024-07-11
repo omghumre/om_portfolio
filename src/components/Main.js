@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PowerButton from '../subComponents/PowerButton';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -62,7 +62,8 @@ const Container = styled.div`
 `;
 
 const Contact = styled(NavLink)`
-  color: ${props => props.theme.text};
+  
+  mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 2rem;
   right: 3vw;
@@ -75,17 +76,20 @@ const Contact = styled(NavLink)`
 `;
 
 const BLOG = styled(NavLink)`
-  color: ${props => props.theme.text};
+  
+  mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 50%;
   transform: rotate(90deg) translate(-50%, -50%);
   right: 3vw;
   text-decoration: none;
   z-index: 1;
+  
 `;
 
 const WORK = styled(NavLink)`
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  
+  mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
@@ -99,7 +103,7 @@ const WORK = styled(NavLink)`
 `;
 
 const ABOUT = styled(NavLink)`
-  color: ${props => (props.click ? '#FFF' : props.theme.text)};
+  mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
 
@@ -108,19 +112,7 @@ const ABOUT = styled(NavLink)`
     top: 25%;
     left: 1.3rem;
     transform: rotate(-90deg);
-    // border: 1px solid ${props => props.theme.body};
-    color: ${props => (props.click ? '#FFF' : props.theme.text)};
-  }
-`;
-
-const NavLinkStyled = styled(NavLink)`
-  color: ${props => (props.click ? '#FFF' : props.theme.text)};
-  text-decoration: none;
-  z-index: 1;
-
-  @media screen and (max-width: 700px) {
-    position: absolute;
-    color: ${props => (props.click ? '#FFF' : props.theme.text)};
+    
   }
 `;
 
@@ -135,18 +127,18 @@ const BottomBar = styled.div`
   align-items: center;
 `;
 
-
 const SKILLS = styled(NavLink)`
-  color: #000;
+  
+  mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 10;
 
   @media screen and (max-width: 700px) {
     position: absolute;
     right: 1.3rem;
-    transform: translateX(15px) rotate(90deg) ;
+    transform: translateX(15px) rotate(90deg);
     z-index: 10;
-    color: ${props => (props.click ? '#FFF' : props.theme.text)};
+    
   }
 `;
 
@@ -162,21 +154,21 @@ const TopBar = styled.div`
 
   @media screen and (max-width: 700px) {
     transform: translate(0, 20vh);
-    border: 2px solid white;
+    
   }
 `;
 
 const CERTIFICATES = styled(NavLink)`
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  
+  mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
-  @media screen and (max-width: 700px) {
-    color: black;
-  }
+  
 `;
 
 const PROJECTS = styled(NavLink)`
-  color: ${props => props.theme.text};
+  
+  mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
 `;
@@ -237,15 +229,27 @@ const DarkDiv = styled.div`
   @media screen and (max-width: 768px) {
     top: 0;
     bottom: auto;
-    height: ${props => (props.click ? '50%' : '0%')};
+    height: ${props => (props.click ? 'calc(50% + 20px)' : '0%')};
     width: 100%;
     right: 0;
   }
 `;
 
-
 const Main = () => {
   const [click, setClick] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 700);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleClick = () => setClick(!click);
 
@@ -255,7 +259,7 @@ const Main = () => {
       <Container>
         <PowerButton />
         <LogoComponent theme={click ? 'dark' : 'light'} />
-        <SocialIcon theme={click ? 'dark' : 'light'} />
+        <SocialIcon theme={isMobile ? 'dark' : (click ? 'dark' : 'light')} />
 
         <Center click={click}>
           <YinYang
@@ -297,11 +301,11 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Blogs
+            Blog
           </motion.h2>
         </BLOG>
 
-        <WORK click={click} to="/work">
+        <WORK to="/work" click={click}>
           <motion.h2
             initial={{
               y: -200,
@@ -317,78 +321,77 @@ const Main = () => {
             Work
           </motion.h2>
         </WORK>
+      <TopBar>
+        <ABOUT to="/about" click={click}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            animate={{
+              y: 0,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            About
+          </motion.h2>
+        </ABOUT>
 
-        <TopBar>
-          
-          <ABOUT  click={click} to="/about">
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.3 }
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.3 }
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              About.
-            </motion.h2>
-          </ABOUT>
-
-          <SKILLS to="/skills">
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Skills.
-            </motion.h2>
-          </SKILLS>
+        <SKILLS to="/skills" click={click}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            animate={{
+              y: 0,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            skills
+          </motion.h2>
+        </SKILLS>
         </TopBar>
 
-        <BottomBar>
-          <CERTIFICATES click={click} to="/certificates">
-            <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Certificates.
-            </motion.h2>
-          </CERTIFICATES>
 
+        <BottomBar>
           <PROJECTS to="/projects">
             <motion.h2
               initial={{
                 y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.6 }
+                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
               }}
               animate={{
                 y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.6 }
+                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
               }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Projects.
+              Projects
             </motion.h2>
           </PROJECTS>
+
+          <CERTIFICATES to="/certificates" click={click}>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
+              }}
+              animate={{
+                y: 0,
+                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Certificates
+            </motion.h2>
+          </CERTIFICATES>
         </BottomBar>
       </Container>
 
