@@ -258,8 +258,8 @@ const Main = () => {
       <DarkDiv click={click} />
       <Container>
         <PowerButton />
-        <LogoComponent theme={click ? 'dark' : 'light'} />
-        <SocialIcon theme={isMobile ? 'dark' : (click ? 'dark' : 'light')} />
+        <LogoComponent  />
+        <SocialIcon />
 
         <Center click={click}>
           <YinYang

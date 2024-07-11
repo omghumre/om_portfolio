@@ -14,6 +14,7 @@ const Icons = styled.div`
     bottom: 0;
     left: 2rem;
     z-index: 3;
+    mix-blend-mode: difference; filter: invert(1);
     
     &>*:not(:last-child){
         margin: 0.3rem 0;
@@ -41,6 +42,10 @@ const Line = styled(motion.span)`
         transform: translateY(20px);
     }
 `
+
+const col = styled.div`
+mix-blend-mode: difference; filter: invert(1);
+`
 const SocialIcon = (props) => {
   return (
     <Icons>
@@ -55,7 +60,7 @@ const SocialIcon = (props) => {
           }}
         >
             <NavLink style={{color:'inherit' }} to="mailto:omghumre74@gmail.com">
-                <Email width={30} height={30} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
+                <Email width={30} height={30} />
             </NavLink>
         </motion.div>
 
@@ -72,7 +77,7 @@ const SocialIcon = (props) => {
         
         >
             <NavLink style={{color:'inherit'}} target="_blank" to="https://github.com/omghumre">
-                <Github width={28} height={28} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
+                <Github width={28} height={28} />
             </NavLink>
         </motion.div>
 
@@ -89,7 +94,7 @@ const SocialIcon = (props) => {
         
         >
             <NavLink style={{color:'inherit'}} target="_blank" to="https://x.com/omghumre">
-                <Twitter width={26} height={26} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
+                <Twitter width={26} height={26}  />
             </NavLink>
         </motion.div>
 
@@ -106,7 +111,7 @@ const SocialIcon = (props) => {
         
         >
             <NavLink style={{color:'inherit'}} target="_blank" to="https://linkedin.com/in/omghumre">
-                <Linkedin width={30} height={30} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
+                <Linkedin width={30} height={30} />
             </NavLink>
         </motion.div>
 
@@ -123,7 +128,7 @@ const SocialIcon = (props) => {
         
         >
             <NavLink style={{color:'inherit'}} target="_blank" to="https://instagram.com/omghumre.in/">
-                <Instagram width={28} height={28} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body } />
+                <Instagram width={28} height={28} />
             </NavLink>
         </motion.div>
 
