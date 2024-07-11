@@ -33,9 +33,15 @@ const Box = styled(motion.div)`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     background: none;
-    border: none;
-    width: 80vw;
+    width: 60vw;
     height: auto;
+
+    
+  
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  border-top: 2px solid ${props => 'white'};
+  border-bottom: 2px solid ${props => 'black'};
   }
 `;
 
@@ -52,7 +58,9 @@ const SubBox = styled.div`
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-      height: 15rem;
+      height: auto;
+      top: 50%;
+      max-heigth: 15vh;
       overflow: hidden;
     }
   }

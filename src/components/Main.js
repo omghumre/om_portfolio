@@ -98,7 +98,8 @@ const WORK = styled(NavLink)`
   z-index: 1;
 
   @media screen and (max-width: 700px) {
-    transform: translate(-50%, -20px) rotate(-90deg);
+    transform: translateY(-20px) rotate(-90deg);
+    left: 0.3rem;
   }
 `;
 
@@ -110,7 +111,7 @@ const ABOUT = styled(NavLink)`
   @media screen and (max-width: 700px) {
     position: absolute;
     top: 25%;
-    left: 1.3rem;
+    left: 0.2rem;
     transform: rotate(-90deg);
     
   }
@@ -128,7 +129,7 @@ const BottomBar = styled.div`
 `;
 
 const SKILLS = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 10;
@@ -151,11 +152,11 @@ const TopBar = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
-  @media screen and (max-width: 700px) {
-    transform: translate(0, 20vh);
+@media screen and (max-width: 700px) {
+    top: 25%;
     
   }
+  
 `;
 
 const CERTIFICATES = styled(NavLink)`
