@@ -25,7 +25,7 @@ h2,h3,h4,h5{
 h3{
   font-family:'Karla', sans-serif ;
   font-weight:500;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2{
@@ -55,7 +55,7 @@ const Contact = styled(NavLink)`
   z-index: 1;
   font-size: 40px;
   @media screen and (max-width: 700px) {
-    font-size: 20px;
+    font-size: 30px;
   }
 `;
 

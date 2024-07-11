@@ -76,23 +76,23 @@ const SubBox = styled.div`
 
 const Text = styled.div`
   font-size: calc(1em + 1.5vw);
-  color: ${props => props.theme.body};
-  padding: 2rem;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+color: ${props => props.theme.body};
+padding: 2rem;
+cursor: pointer;
 
-  // & > :last-child {
-  //   color: ${props => `rgba(${props.theme.bodyRgba}, 0.6)`};
-  //   font-size: calc(0.5rem + 1.5vw);
-  //   font-weight: 300;
-  // }
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
 
-  @media screen and (max-width: 768px) {
-    text-align: center;
-    padding: 1rem;
-  }
+&>*:last-child{
+    color: ${props => `rgba(${props.theme.bodyRgba},0.6)` };
+    font-size: calc(0.5rem + 1.5vw);
+    font-weight:300;
+
+}
+
+
+  
 `;
 
 const Intro = () => {
@@ -106,8 +106,7 @@ const Intro = () => {
         <Text>
           <h1>Hi,</h1>
           <h3>I'm Om Ghumre.</h3>
-          <h6>Machine Learning Enthusiast and</h6>
-          <h6>Frontend Developer.</h6>
+          <h6>Machine Learning Enthusiast and Frontend Developer.</h6>
         </Text>
       </SubBox>
       <SubBox>
