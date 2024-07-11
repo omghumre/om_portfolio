@@ -9,47 +9,31 @@ import { YinYang } from './Allsvg';
 import Intro from './intro';
 
 const MainContainer = styled.div`
-  background: ${props => props.theme.body};
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+background: ${props => props.theme.body};
+width: 100vw;
+height: 100vh;
+overflow:hidden;
 
-  h2, h3, h4, h5, h6 {
-    font-family: 'Karla', sans-serif;
-    font-weight: 500;
-  }
+position: relative;
 
-  h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+h2,h3,h4,h5{
+  font-family:'Karla', sans-serif ;
+  font-weight:500;
+  // font-size: 2rem;
+}
 
-  h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.8rem;
-  }
+h3{
+  font-family:'Karla', sans-serif ;
+  font-weight:500;
+  font-size: 2rem;
+}
 
-  @media screen and (max-width: 700px) {
-    h2 {
-      font-size: 1rem;
-    }
+h2{
+font-size: 1.5rem;
+}
 
-    h6 {
-      font-size: 1.6rem;
-    }
-
-    h1 {
-      font-size: 1.6rem;
-      transform: translateY(5px);
-    }
-  }
-`;
+`
+    
 
 const Container = styled.div`
   padding: 0rem;
@@ -119,13 +103,20 @@ const ABOUT = styled(NavLink)`
 
 const BottomBar = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 5%;
   left: 0;
   right: 0;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+@media screen and (max-width: 700px) {
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    
+  }
 `;
 
 const SKILLS = styled(NavLink)`
@@ -138,7 +129,7 @@ const SKILLS = styled(NavLink)`
     position: absolute;
     right: 1.3rem;
     transform: translateX(15px) rotate(90deg);
-    z-index: 10;
+    z-index: 1;
     
   }
 `;
@@ -164,7 +155,13 @@ const CERTIFICATES = styled(NavLink)`
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
-  
+  @media screen and (max-width: 700px) {
+    position: absolute;
+    right: -2rem;
+    transform: rotate(90deg);
+    z-index: 1;
+    
+  }
 `;
 
 const PROJECTS = styled(NavLink)`
@@ -172,6 +169,14 @@ const PROJECTS = styled(NavLink)`
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
+
+  @media screen and (max-width: 700px) {
+    position: absolute;
+    left: -0.5rem;
+    transform: rotate(-90deg);
+    z-index: 1;
+    
+  }
 `;
 
 const rotate = keyframes`
@@ -201,18 +206,20 @@ const Center = styled.button`
 
   & > :first-child {
     animation: ${rotate} infinite 1.5s linear;
-    width: ${props => props.click ? '80px' : '120px'};
+    
   }
 
   & > :last-child {
     display: ${props => (props.click ? 'none' : 'inline-block')};
-    
+    padding-top: 1rem;
   }
 
   @media screen and (max-width: 700px) {
     transform: translate(-50%, -50%);
-    top: ${props => (props.click ? '85%' : '50%')};
+    top: ${props => (props.click ? '90%' : '50%')};
+    left: ${props => (props.click ? '85%' : '50%')};
     transition: all 1s ease;
+    
   }
 `;
 
@@ -238,19 +245,6 @@ const DarkDiv = styled.div`
 
 const Main = () => {
   const [click, setClick] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 700);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const handleClick = () => setClick(!click);
 
@@ -345,6 +339,7 @@ const Main = () => {
             initial={{
               y: -200,
               transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+              
             }}
             animate={{
               y: 0,
@@ -361,37 +356,38 @@ const Main = () => {
 
         <BottomBar>
           <PROJECTS to="/projects">
-            <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.4 }
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Projects
-            </motion.h2>
+          <motion.h2
+            initial={{
+              y: 700,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            animate={{
+              y: 0,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Projects
+          </motion.h2>
           </PROJECTS>
 
           <CERTIFICATES to="/certificates" click={click}>
-            <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1.5 }
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Certificates
-            </motion.h2>
+          <motion.h2
+            initial={{
+              y: 700,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+
+            }}
+            animate={{
+              y: 0,
+              transition: { type: 'spring', duration: 1.5, delay: 1.3 }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Certificates
+          </motion.h2>
           </CERTIFICATES>
         </BottomBar>
       </Container>

@@ -38,10 +38,13 @@ const Box = styled(motion.div)`
 
     
   
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
   background-size: 100% 2px;
-  border-top: 2px solid ${props => 'white'};
-  border-bottom: 2px solid ${props => 'black'};
+  // border-top: 2px solid white;
+  // border-bottom: 2px solid black;
+  border: 2px solid white;
+  outline-color: invert;
+  
   }
 `;
 
@@ -58,9 +61,9 @@ const SubBox = styled.div`
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-      height: auto;
+      height: 15rem;
       top: 50%;
-      max-heigth: 15vh;
+      // max-heigth: 15vh;
       overflow: hidden;
     }
   }
@@ -103,8 +106,8 @@ const Intro = () => {
         <Text>
           <h1>Hi,</h1>
           <h3>I'm Om Ghumre.</h3>
-          <h3>Machine Learning Enthusiast and</h3>
-          <h3>Frontend Developer.</h3>
+          <h6>Machine Learning Enthusiast and</h6>
+          <h6>Frontend Developer.</h6>
         </Text>
       </SubBox>
       <SubBox>
