@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
-import {lightTheme , DarkTheme} from '../components/Themes'
+import {DarkTheme} from '../components/Themes'
 
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
@@ -45,7 +45,7 @@ const Main = styled.div`
     color: ${props => props.theme.text};
     padding: 2rem;
     width: 60vw;
-    height: 70vh;
+    height: 60vh;
     z-index: 3;
     line-height: 1.5;
 
@@ -61,6 +61,12 @@ const Main = styled.div`
 
     font-family: 'Ubutntu Mono', monospace;
     font-style: italic;
+
+    @media screen and (max-width: 700px) {
+    left: calc(3.5rem);
+    top: 15rem;
+    height: 50vh;
+  }
 `
 
 const AboutPage = () => {
@@ -71,7 +77,7 @@ const AboutPage = () => {
 
     
     <Box>
-    {/* < LampDemo/> */}
+    
     <LogoComponent theme='dark' />
       <PowerButton theme='dark' />
       <SocialIcon theme='dark' />
@@ -93,7 +99,7 @@ Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tem
       </Main>
       
       <BigTitle text="ABOUT" top='10%' right='65%' />
-      {/* <BigTitle text="ABOUT" top='70%' right='10%' /> */}
+      <BigTitle text="ABOUT" top='75%' right='5%' />
     </Box>
     </ThemeProvider>
 
