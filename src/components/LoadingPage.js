@@ -116,14 +116,15 @@ const LoadingPage = ({ onLoadingComplete }) => {
     <div className="loader">
       <h1 className="counter">0</h1>
       <div className="site-teaser">
-        <span>Use headphones</span>
+        <span>Something is cooking...</span>
       </div>
       <div className="circles">
         <div className="circle circle-outer"></div>
         <div className="circle circle-inner"></div>
         <div className="circle-inner-rotator"></div>
-        <div className="block"></div>
+        
       </div>
+      <div className="block"></div>
       <div className="white-block"></div>
     </div>
   );
