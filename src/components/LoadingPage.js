@@ -26,32 +26,32 @@ const LoadingPage = ({ onLoadingComplete }) => {
 
     updateCounter();
 
-    gsap.from(".circles", 2, {
+    gsap.from(".circles", 3, {
       top: "-100%",
       ease: "elastic.out",
       delay: 0.5,
     });
 
-    gsap.from(".circle-inner", 1, {
+    gsap.from(".circle-inner", 2, {
       width: "75px",
       height: "75px",
       ease: "power4.inOut",
       delay: 2,
     });
 
-    gsap.from(".circle-inner-rotator", 1, {
+    gsap.from(".circle-inner-rotator", 2, {
       scale: 1,
       ease: "power4.inOut",
       delay: 2.5,
     });
 
-    gsap.from(".circles", 1.5, {
+    gsap.from(".circles", 2, {
       rotation: 360,
       ease: "power4.inOut",
       delay: 3,
     });
 
-    gsap.from(".block", 0.75, {
+    gsap.from(".block", 1, {
       width: "800px",
       ease: "power4.inOut",
       delay: 4.5,
@@ -60,14 +60,14 @@ const LoadingPage = ({ onLoadingComplete }) => {
     gsap.fromTo(
       ".container",
       {
-        duration: 2,
+        duration: 3,
         left: "100%",
         scale: 0.5,
         ease: "power4.inOut",
         delay: 4,
       },
       {
-        duration: 2,
+        duration: 3,
         left: "50%",
         scale: 0.5,
         transform: "translateX(-50%)",
@@ -76,34 +76,34 @@ const LoadingPage = ({ onLoadingComplete }) => {
       }
     );
 
-    gsap.to(".block", 1.5, {
+    gsap.to(".block", 2, {
       width: "0px",
-      ease: "power4.inOut",
-      delay: 5,
-    });
-    gsap.to(".block", 1.5, {
-      height: "0px",
       ease: "power4.inOut",
       delay: 6,
     });
-
-    gsap.to(".circles", 1.5, {
-      rotation: 0,
-      ease: "power4.inOut",
-      delay: 6.5,
-    });
-
-    gsap.to(".loader", 2.5, {
-      scale: 0,
+    gsap.to(".block", 2, {
+      height: "0px",
       ease: "power4.inOut",
       delay: 7,
+    });
+
+    gsap.to(".circles", 2, {
+      rotation: 0,
+      ease: "power4.inOut",
+      delay: 8,
+    });
+
+    gsap.to(".loader", 3, {
+      scale: 0,
+      ease: "power4.inOut",
+      delay: 9,
       onComplete: onLoadingComplete,
     });
 
-    gsap.to(".container", 2, {
+    gsap.to(".container", 3, {
       scale: 1,
       ease: "power4.inOut",
-      delay: 7.5,
+      delay: 9.5,
     });
   }, [onLoadingComplete]);
 
@@ -111,7 +111,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
     <div className="loader">
       <h1 className="counter">0</h1>
       <div className="site-teaser">
-        <span>Use headphones</span>
+        <span>Something is cooking...</span>
       </div>
       <div className="circles">
         <div className="circle circle-outer"></div>

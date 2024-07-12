@@ -2,10 +2,7 @@
     --circle-outline: #505050;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 
 .loader {
@@ -26,7 +23,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     color: var(--circle-outline);
-    padding: 2rem 4rem;
+    padding: 1rem -1rem;
     font-size: 10vw;
     font-family: "Saol Display";
     font-weight: lighter;

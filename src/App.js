@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import './index.css';
 
 import SoundBar from "./subComponents/SoundBar";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Suspense, lazy, useState, useEffect } from "react";
 import LoadingPage from "./components/LoadingPage";
 
@@ -42,44 +42,51 @@ function App() {
           {loading ? (
             <LoadingPage onLoadingComplete={handleLoadingComplete} />
           ) : (
-            <Routes location={location} key={location.pathname}>
-              <Route path="/" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Main />
-                </Suspense>
-              } />
-              <Route path="/about" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <AboutPage />
-                </Suspense>
-              } />
-              <Route path="/blog" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <BlogPage />
-                </Suspense>
-              } />
-              <Route path="/work" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <WorkPage />
-                </Suspense>
-              } />
-              <Route path="/projects" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <ProjectPage />
-                </Suspense>
-              } />
-              <Route path="/certificates" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Certificates />
-                </Suspense>
-              } />
-              <Route path="/skills" element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <MySkillsPage />
-                </Suspense>
-              } />
-              <Route path="*" element={<Main />} />
-            </Routes>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Main />
+                  </Suspense>
+                } />
+                <Route path="/about" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <AboutPage />
+                  </Suspense>
+                } />
+                <Route path="/blog" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <BlogPage />
+                  </Suspense>
+                } />
+                <Route path="/work" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <WorkPage />
+                  </Suspense>
+                } />
+                <Route path="/projects" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <ProjectPage />
+                  </Suspense>
+                } />
+                <Route path="/certificates" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Certificates />
+                  </Suspense>
+                } />
+                <Route path="/skills" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <MySkillsPage />
+                  </Suspense>
+                } />
+                <Route path="*" element={<Main />} />
+              </Routes>
+            </motion.div>
           )}
         </AnimatePresence>
       </ThemeProvider>
