@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.19",
     "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
+    "gsap": "^3.12.5",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.39",
     "react": "^18.3.1",
