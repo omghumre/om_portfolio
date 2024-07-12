@@ -1,12 +1,13 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
-import { DarktTheme, lightTheme } from "./components/Themes";
+import { lightTheme } from "./components/Themes";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import './index.css';
 
 import SoundBar from "./subComponents/SoundBar";
 import { AnimatePresence } from "framer-motion";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState, useEffect } from "react";
+import LoadingPage from "./components/LoadingPage";
 
 const Main = lazy(() => import("./components/Main"));
 const AboutPage = lazy(() => import("./components/AboutPage"));
@@ -18,47 +19,68 @@ const ProjectPage = lazy(() => import("./components/ProjectPage"));
 
 function App() {
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    if (loading) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [loading]);
 
   return (
     <>
-      <GlobalStyle/>
+      <GlobalStyle />
       <ThemeProvider theme={lightTheme}>
-        <SoundBar/>
+        <SoundBar />
         <AnimatePresence mode='wait'>
-          
+          {loading ? (
+            <LoadingPage onLoadingComplete={handleLoadingComplete} />
+          ) : (
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <Main />
+                  <Main />
                 </Suspense>
-                } />
+              } />
               <Route path="/about" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <AboutPage />
-                </Suspense>} />
+                  <AboutPage />
+                </Suspense>
+              } />
               <Route path="/blog" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <BlogPage />
-                </Suspense>} />
+                  <BlogPage />
+                </Suspense>
+              } />
               <Route path="/work" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <WorkPage />
-                </Suspense>} />
+                  <WorkPage />
+                </Suspense>
+              } />
               <Route path="/projects" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <ProjectPage />
-                </Suspense>} />
+                  <ProjectPage />
+                </Suspense>
+              } />
               <Route path="/certificates" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <Certificates />
-                </Suspense>} />
+                  <Certificates />
+                </Suspense>
+              } />
               <Route path="/skills" element={
                 <Suspense fallback={<div>Loading...</div>}>
-                <MySkillsPage />
-                </Suspense>} />
+                  <MySkillsPage />
+                </Suspense>
+              } />
               <Route path="*" element={<Main />} />
             </Routes>
-          
+          )}
         </AnimatePresence>
       </ThemeProvider>
     </>
