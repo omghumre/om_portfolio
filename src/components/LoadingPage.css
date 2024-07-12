@@ -1,21 +1,25 @@
-:root{
+:root {
     --circle-outline: #505050;
-}
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
 
+  }
+  
 
-
-
-.loader {
+  
+  .loader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: #000;
-    z-index: 1000; /* Ensure it's on top */
-}
-
-.counter {
+  }
+  
+  .counter {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -23,14 +27,23 @@
     justify-content: flex-end;
     align-items: flex-end;
     color: var(--circle-outline);
-    padding: 1rem -1rem;
+    padding: 2rem 4rem;
     font-size: 10vw;
     font-family: "Saol Display";
     font-weight: lighter;
     font-style: italic;
-}
-
-.site-teaser span {
+    z-index: 1000;
+  }
+  @media (max-width: 700px) {
+    .counter {
+      font-size: 15vw; /* Increase size for better visibility */
+      padding: 1rem;   /* Adjust padding */
+      justify-content: center; /* Center it horizontally */
+      align-items: center;     /* Center it vertically */
+    }
+  }
+  
+  .site-teaser span {
     position: absolute;
     top: 0;
     right: 0;
@@ -39,18 +52,18 @@
     font-size: 1rem;
     font-family: "Saol Display";
     font-weight: lighter;
-}
-
-.circles {
+  }
+  
+  .circles {
     position: absolute;
     left: 5rem;
     border-radius: 100%;
     bottom: 5rem;
     width: 400px;
     height: 400px;
-}
-
-.circle {
+  }
+  
+  .circle {
     position: absolute;
     top: 0;
     left: 0;
@@ -59,18 +72,18 @@
     background: none;
     border: 1px solid var(--circle-outline);
     border-radius: 100%;
-}
-
-.circle-inner {
+  }
+  
+  .circle-inner {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
     height: 400px;
-}
-
-.circle-inner-rotator {
+  }
+  
+  .circle-inner-rotator {
     position: absolute;
     left: 50%;
     transform: translateX(-50%) scale(0);
@@ -79,9 +92,9 @@
     background: none;
     border: 1px solid var(--circle-outline);
     border-radius: 100%;
-}
-
-.block {
+  }
+  
+  .block {
     position: absolute;
     top: -100px;
     left: 200px;
@@ -91,9 +104,9 @@
     background: none;
     border: 1px solid var(--circle-outline);
     transform-origin: bottom;
-}
-
-.container {
+  }
+  
+  .container {
     position: fixed;
     top: 0;
     left: 0;
@@ -103,15 +116,28 @@
     justify-content: center;
     align-items: center;
     background: #fff;
-}
-
-.container h1 {
+  }
+  
+  .container h1 {
     font-family: "Saol Display";
     font-weight: 40;
     font-size: 7.5rem;
     letter-spacing: -0.5rem;
-}
-
-.container h1 span {
+  }
+  
+  .container h1 span {
     font-style: italic;
-}
+  }
+  
+  .white-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 1;
+    background: white;
+    z-index: 999;
+  }
+  

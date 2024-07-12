@@ -9,7 +9,13 @@ const LoadingPage = ({ onLoadingComplete }) => {
 
     function updateCounter() {
       if (currentValue === 100) {
-        onLoadingComplete();
+        gsap.to(".white-block", 1.5, {
+          width: "100%",
+          height: "100%",
+          opacity: 1,
+          ease: "power4.inOut",
+          onComplete: onLoadingComplete,
+        });
         return;
       }
 
@@ -97,7 +103,6 @@ const LoadingPage = ({ onLoadingComplete }) => {
       scale: 0,
       ease: "power4.inOut",
       delay: 9,
-      onComplete: onLoadingComplete,
     });
 
     gsap.to(".container", 3, {
@@ -111,7 +116,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
     <div className="loader">
       <h1 className="counter">0</h1>
       <div className="site-teaser">
-        <span>Something is cooking...</span>
+        <span>Use headphones</span>
       </div>
       <div className="circles">
         <div className="circle circle-outer"></div>
@@ -119,6 +124,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
         <div className="circle-inner-rotator"></div>
         <div className="block"></div>
       </div>
+      <div className="white-block"></div>
     </div>
   );
 };
