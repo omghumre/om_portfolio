@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useRef, useEffect } from 'react';
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import { cn } from '../../utils/cn';
 
 // Create context
@@ -27,7 +28,10 @@ export const useMouseEnter = () => {
 export const CardContainer = ({
   children,
   className,
-  containerClassName
+  containerClassName,
+  variants, // Accept variants as a prop
+  initial,  // Accept initial as a prop
+  animate   // Accept animate as a prop
 }) => {
   const containerRef = useRef(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
@@ -56,16 +60,19 @@ export const CardContainer = ({
         className={cn("py-20 flex items-center justify-center", containerClassName)}
         style={{ perspective: "800px" }}
       >
-        <div
+        <motion.div
           ref={containerRef}
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn("flex items-center justify-center relative transition-all duration-200 ease-linear", className)}
           style={{ transformStyle: "preserve-3d" }}
+          variants={variants} // Apply variants
+          initial={initial}   // Apply initial
+          animate={animate}   // Apply animate
         >
           {children}
-        </div>
+        </motion.div>
       </div>
     </MouseEnterContext.Provider>
   );

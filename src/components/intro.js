@@ -40,8 +40,6 @@ const Box = styled(motion.div)`
   
   background-repeat: no-repeat;  
   background-size: 100% 2px;
-  // border-top: 2px solid white;
-  // border-bottom: 2px solid black;
   border: 2px solid white;
   outline-color: invert;
   
@@ -57,14 +55,14 @@ const SubBox = styled.div`
 
   .pic {
     width: auto;
-    height: auto;
+    height: 51vh;
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
       height: 15rem;
       top: 50%;
-      // max-heigth: 15vh;
-      overflow: hidden;
+      
+      
     }
   }
 

@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { YinYang } from './Allsvg';
 import Intro from './intro';
+// import {Suspense, lazy} from 'react';
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -46,7 +47,7 @@ const Container = styled.div`
 `;
 
 const Contact = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 2rem;
@@ -60,7 +61,7 @@ const Contact = styled(NavLink)`
 `;
 
 const BLOG = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 50%;
@@ -72,7 +73,7 @@ const BLOG = styled(NavLink)`
 `;
 
 const WORK = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   position: absolute;
   top: 50%;
@@ -88,6 +89,7 @@ const WORK = styled(NavLink)`
 `;
 
 const ABOUT = styled(NavLink)`
+color: #000;
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
@@ -151,7 +153,7 @@ const TopBar = styled.div`
 `;
 
 const CERTIFICATES = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;
@@ -165,7 +167,7 @@ const CERTIFICATES = styled(NavLink)`
 `;
 
 const PROJECTS = styled(NavLink)`
-  
+  color: #000;
   mix-blend-mode: difference; filter: invert(1);
   text-decoration: none;
   z-index: 1;

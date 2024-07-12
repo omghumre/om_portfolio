@@ -1,60 +1,68 @@
-import { ThemeProvider } from "styled-components"
-import GlobalStyle from "./globalStyles"
-import { DarktTheme, lightTheme } from "./components/Themes"
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./globalStyles";
+import { DarktTheme, lightTheme } from "./components/Themes";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import './index.css';
-import {Switch} from "react-router-dom";
 
-import Main from "./components/Main";
-import AboutPage from "./components/AboutPage";
-import BlogPage from "./components/BlogPage";
-import MySkillsPage from "./components/MySkillsPage";
-import WorkPage from "./components/WorkPage";
-import Certificates from "./components/Certificates";
-import ProjectPage from "./components/ProjectPage";
-import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
+import { AnimatePresence } from "framer-motion";
+import { Suspense, lazy } from "react";
 
-
+const Main = lazy(() => import("./components/Main"));
+const AboutPage = lazy(() => import("./components/AboutPage"));
+const BlogPage = lazy(() => import("./components/BlogPage"));
+const MySkillsPage = lazy(() => import("./components/MySkillsPage"));
+const WorkPage = lazy(() => import("./components/WorkPage"));
+const Certificates = lazy(() => import("./components/Certificates"));
+const ProjectPage = lazy(() => import("./components/ProjectPage"));
 
 function App() {
-
   const location = useLocation();
 
-  return <>
-    
-  <GlobalStyle/>
-  <ThemeProvider theme={lightTheme}>
-
-    <SoundBar/>
-  
- 
-<AnimatePresence mode='wait'>
-
-  <Routes location={location} key={location.pathname}>
-    <Route path="/" element={<Main/>} />
-    <Route path="/about" element={<AboutPage/>} />
-    <Route path="/blog" element={<BlogPage/>} />
-    <Route path="/work" element={<WorkPage/>} />
-    <Route path="/projects" element={<ProjectPage/>} />
-    <Route path="/certificates" element={<Certificates/>} />
-    <Route path="/skills" element={<MySkillsPage/>} />
-    <Route path="*" element={<Main />} />
-  </Routes>
-
-  </AnimatePresence>
-
-
-  </ThemeProvider>
-    
-    
-    
-    
-    
-
+  return (
+    <>
+      <GlobalStyle/>
+      <ThemeProvider theme={lightTheme}>
+        <SoundBar/>
+        <AnimatePresence mode='wait'>
+          
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <Main />
+                </Suspense>
+                } />
+              <Route path="/about" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <AboutPage />
+                </Suspense>} />
+              <Route path="/blog" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <BlogPage />
+                </Suspense>} />
+              <Route path="/work" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <WorkPage />
+                </Suspense>} />
+              <Route path="/projects" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <ProjectPage />
+                </Suspense>} />
+              <Route path="/certificates" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <Certificates />
+                </Suspense>} />
+              <Route path="/skills" element={
+                <Suspense fallback={<div>Loading...</div>}>
+                <MySkillsPage />
+                </Suspense>} />
+              <Route path="*" element={<Main />} />
+            </Routes>
+          
+        </AnimatePresence>
+      </ThemeProvider>
     </>
-    
+  );
 }
 
-export default App
-
+export default App;
