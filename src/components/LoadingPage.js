@@ -9,9 +9,10 @@ const LoadingPage = ({ onLoadingComplete }) => {
 
     function updateCounter() {
       if (currentValue === 100) {
-        gsap.to(".white-block", 1.5, {
-          width: "100%",
-          height: "100%",
+        gsap.to(".circle", 1.5, {
+          width: "1000%",
+          height: "1000%",
+          background: "white",
           opacity: 1,
           ease: "power4.inOut",
           onComplete: onLoadingComplete,
@@ -19,7 +20,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
         return;
       }
 
-      currentValue += Math.floor(Math.random() * 10) + 1;
+      currentValue += Math.floor(Math.random() * 10) + 2;
 
       if (currentValue > 100) {
         currentValue = 100;
@@ -39,6 +40,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
     });
 
     gsap.from(".circle-inner", 2, {
+      rotation: 360,
       width: "75px",
       height: "75px",
       ease: "power4.inOut",
@@ -46,6 +48,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
     });
 
     gsap.from(".circle-inner-rotator", 2, {
+      rotation: 360,
       scale: 1,
       ease: "power4.inOut",
       delay: 2.5,
@@ -94,7 +97,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
     });
 
     gsap.to(".circles", 2, {
-      rotation: 0,
+      rotation: 360,
       ease: "power4.inOut",
       delay: 8,
     });
