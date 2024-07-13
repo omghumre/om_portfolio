@@ -1,144 +1,156 @@
 :root {
-    --circle-outline: #505050;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
+  --circle-outline: #505050;
+}
 
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  
-  .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-  }
-  
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: background-color 0.3s ease;
+}
+
+.counter {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: var(--circle-outline);
+  padding: 2rem 4rem;
+  font-size: 10vw;
+  font-family: "Saol Display";
+  font-weight: lighter;
+  font-style: italic;
+  z-index: 1000;
+}
+
+@media (max-width: 700px) {
   .counter {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    color: var(--circle-outline);
-    padding: 2rem 4rem;
-    font-size: 10vw;
-    font-family: "Saol Display";
-    font-weight: lighter;
-    font-style: italic;
-    z-index: 1000;
-  }
-  @media (max-width: 700px) {
-    .counter {
-      font-size: 15vw; /* Increase size for better visibility */
-      padding: 1rem;   /* Adjust padding */
-      justify-content: center; /* Center it horizontally */
-      align-items: center;     /* Center it vertically */
-    }
-  }
-  
-  .site-teaser span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 2rem 4rem;
-    color: var(--circle-outline);
-    font-size: 1rem;
-    font-family: "Saol Display";
-    font-weight: lighter;
-  }
-  
-  .circles {
-    position: absolute;
-    left: 20%;
-    border-radius: 100%;
-    bottom: 5rem;
-    width: 400px;
-    height: 400px;
-    opacity: 1;
-  }
-  
-  .circle {
-    position: absolute;
-    top: 0;
-    left: 10rem;
-    width: 100%;
-    height: 100%;
-    background: none;
-    border: 1px solid var(--circle-outline);
-    border-radius: 100%;
-  }
-  
-  .circle-inner {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-  }
-  
-  .circle-inner-rotator {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    width: 162.5px;
-    height: 162.5px;
-    background: none;
-    border: 1px solid var(--circle-outline);
-    border-radius: 100%;
-  }
-  
-  .block {
-    position: absolute;
-    top: -100px;
-    left: 200px;
-    width: 0px;
-    height: 0px;
-    display: none;
-    background: none;
-    border: 1px solid var(--circle-outline);
-    transform-origin: bottom;
-  }
-  
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+    font-size: 15vw;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
-    background: #fff;
   }
-  
-  .container h1 {
-    font-family: "Saol Display";
-    font-weight: 40;
-    font-size: 7.5rem;
-    letter-spacing: -0.5rem;
-  }
-  
-  .container h1 span {
-    font-style: italic;
-  }
-  
-  .white-block {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    opacity: 1;
-    background: white;
-    z-index: 999;
-  }
-  
+}
+
+.site-teaser span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2rem 4rem;
+  color: var(--circle-outline);
+  font-size: 1rem;
+  font-family: "Saol Display";
+  font-weight: lighter;
+}
+
+.circles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 1px solid var(--circle-outline);
+  border-radius: 100%;
+}
+
+.circle-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+}
+
+.circle-inner-rotator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 162.5px;
+  height: 162.5px;
+  background: none;
+  border: 1px solid var(--circle-outline);
+  border-radius: 100%;
+}
+
+.circle-bounce {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: none;
+  border: 1px solid var(--circle-outline);
+  border-radius: 100%;
+}
+
+.block {
+  position: absolute;
+  top: -100px;
+  left: 200px;
+  width: 0px;
+  height: 0px;
+  display: none;
+  background: none;
+  border: 1px solid var(--circle-outline);
+  transform-origin: bottom;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.container h1 {
+  font-family: "Saol Display";
+  font-weight: 40;
+  font-size: 7.5rem;
+  letter-spacing: -0.5rem;
+}
+
+.container h1 span {
+  font-style: italic;
+}
+
+.white-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  opacity: 1;
+  background: white;
+  z-index: 999;
+}

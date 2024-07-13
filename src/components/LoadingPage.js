@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./LoadingPage.css";
 import gsap from "gsap";
+import { Bounce } from "gsap/all";
 
 const LoadingPage = ({ onLoadingComplete }) => {
   useEffect(() => {
@@ -27,7 +28,10 @@ const LoadingPage = ({ onLoadingComplete }) => {
       }
 
       counterElement.textContent = currentValue + "%";
+
       let delay = Math.floor(Math.random() * 200) + 250;
+
+      
       setTimeout(updateCounter, delay);
     }
 
@@ -113,6 +117,29 @@ const LoadingPage = ({ onLoadingComplete }) => {
       ease: "power4.inOut",
       delay: 9.5,
     });
+
+    // New circle animations
+    gsap.to(".circle-inner", {
+      rotation: 360,
+      repeat: -1,
+      duration: 5,
+      ease: "linear",
+    });
+
+    gsap.to(".circle-inner-rotator", {
+      rotation: -360,
+      repeat: -1,
+      duration: 5,
+      ease: "linear",
+    });
+
+    gsap.to(".circle-bounce", {
+      y: 100,
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: Bounce.easeInOut,
+    });
   }, [onLoadingComplete]);
 
   return (
@@ -125,7 +152,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
         <div className="circle circle-outer"></div>
         <div className="circle circle-inner"></div>
         <div className="circle-inner-rotator"></div>
-        
+        <div className="circle circle-bounce"></div>
       </div>
       <div className="block"></div>
       <div className="white-block"></div>
