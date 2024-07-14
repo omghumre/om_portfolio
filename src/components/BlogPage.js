@@ -74,7 +74,6 @@ const Grid = styled.div`
   }
 `
 
-
 const BlogPage = () => {
 
   const [numbers, setNumbers] = useState(0);

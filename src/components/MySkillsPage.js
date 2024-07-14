@@ -15,11 +15,18 @@ import SparklesPreview from '../test'
 const Box=styled.div`
     background-color: ${props => props.theme.body};
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0;
+  }
 
     
 
@@ -46,7 +53,11 @@ const Main = styled.div`
       backdrop-filter: blur(2px);
     }
 
-
+    @media (max-width: 700px) {
+    width: 80%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
 
     `
 
@@ -103,7 +114,7 @@ const MySkillsPage = () => {
       
       <Main>
         <Title>
-          <Design width={40} height={40} fill="currentColor"  /> Designer
+          <Design width={40} height={40} fill="currentColor"  /> Machine Learning
         </Title>
 
         <Description>
