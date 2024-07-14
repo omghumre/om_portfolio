@@ -21,12 +21,13 @@ const Box=styled.div`
     justify-content: space-evenly;
     align-items: center;
 
+    
+
 `
 
 const Main = styled.div`
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
-    // background-color: ${props => props.theme.body};
     background-color: transparent;
     padding: 2rem;
     width: 30vw;
@@ -40,23 +41,12 @@ const Main = styled.div`
     justify-content: space-between;
     
     
-    // &:hover{
-    //   color: ${props => props.theme.body};
-    //   background-color: ${props => props.theme.text};
-    // }
-
-    &:hover {
-        transform: translateZ(50px);
-        background-color: transparent;
-        backdrop-filter: blur(2px); 
-        background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.2)
-        
-    );
-    // background-size: 10px ;
+    &:hover{
+      background-color: rgba(255,255,255,0.6);
+      backdrop-filter: blur(2px);
     }
+
+
 
     `
 
@@ -67,15 +57,12 @@ const Title = styled.h2`
     font-size: calc(1em + 1vw);
 
     // do this when hover on main
-    ${Main}:hover &{
-    
+    ${Main}:hover &{  
     color: ${props => props.theme.body};
-  
-}
+  }
 
-    // &>* : first-child{
-    //   margin-right: 1rem;
-    // }
+
+  
 `
 
 const Description = styled.div`
@@ -96,6 +83,7 @@ const Description = styled.div`
       color: ${props => props.theme.body};
     
   }
+
     
 `
 
