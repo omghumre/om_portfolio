@@ -9,7 +9,6 @@ import {Blogs} from '../data/BlogData'
 import BlogComponent from './BlogComponent'
 import AnchorComponent from '../subComponents/Anchor'
 import BigTitle from '../subComponents/BigTitle'
-import { Opacity } from '@tsparticles/engine'
 import { motion } from 'framer-motion'
 
 const MainContainer = styled(motion.div)`
@@ -18,6 +17,12 @@ const MainContainer = styled(motion.div)`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+
+    @media (max-width: 700px) {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 `
 
 const Container = styled.div`
@@ -47,14 +52,29 @@ const Center = styled.div`
     justify-content: center;
     align-items: center;
     padding-top: 10rem;
+
+     @media screen and (max-width: 768px) {
+    padding-top: 2rem;
+  }
 `
 
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
     grid-gap: calc(1rem + 2vw);
+
+    @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `
 
+const HiddenAnchorComponent = styled(AnchorComponent)`
+  @media screen and (max-width: 700px) {
+    display: none;
+    opacity:0;
+    color: white;
+  }
+`;
 
 
 const BlogPage = () => {
@@ -82,7 +102,7 @@ const BlogPage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcon/>
-        <AnchorComponent numbers={numbers} />
+        <HiddenAnchorComponent numbers={numbers} />
       <Center>
       <Grid>
             {regularBlogs.map(blog => (

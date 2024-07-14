@@ -5,6 +5,9 @@ import { Link } from '../components/Allsvg'
 
 const Container = styled.div`
     position: relative;
+    @media screen and (max-width: 700px) {
+    display: none;
+    }
 `
 
 const Slider = styled.div`
