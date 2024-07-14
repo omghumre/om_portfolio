@@ -74,12 +74,6 @@ const Grid = styled.div`
   }
 `
 
-const HiddenAnchorComponent = styled(AnchorComponent)`
-  @media screen and (max-width: 700px) {
-    display: none;
-  }
-`;
-
 
 const BlogPage = () => {
 
@@ -106,7 +100,7 @@ const BlogPage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcon/>
-        <HiddenAnchorComponent numbers={numbers} />
+        <AnchorComponent numbers={numbers} />
       <Center>
       <Grid>
             {regularBlogs.map(blog => (
