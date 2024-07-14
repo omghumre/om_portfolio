@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const Box = styled(motion(NavLink))`
     width: calc(10rem + 15vw);
     text-decoration: none;
-    height: 20rem;
+    height: auto;
     padding: 1rem;
     color: ${props => props.theme.text};
     border: 2px solid ${props => props.theme.text};
@@ -26,6 +26,11 @@ const Box = styled(motion(NavLink))`
         background-color: ${props => props.theme.text};
         border: 1px solid ${props => props.theme.body};
         box-shadow: 5px 5px 10px ${props => props.theme.text};
+    }
+
+    @media screen and (max-width: 700px) {
+    width: 33vh;
+    height: auto;
     }
 `;
 
