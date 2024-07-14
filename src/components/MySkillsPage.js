@@ -147,7 +147,7 @@ const MySkillsPage = () => {
       </Main>
       
 
-      <BigTitle text="Skills" top='80%' right='30%' />
+      <BigTitle text="Skills" top='10%' right='45%' />
 
     </Box>
     </ThemeProvider>

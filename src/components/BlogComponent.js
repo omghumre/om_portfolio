@@ -16,7 +16,7 @@ const Box = styled(motion(NavLink))`
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    z-index: 5;
+    z-index: 3;
     transform-style: preserve-3d;
     transition: transform 0.3s ease;
 

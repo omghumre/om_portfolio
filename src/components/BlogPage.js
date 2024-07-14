@@ -91,8 +91,8 @@ const BlogPage = () => {
       </Grid>
       
       </Center>
-      <BigTitle text="BLOG" top='10%' right='70%' />
-        <BigTitle text="BLOG" top='60%' right='5%' />
+      <BigTitle text="BLOG" top='10%' right='80%' />
+        <BigTitle text="BL OG" top='60%' right='5%' />
       </Container>
     </MainContainer>
   )

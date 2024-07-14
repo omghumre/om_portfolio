@@ -8,10 +8,13 @@ const Text = styled.h1`
     left: ${props => props.left};
     right: ${props => props.right};
     color: ${props => `rgba(${props.theme.textRgba},0.1)`};
-    font-size: calc(5rem + 5vw);
+    font-size: calc(5rem + 2vw);
     z-index: 1;
     font-weight: 1000;
     cursor: pointer;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    
 `
 
 
