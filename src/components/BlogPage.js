@@ -66,6 +66,9 @@ const BlogPage = () => {
     setNumbers(parseInt(num))
   }, []);
 
+  const regularBlogs = Blogs.filter(blog => blog.key !== 20);
+  const specialBlogs = Blogs.filter(blog => blog.key === 20);
+
   return (
     <MainContainer 
       variants={container}
@@ -82,14 +85,14 @@ const BlogPage = () => {
         <AnchorComponent numbers={numbers} />
       <Center>
       <Grid>
-        {
-          Blogs.map(blog => {
-              return <BlogComponent key={blog.id} blog={blog} />
-              // return <ThreeDCardDemo key={blog.id} blog={blog} />
-          })
-        }
+            {regularBlogs.map(blog => (
+              <BlogComponent key={blog.id} blog={blog} />
+            ))}
+            {specialBlogs.map(blog => (
+              <BlogComponent key={blog.id} blog={blog} />
+            ))}
+            
       </Grid>
-      
       </Center>
       <BigTitle text="BLOG" top='10%' right='80%' />
         <BigTitle text="BL OG" top='60%' right='5%' />

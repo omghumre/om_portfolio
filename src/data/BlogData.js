@@ -1,3 +1,5 @@
+import soon from "../assets/Images/soon.jpg"
+
 export const Blogs = [
     {
         id:1,
@@ -65,5 +67,20 @@ export const Blogs = [
         imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--rv4I8UwE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0a9h50milhlf1us6mn4a.png",
         link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
     },
-  
+    {
+        id:20,
+        name:"Comming soon...",
+        tags:[" "],
+        date:"202X",
+        imgSrc:{soon},
+        link:""
+    },
+    {
+        id:20,
+        name:"Comming soon...",
+        tags:[" "],
+        date:"202X",
+        imgSrc:{soon},
+        link:""
+    },
 ] 
