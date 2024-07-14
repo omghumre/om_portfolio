@@ -9,11 +9,14 @@ const Logo = styled(motion.h1)`
     font-family: 'Pacifico',cursive;
     position: fixed;
     left: 2rem;
-    top: 1.5rem;
+    top: 2.3rem;
     z-index: 3;
     cursor:pointer;
     font-size: 40px;
 
+    @media screen and (max-width: 700px) {
+    font-size: 25px;
+  }
     
 `
 

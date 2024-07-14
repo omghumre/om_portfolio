@@ -31,6 +31,11 @@ cursor: pointer;
     color: inherit;
 }
 
+@media screen and (max-width: 700px) {
+    width: 1rem;
+    height: 1rem;
+  }
+
     `
 
 

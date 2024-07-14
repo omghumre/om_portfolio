@@ -32,6 +32,7 @@ const Container = styled.div`
 
   position: relative;
   padding-bottom: 5rem;
+  
 `
 
 const container = {
@@ -53,7 +54,7 @@ const Center = styled.div`
     align-items: center;
     padding-top: 10rem;
 
-     @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
     padding-top: 2rem;
   }
 `
@@ -65,14 +66,17 @@ const Grid = styled.div`
 
     @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
+    overflow-y: hidden;
+
+    & > div:first-child {
+      margin-top: 8rem;
+    }
   }
 `
 
 const HiddenAnchorComponent = styled(AnchorComponent)`
   @media screen and (max-width: 700px) {
     display: none;
-    opacity:0;
-    color: white;
   }
 `;
 
