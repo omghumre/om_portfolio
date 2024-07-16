@@ -7,7 +7,6 @@ import img from '../assets/Images/wall.jpg'
 
 import { Certificate } from '../data/CertiData'
 import CertiComponent from './CertiComponent'
-import AnchorComponent from '../subComponents/Anchor'
 import BigTitle from '../subComponents/BigTitle'
 import { motion } from 'framer-motion'
 
