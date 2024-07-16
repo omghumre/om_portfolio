@@ -8,28 +8,46 @@ import SocialIcons from "../subComponents/SocialIcon";
 import PowerButton from "../subComponents/PowerButton";
 
 import { Work } from "../data/WorkData";
-import Card from "../subComponents/Card";
+import Card from "../subComponents/Wcard";
 import { YinYang } from "./Allsvg";
 import BigTitlte from "../subComponents/BigTitle";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-
-  height: 400vh;
+  height: auto;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 7rem;
+  margin-right: 0rem;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 `;
 
 const Main = styled(motion.ul)`
-  position: fixed;
-  top: 12rem;
-  left: calc(10rem + 15vw);
-  height: 40vh;
+  position: relative;
+  height: auto;
+  top: 10rem;
+  width: 100vw;
   display: flex;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   color: white;
+
+  @media (max-width: 768px) {
+    top: 5rem;
+  }
 `;
+
 const Rotate = styled.span`
   display: block;
   position: fixed;
@@ -54,24 +72,7 @@ const container = {
 };
 
 const WorkPage = () => {
-  const ref = useRef(null);
-  const yinyang = useRef(null);
-
-  useEffect(() => {
-    let element = ref.current;
-
-    const rotate = () => {
-      element.style.transform = `translateX(${-window.pageYOffset}px)`;
-
-      return (yinyang.current.style.transform =
-        "rotate(" + -window.pageYOffset + "deg)");
-    };
-
-    window.addEventListener("scroll", rotate);
-    return () => {
-      window.removeEventListener("scroll", rotate);
-    };
-  }, []);
+  
 
   return (
     <ThemeProvider theme={DarkTheme}>
@@ -80,16 +81,13 @@ const WorkPage = () => {
         <SocialIcons theme="dark" />
         <PowerButton />
 
-        <Main ref={ref} variants={container} initial="hidden" animate="show">
+        <Main  variants={container} initial="hidden" animate="show">
           {Work.map((d) => (
             <Card key={d.id} data={d} />
           ))}
         </Main>
-        <Rotate ref={yinyang}>
-          <YinYang width={80} height={80} fill={DarkTheme.text} />
-        </Rotate>
 
-        <BigTitlte text="WORK" top="10%" right="20%" />
+        <BigTitlte text="WORK" top="10%" right="5%" />
       </Box>
     </ThemeProvider>
   );
