@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
     width: 30rem;
-    height: 25rem;
+    height: 25rem;  
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
     padding: 1.5rem 2rem;
@@ -28,14 +28,20 @@ const Box = styled(motion.li)`
         border: 1px solid ${props => props.theme.text};
         transform: translateZ(-10px);
     }
-@media screen and (max-width: 700px) {
-    width: 20rem;
-    height: 30rem;
-  }
+    @media screen and (max-width: 700px) {
+    margin-bottom: 2rem;
+    margin-right: 0rem;
+    width: 15rem;
+    height: 20rem;
+
+    & > div:last-child {
+    margin-bottom: -10rem;
+    }
+}
 `
 
 const Title = styled.h2`
-    font-size: calc(1em + 0.5vw);
+    font-size: calc(1em + 1vw);
 `
 
 const Description = styled.h2`

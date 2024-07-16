@@ -69,8 +69,14 @@ const Grid = styled.div`
     overflow-y: hidden;
 
     & > div:first-child {
-      margin-top: 8rem;
+      margin-top: 5rem;
     }
+
+    @media screen and (max-width: 700px) {
+    & > div:last-child {
+      margin-bottom: 4rem;
+    }
+  }
   }
 `
 
