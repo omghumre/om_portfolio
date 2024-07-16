@@ -6,8 +6,8 @@ import {Github} from '../components/Allsvg'
 import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
-    width: 20rem;
-    height: 40vh;
+    width: 30rem;
+    height: 25rem;
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
     padding: 1.5rem 2rem;
@@ -20,12 +20,18 @@ const Box = styled(motion.li)`
     border: 1px solid ;
     transition: all 0.2s ease;
 
+    gap: 1rem;
+
     &:hover{
         background-color: ${props => props.theme.body};
         color: ${props => props.theme.text};
         border: 1px solid ${props => props.theme.text};
         transform: translateZ(-10px);
     }
+@media screen and (max-width: 700px) {
+    width: 20rem;
+    height: 30rem;
+  }
 `
 
 const Title = styled.h2`
@@ -96,14 +102,33 @@ const Item = {
     }
 }
 
+const Image = styled.div`
+    background-image: ${props => `url(${props.img})`};
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-position: center center;
+    transition: transform 0.3s ease;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transform-style: preserve-3d;
+
+    ${Box}:hover & {
+        border:1px solid ${props => props.theme.text};
+    }
+`;
+
 
 const Card = (props) => {
   
-  const {id, name, description, tags, demo, github} = props.data ;
+  const {id, name, description, tags, demo, imgSrc} = props.data ;
 
     return (
     <Box key={id}  variants={Item}>
         <Title>{name}</Title>
+        <Image img={imgSrc} alt="thumbnail" />
         <Description>
             {description}
         </Description>

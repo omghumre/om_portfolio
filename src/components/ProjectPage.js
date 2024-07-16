@@ -6,7 +6,7 @@ import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 
-import {Work} from "../data/WorkData";
+import {Work} from "../data/ProjectData";
 import Card from "../subComponents/Card"
 import { useRef } from 'react'
 import { YinYang } from './Allsvg'
@@ -55,6 +55,8 @@ const Container = {
     }
   }
 }
+
+
 
 const ProjectPage = () => {
   const ref = useRef(null);
