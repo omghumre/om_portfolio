@@ -1,52 +1,66 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
-import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
+import img from '../assets/Images/wall.jpg'
 
-import {Blogs} from '../data/BlogData'
+import { Certificate } from '../data/CertiData'
 import CertiComponent from './CertiComponent'
 import AnchorComponent from '../subComponents/Anchor'
 import BigTitle from '../subComponents/BigTitle'
 import { motion } from 'framer-motion'
 
 const MainContainer = styled(motion.div)`
+    position: relative;
+    width: 100vw;
+    min-height: 100vh; // Changed to min-height
+    overflow: hidden;
+
+    @media (max-width: 700px) {
+        width: 100%;
+        z-index: -1;
+    }
+`
+
+const BackgroundImage = styled.div`
     background-image: url(${img}) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-
-    @media (max-width: 700px) {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5; // To fade the background
     z-index: -1;
-  }
 `
 
 const Container = styled.div`
-  background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`}; 
-  width: 100%;
-  height: auto;
+    background-color: ${props => `rgba(${props.theme.bodyRgba},0.7)`}; 
+    width: calc(100% - 2rem); // Add space on left and right
+    height: auto;
+    position: relative;
+    padding: 0 1rem 5rem; // Add padding on the sides and bottom
+    margin: 0 auto; // Center the container
 
-  position: relative;
-  padding-bottom: 5rem;
-  
+    @media (max-width: 700px) {
+        padding: 0 0.5rem 5rem; // Adjust padding for smaller screens
+    }
 `
 
 const container = {
-  hidden: {Opacity:0},
-  show: {
-    opacity:1,
-
-    transition:{
-      staggerChildren: 0.5,
-      duration: 0.5,
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.5,
+            duration: 0.5,
+        }
     }
-  }
 }
-
 
 const Center = styled.div`
     display: flex;
@@ -55,67 +69,73 @@ const Center = styled.div`
     padding-top: 10rem;
 
     @media screen and (max-width: 768px) {
-    padding-top: 2rem;
-  }
+        padding-top: 2rem;
+    }
 `
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-template-columns: repeat(4, minmax(15rem, 1fr)); // Adjusted for fixed width
     grid-gap: calc(1rem + 2vw);
 
-    @media screen and (max-width: 700px) {
-    grid-template-columns: 1fr;
-    overflow-y: hidden;
-
-    & > div:first-child {
-      margin-top: 8rem;
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(3, minmax(15rem, 1fr)); // Adjusted for fixed width
     }
-  }
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: repeat(2, minmax(15rem, 1fr)); // Adjusted for fixed width
+    }
+
+    @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+        overflow-y: hidden;
+
+        & > div:first-child {
+            margin-top: 8rem;
+        }
+    }
 `
 
 const Certificates = () => {
+    const [numbers, setNumbers] = useState(0);
 
-  const [numbers, setNumbers] = useState(0);
+    useEffect(() => {
+        let num = (window.innerHeight - 70) / 30;
+        setNumbers(parseInt(num));
+    }, []);
 
-  useEffect(() => {
-    let num = (window.innerHeight - 70)/30;
-    setNumbers(parseInt(num))
-  }, []);
+    const regularBlogs = Certificate.filter(Certificate => Certificate.key !== 20);
+    const specialBlogs = Certificate.filter(Certificate => Certificate.key === 20);
 
-  const regularBlogs = Blogs.filter(blog => blog.key !== 20);
-  const specialBlogs = Blogs.filter(blog => blog.key === 20);
-
-  return (
-    <MainContainer 
-      variants={container}
-      initial='hidden'
-      animate='show'
-      exit={{
-        opacity: 0, transition:{duration: 0.5}
-      }}
-    >
-      <Container>
-        <LogoComponent />
-        <PowerButton />
-        <SocialIcon/>
-        <AnchorComponent numbers={numbers} />
-      <Center>
-      <Grid>
-            {regularBlogs.map(blog => (
-              <CertiComponent key={blog.id} blog={blog} />
-            ))}
-            {specialBlogs.map(blog => (
-              <CertiComponent key={blog.id} blog={blog} />
-            ))}
-            
-      </Grid>
-      </Center>
-      <BigTitle text="BLOG" top='10%' right='80%' />
-        <BigTitle text="BL OG" top='60%' right='5%' />
-      </Container>
-    </MainContainer>
-  )
+    return (
+        <MainContainer
+            variants={container}
+            initial='hidden'
+            animate='show'
+            exit={{
+                opacity: 0, transition: { duration: 0.5 }
+            }}
+        >
+            <BackgroundImage />
+            <Container>
+                <LogoComponent />
+                <PowerButton />
+                <SocialIcon />
+                <Center>
+                    <Grid>
+                        {regularBlogs.map(Certificate => (
+                            <CertiComponent key={Certificate.id} blog={Certificate} />
+                        ))}
+                        {specialBlogs.map(Certificate => (
+                            <CertiComponent key={Certificate.id} blog={Certificate} />
+                        ))}
+                    </Grid>
+                </Center>
+                <BigTitle text="Certificates" top='10%' right='80%' />
+                <BigTitle text="f i c a t e s" top='83%' right='20%' />
+            </Container>
+        </MainContainer>
+    )
 }
 
 export default Certificates
