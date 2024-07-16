@@ -98,8 +98,8 @@ Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tem
 
       </Main>
       
-      <BigTitle text="ABOUT" top='10%' right='65%' />
-      <BigTitle text="ABOUT" top='75%' right='5%' />
+      <BigTitle text="ABOUT" top='10%' right='80%' />
+      <BigTitle text="A B O U T" top='75%' right='5%' />
     </Box>
     </ThemeProvider>
 
