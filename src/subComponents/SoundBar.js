@@ -27,10 +27,11 @@ const Box = styled.div`
     }
     
      @media screen and (max-width: 700px){
-        transform: translateY(60px);
-        left: calc(50% - 17px);
+        transform: translateY(0px);
+        left: calc(55%);
         position: fixed;
         align-items: center;
+        // top: 5rem;
     }
 `
 

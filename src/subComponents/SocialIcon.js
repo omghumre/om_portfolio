@@ -10,10 +10,10 @@ const Icons = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 2rem;
-  z-index: 3;
+  z-index: 10;
   mix-blend-mode: difference;
   filter: invert(1);
   
@@ -28,9 +28,9 @@ const Icons = styled.div`
       height: 30px;
     }
     flex-direction: row;
-    bottom: 1rem;
-    // left: 50%;
-    // transform: translateX(50%);
+    bottom: 2rem;
+    margin-top: 2rem;
+    
   }
 `;
 
@@ -95,7 +95,7 @@ const SocialIcon = (props) => {
       </motion.div>
 
       <Line
-        color={props.theme}
+        color='inherit'
         initial={{ height: 0 }}
         animate={{ height: '8rem' }}
         transition={{ type: 'spring', duration: 1, delay: 0.8 }}

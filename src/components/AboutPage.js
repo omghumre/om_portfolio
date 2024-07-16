@@ -16,7 +16,7 @@ const Box=styled.div`
     background-color: ${props => props.theme.body};
     width: 100%;
     height: 100vh;
-    position: relative;
+    position: fixed;
     overflow: hidden;
 
 `
@@ -29,7 +29,7 @@ const float = keyframes`
 
 const Spaceman = styled.div`
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 5%;
     width: 20vw;
     animation: ${float} 4s ease infinite;
@@ -63,9 +63,9 @@ const Main = styled.div`
     font-style: italic;
 
     @media screen and (max-width: 700px) {
-    left: calc(3.5rem);
-    top: 15rem;
-    height: 50vh;
+    left: 2.5rem;
+    top: 10rem;
+    height: auto;
   }
 `
 

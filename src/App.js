@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import './index.css';
 
 import SoundBar from "./subComponents/SoundBar";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { Suspense, lazy, useState, useEffect } from "react";
 import LoadingPage from "./components/LoadingPage";

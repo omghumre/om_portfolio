@@ -15,7 +15,7 @@ width: 100vw;
 height: 100vh;
 overflow:hidden;
 
-position: relative;
+position: fixed;
 
 h2,h3,h4,h5{
   font-family:'Karla', sans-serif ;

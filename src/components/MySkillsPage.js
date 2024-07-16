@@ -9,7 +9,7 @@ import SocialIcon from '../subComponents/SocialIcon'
 import ParticleComponent from '../subComponents/ParticleComponent'
 
 import BigTitle from '../subComponents/BigTitle'
-import SparklesPreview from '../test'
+
 
 
 const Box=styled.div`
@@ -26,6 +26,7 @@ const Box=styled.div`
     justify-content: center;
     align-items: center;
     padding: 0rem 0;
+    
   }
 
     
@@ -54,6 +55,9 @@ const Main = styled.div`
     }
 
     @media (max-width: 700px) {
+    right-margin:2rem;
+
+    top: 5rem;
     width: 80%;
     height: auto;
     margin-bottom: 2rem;

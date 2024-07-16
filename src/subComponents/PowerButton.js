@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 const Power = styled.button`
 position: fixed;
 top: 2rem;
-left: 50%;
+left: 45%;
 transform: translate(-50%,0);
 
 background-color: #FCF6F4;
