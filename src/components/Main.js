@@ -69,7 +69,10 @@ const BLOG = styled(NavLink)`
   right: 3vw;
   text-decoration: none;
   z-index: 1;
-  
+  @media screen and (max-width: 700px) {
+    transform: rotate(90deg) translate(-50%, -50%);
+    top: 22rem
+  }
 `;
 
 const WORK = styled(NavLink)`
@@ -83,7 +86,7 @@ const WORK = styled(NavLink)`
   z-index: 1;
 
   @media screen and (max-width: 700px) {
-    transform: translateY(-20px) rotate(-90deg);
+    transform: translateY(-50px) rotate(-90deg);
     left: 0.3rem;
   }
 `;
@@ -96,7 +99,7 @@ color: #000;
 
   @media screen and (max-width: 700px) {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 0.2rem;
     transform: rotate(-90deg);
     
@@ -114,7 +117,7 @@ const BottomBar = styled.div`
   align-items: center;
 
 @media screen and (max-width: 700px) {
-    bottom: 25%;
+    bottom: 30%;
     left: 0;
     right: 0;
     
@@ -146,7 +149,7 @@ const TopBar = styled.div`
   justify-content: space-evenly;
   align-items: center;
 @media screen and (max-width: 700px) {
-    top: 25%;
+    top: 20%;
     
   }
   
@@ -200,6 +203,7 @@ const Center = styled.button`
   background-color: transparent;
   cursor: pointer;
 
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,8 +222,8 @@ const Center = styled.button`
 
   @media screen and (max-width: 700px) {
     transform: translate(-50%, -50%);
-    top: ${props => (props.click ? '90%' : '50%')};
-    left: ${props => (props.click ? '85%' : '50%')};
+    top: ${props => (props.click ? '84%' : '50%')};
+    left: ${props => (props.click ? '83%' : '50%')};
     transition: all 1s ease;
     
   }
@@ -236,10 +240,10 @@ const DarkDiv = styled.div`
   z-index: 0;
   transition: height 0.5s ease, width 1s ease 0.5s;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 700px) {
     top: 0;
     bottom: auto;
-    height: ${props => (props.click ? 'calc(50% + 20px)' : '0%')};
+    height: ${props => (props.click ? 'calc(45%)' : '0%')};
     width: 100%;
     right: 0;
   }
@@ -261,8 +265,8 @@ const Main = () => {
         <Center click={click}>
           <YinYang
             onClick={() => handleClick()}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
+            width={click ? 110 : 190}
+            height={click ? 110 : 190}
             fill='currentColor'
           />
           <span>Click here</span>

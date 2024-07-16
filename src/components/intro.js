@@ -30,7 +30,7 @@ const Box = styled(motion.div)`
 
   z-index: 1;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 700px) {
     flex-direction: column;
     background: none;
     width: 60vw;
@@ -58,22 +58,23 @@ const SubBox = styled.div`
     height: 51vh;
     overflow: hidden;
 
-    @media screen and (max-width: 768px) {
-      height: 15rem;
-      top: 50%;
-      
-      
+    @media screen and (max-width: 700px) {
+      height: 16rem;
+      z-index: 10;
+      overflow: visible;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 700px) {
     width: 100%;
+    top: 0rem;
     overflow: hidden;
+    z-index: 1;
   }
 `;
 
 const Text = styled.div`
-  font-size: calc(1em + 1.5vw);
+font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
 padding: 2rem;
 cursor: pointer;
@@ -84,10 +85,14 @@ justify-content: space-evenly;
 
 &>*:last-child{
     color: ${props => `rgba(${props.theme.bodyRgba},0.6)` };
-    font-size: calc(0.5rem + 1.5vw);
+    font-size: calc(0.5rem + 3vw);
     font-weight:300;
-
+    padding-bottom: 0rem;
 }
+
+@media screen and (max-width: 700px) {
+    padding: 1rem;
+  }
 
 
   
@@ -97,13 +102,13 @@ const Intro = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: '55vh' }}
+      animate={{ height: '75vh' }}
       transition={{ type: 'spring', duration: 2, delay: 1 }}
     >
       <SubBox>
         <Text>
           <h1>Hi,</h1>
-          <h3>I'm Om Ghumre.</h3>
+          <h3>I'm Om Ghumre</h3>
           <h6>Machine Learning Enthusiast and Frontend Developer.</h6>
         </Text>
       </SubBox>
