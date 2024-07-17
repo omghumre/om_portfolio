@@ -12,32 +12,28 @@ import { YinYang } from './Allsvg'
 import BigTitle from '../subComponents/BigTitle'
 import { motion } from 'framer-motion'
 
-const Box = styled.div`
-  background-color: ${props => props.theme.body};
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  overflow-x: hidden;
-`
+const Box=styled.div`
+    background-color: ${props => props.theme.body};
+    height: 400vh;
+    // position: fixed
+    display: flex;
+    align-items: center; 
+
+    `
+
+
 
 const Main = styled(motion.ul)`
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 7rem;
-  color: white;
-  // margin-bottom: 2rem;
+position: fixed;
+top: 12rem;
+left: calc(10rem + 15vw);
+height: 40vh;
+display: flex;
+color: white;
 
-  @media (min-width: 700px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+
 `
+
 
 const Rotate = styled.span`
   display: block;
@@ -47,11 +43,7 @@ const Rotate = styled.span`
   width: 80px;
   height: 80px;
   z-index: 1;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
+  `
 
 const Container = {
   hidden: { opacity: 0 },
@@ -72,7 +64,7 @@ const ProjectPage = () => {
     let element = ref.current;
 
     const rotate = () => {
-      element.style.transform = `translateY(${-window.pageYOffset}px)`;
+      element.style.transform = `translateX(${-window.pageYOffset}px)`;
       yinyang.current.style.transform = `rotate(` + -window.pageYOffset + `deg)`;
     }
 

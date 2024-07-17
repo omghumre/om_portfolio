@@ -10,7 +10,7 @@ const Icons = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 2rem;
   z-index: 10;
@@ -30,6 +30,7 @@ const Icons = styled.div`
     flex-direction: row;
     bottom: 2rem;
     margin-top: 2rem;
+    position: absolute;
     
   }
 `;
