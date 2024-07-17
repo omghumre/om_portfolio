@@ -32,9 +32,7 @@ cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
-    width: 1rem;
-    height: 1rem;
-    left: 40%;
+    // left: 40%;
   }
 
     `
