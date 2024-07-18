@@ -17,31 +17,29 @@ const Box = styled.div`
   height: 400vh;
   display: flex;
   align-items: center;
-  // z-index: 0;
   @media (max-width: 700px) {
     width: 100%;
     height: auto;
     flex-direction: column;
     justify-content: center;
-    // position: fixed;
-    
   }
 `;
 
 const Main = styled(motion.ul)`
   position: fixed;
-  top: 12rem;
+  top: 10rem;
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
   color: white;
-  // z-index: 1
 
   @media (max-width: 700px) {
+    top: 7rem;
     position: relative;
     left: 0;
     flex-direction: column;
     height: auto;
+    overflow-y: hidden;
   }
 `;
 
@@ -54,9 +52,10 @@ const Rotate = styled.span`
   height: 80px;
   z-index: 1;
   @media (max-width: 700px) {
-    display: none
-    }
+    display: none;
+  }
 `;
+
 
 
 const Container = {
@@ -95,31 +94,19 @@ const ProjectPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box>
-      
-          <LogoComponent theme='dark' />
-          <PowerButton theme='dark' />
-          
-          <SocialIcon theme='dark' />
-        
-
+        <LogoComponent theme='dark' />
+        <PowerButton theme='dark' />
         <Main ref={ref} variants={Container} initial='hidden' animate='show'>
-          {
-            Work.map(d =>
-              <Card key={d.id} data={d} />
-            )
-          }
+          {Work.map(d => <Card key={d.id} data={d} />)}
         </Main>
-
-
         <Rotate ref={yinyang}>
-          
           <YinYang width={80} height={80} fill={DarkTheme.text} />
         </Rotate>
-
         <BigTitle text="Projects" top='5%' right='10%' />
+        {/* <StyledSocialIcon theme='dark' /> */}
       </Box>
     </ThemeProvider>
-  )
+  );
 }
 
 export default ProjectPage;
