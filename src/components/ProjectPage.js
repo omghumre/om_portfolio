@@ -4,7 +4,7 @@ import { DarkTheme } from '../components/Themes';
 
 import PowerButton from '../subComponents/PowerButton';
 import LogoComponent from '../subComponents/LogoComponent';
-import SocialIcon from '../subComponents/SocialIcon';
+// import SocialIcon from '../subComponents/SocialIcon';
 
 import { Work } from "../data/ProjectData";
 import Card from "../subComponents/Card";
