@@ -36,6 +36,7 @@ const Box = styled(motion.li)`
 
     & > div:last-child {
     margin-bottom: -10rem;
+    padding-bottom: 2rem;
     }
 }
 `

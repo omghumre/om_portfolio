@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme, DarkTheme } from '../components/Themes';
+import { DarkTheme } from '../components/Themes';
 
 import PowerButton from '../subComponents/PowerButton';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -17,11 +17,13 @@ const Box = styled.div`
   height: 400vh;
   display: flex;
   align-items: center;
+  // z-index: 0;
   @media (max-width: 700px) {
     width: 100%;
     height: auto;
     flex-direction: column;
     justify-content: center;
+    // position: fixed;
     
   }
 `;
@@ -33,6 +35,7 @@ const Main = styled(motion.ul)`
   height: 40vh;
   display: flex;
   color: white;
+  // z-index: 1
 
   @media (max-width: 700px) {
     position: relative;
@@ -55,11 +58,6 @@ const Rotate = styled.span`
     }
 `;
 
-const FixedComponents = styled.div`
-  @media (max-width: 700px) {
-    top: 10rem;
-  }
-`;
 
 const Container = {
   hidden: { opacity: 0 },
@@ -100,9 +98,9 @@ const ProjectPage = () => {
       
           <LogoComponent theme='dark' />
           <PowerButton theme='dark' />
-          <FixedComponents>
+          
           <SocialIcon theme='dark' />
-        </FixedComponents>
+        
 
         <Main ref={ref} variants={Container} initial='hidden' animate='show'>
           {
