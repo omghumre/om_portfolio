@@ -30,8 +30,8 @@ const float = keyframes`
 const Spaceman = styled.div`
     position: absolute;
     top: 5%;
-    right: 5%;
-    width: 20vw;
+    right: 2%;
+    width: 17vw;
     animation: ${float} 4s ease infinite;
 
     img{
@@ -43,9 +43,9 @@ const Spaceman = styled.div`
 const Main = styled.div`
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
-    padding: 2rem;
-    width: 60vw;
-    height: 60vh;
+    padding: 1.5rem;
+    width: 70vw;
+    height: auto;
     z-index: 3;
     line-height: 1.5;
 
@@ -56,8 +56,8 @@ const Main = styled.div`
     backdrop-filter: blur(2px);
 
     position: absolute;
-    left: calc(5rem + 5vw);
-    top: 10rem;
+    left: calc(5rem + 2vw);
+    top: 8rem;
 
     font-family: 'Ubutntu Mono', monospace;
     font-style: italic;
@@ -90,11 +90,12 @@ const AboutPage = () => {
       </Spaceman>
 
       <Main>
-        Labore aute nostrud occaecat eiusmod nulla ea mollit duis reprehenderit reprehenderit anim commodo Lorem dolore. 
+      Hey, I am Om Ghumre. A Machine Learning Enthusiast and Front-end Developer/React Developer from India who loves to convert data into information and visualize code. I use React.js to build the web application interfaces and the functionalities. At the moment, I am pursuing my Bachelor's degree in Computer Science with specialization in AIML.
+        <br/><br/>
+        My first programming language was C. Since then, I've learnt C++, Java, and Python. I also played around with databases. 
+I am an eager problem solver and software developer who enjoys travelling. I enjoy leveraging my skills in competitive programming and software development to solve complex problems.
 <br/><br/>
-Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. 
-<br/><br/>
-Commodo sit cupidatat ea fugiat ullamco minim. Proident mollit quis deserunt tempor ipsum pariatur. 
+The only way to do great work is to love what you do. I love my work and enjoy each and every project I do. Feel free to look at my portfolio and don't hesitate to contact me.
 
       </Main>
       
