@@ -71,7 +71,7 @@ const BLOG = styled(NavLink)`
   z-index: 1;
   @media screen and (max-width: 700px) {
     transform: rotate(90deg) translate(-50%, -50%);
-    top: 22rem
+    top: calc(50% - 4vh)
   }
 `;
 

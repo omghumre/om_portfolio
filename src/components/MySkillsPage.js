@@ -36,33 +36,31 @@ const Main = styled.div`
     color: ${props => props.theme.text};
     background-color: transparent;
     padding: 2rem;
-    width: 30vw;
-    height: 60vh;
+    width: 40vw;
+    height: auto;
     z-index: 3;
     line-height: 1.5;
     cursor: pointer;
-    font-family: 'Ubuntu Mono', monospace ;
+    font-family: 'Ubuntu Mono', monospace;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 5rem;
-    
-    
+    box-sizing: border-box; /* Include padding and border in the width and height */
+
     &:hover{
       background-color: rgba(255,255,255,0.6);
       backdrop-filter: blur(2px);
     }
 
     @media (max-width: 700px) {
-    right-margin:2rem;
+        top: 5rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+`
 
-    top: 5rem;
-    width: 80%;
-    height: auto;
-    margin-bottom: 2rem;
-  }
-
-    `
 
 const Title = styled.h2`
     display: flex;
@@ -104,26 +102,25 @@ const Grid = styled.div`
     grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
     grid-gap: calc(1rem + 2vw);
     margin-top: 10rem;
-    margin-right: 6rem;
-    
-    @media screen and (max-width: 700px) {
-    grid-template-columns: 1fr;
-    overflow-y: hidden;
-
-    & > div:first-child {
-      margin-top: 5rem;
-    }
+    margin-right: 2rem;
+    overflow-x: hidden;  /* Prevent horizontal overflow */
 
     @media screen and (max-width: 700px) {
-    & > div:last-child {
-      margin-bottom: 4rem;
+        grid-template-columns: 1fr;
+        overflow-y: hidden;
+        margin-right: 1rem; /* Remove right margin on mobile view */
+        margin-left: 1rem;  /* Adjust left margin if needed */
+
+        & > div:last-child {
+            margin-bottom: 10rem;
+        }
     }
-  }
-  `
+`
+
 
 const MySkillsPage = () => {
 
-  const username = "omghumre";
+  
   return (
 
     <ThemeProvider theme={DarkTheme}> 
