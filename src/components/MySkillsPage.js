@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import {lightTheme , DarkTheme} from '../components/Themes'
-import {Design, Develope} from './Allsvg'
+import {DarkTheme} from '../components/Themes'
+import {Coding, Develope, Design, Machine} from './Allsvg'
 
 import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
@@ -9,8 +9,6 @@ import SocialIcon from '../subComponents/SocialIcon'
 import ParticleComponent from '../subComponents/ParticleComponent'
 
 import BigTitle from '../subComponents/BigTitle'
-
-
 
 const Box=styled.div`
     background-color: ${props => props.theme.body};
@@ -47,6 +45,7 @@ const Main = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 5rem;
     
     
     &:hover{
@@ -98,11 +97,33 @@ const Description = styled.div`
       color: ${props => props.theme.body};
     
   }
-
-    
 `
 
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-gap: calc(1rem + 2vw);
+    margin-top: 10rem;
+    margin-right: 6rem;
+    
+    @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    overflow-y: hidden;
+
+    & > div:first-child {
+      margin-top: 5rem;
+    }
+
+    @media screen and (max-width: 700px) {
+    & > div:last-child {
+      margin-bottom: 4rem;
+    }
+  }
+  `
+
 const MySkillsPage = () => {
+
+  const username = "omghumre";
   return (
 
     <ThemeProvider theme={DarkTheme}> 
@@ -115,52 +136,93 @@ const MySkillsPage = () => {
       <ParticleComponent theme='dark'/>
       {/* <SparklesPreview /> */}
       {/* <auroraComponent /> */}
+
+      <Grid>
       
       <Main>
         <Title>
-          <Design width={40} height={40} fill="currentColor"  /> Machine Learning
+        <Machine width={80} height={40} fill="currentColor"/> 
+        Machine Learning
         </Title>
 
         <Description>
-          This is Description for first skills
+          I Love to convert data into Information
         </Description>
 
         <Description>
-          <strong>I like to design</strong>
-          <ul>
-            <li>Web design</li>
-            <li>mobile app</li>
-          </ul>
+          <strong>Experties</strong>
+          <p>Generative AI, Deep Learning , Natural Language Processing, Computer Vision</p>
         </Description>
 
         <Description>
-          <strong>Tools</strong>
-          <ul>
-            <li>Figma</li>
-          </ul>
+          <strong>libraries</strong>
+          <p>Scikit-Learn, Numpy, Pandas, Streamlit, Tensorflow, Joblib, Keras, Matplotlib</p>
         </Description>
 
       </Main>
       
       <Main>
         <Title>
-          <Develope width={40} height={40} fill="currentColor"/> Frontend Developer
+          <Coding width={80} height={40} fill="currentColor"/> 
+          Coding Profile
         </Title>
 
         <Description>
-          This is Description for second skills
+          Those who cannot remember the past are condemned to repeat it.
+        </Description>
+        <Description>
+          <strong>Leetcode</strong>
+          <p>Listed in top 15% users with Rating of 1650+</p>
+          <p>Solved 300+ questions </p>
+          <p>Attended 25+ contest</p>
+        </Description>
+
+        <Description>
+          <strong>CodeChef</strong>
+          <p>Global Rank 26801</p>
+          <p>Highest Rating 1540</p>
+        </Description>
+      </Main>
+
+      <Main>
+        <Title>
+          <Design width={60} height={40} fill="currentColor"/> Frontend Developer
+        </Title>
+
+        <Description>
+          I Love crafting clean, minimalistic designs that can speak. 
         </Description>
         <Description>
           <strong>Skills</strong>
-          <p>HTml css js </p>
+          <p>Html, Css, Js, React, Bootstrap, Tailwind</p>
         </Description>
 
         <Description>
           <strong>Tools</strong>
-          <p>Github</p>
+          <p>VScode, Github, Codepen, Figma etc.</p>
         </Description>
       </Main>
+
+      <Main>
+        <Title>
+          <Develope width={80} height={40} fill="currentColor"/> Research work
+        </Title>
+
+        <Description>
+        <h4>Crafting Visual Art from Text: A Generative Approach</h4>
+        </Description>
+        <Description>
+        A LoRA Model for Stable Diffusion to generate anime-style image.
+        </Description>
+        <Description>
+          Paper presented at ICACEBD 2024
+          Published in scopus indexed journal
+        </Description>
+
+        
+      </Main>
       
+      </Grid>
 
       <BigTitle text="Skills" top='10%' right='45%' />
 

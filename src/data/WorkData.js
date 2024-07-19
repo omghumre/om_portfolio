@@ -46,16 +46,16 @@ export const Work = [
         github:"https://github.com/codebucks27/React-Redux-Todo-App"
         
     },
-    {
-        id:6,
-        name:"Responsive Navigation Menu",
-        description:"A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
-        tags:["react","react-router","css"],
+    // {
+    //     id:6,
+    //     name:"Responsive Navigation Menu",
+    //     description:"A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
+    //     tags:["react","react-router","css"],
         
-        demo:"http://react-responsive-navbar-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-responsive-navbar"
+    //     demo:"http://react-responsive-navbar-codebucks27.vercel.app/",
+    //     github:"https://github.com/codebucks27/React-responsive-navbar"
         
-    },
+    // },
     
 
 ] 

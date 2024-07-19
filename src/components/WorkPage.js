@@ -48,15 +48,6 @@ const Main = styled(motion.ul)`
   }
 `;
 
-const Rotate = styled.span`
-  display: block;
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  width: 80px;
-  height: 80px;
-  z-index: 1;
-`;
 
 // Framer-motion Configuration
 const container = {

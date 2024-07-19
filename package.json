@@ -10,6 +10,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.7.2",
     "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.5",
