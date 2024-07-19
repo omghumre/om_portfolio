@@ -6,8 +6,9 @@ import {Github} from '../components/Allsvg'
 import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
-    width: 30rem;
-    height: 25rem;  
+    width: 40rem;
+    // height: 35rem;
+    height: auto;  
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
     padding: 1.5rem 2rem;
@@ -32,7 +33,7 @@ const Box = styled(motion.li)`
     margin-bottom: 2rem;
     margin-right: 0rem;
     width: 15rem;
-    height: 20rem;
+    height: auto;
 
     & > div:last-child {
     margin-bottom: -10rem;
@@ -112,7 +113,7 @@ const Item = {
 const Image = styled.div`
     background-image: ${props => `url(${props.img})`};
     width: 100%;
-    height: 100%;
+    height: 25vh;
     background-size: cover;
     border: 1px solid transparent;
     border-radius: 10px;
@@ -124,6 +125,10 @@ const Image = styled.div`
 
     ${Box}:hover & {
         border:1px solid ${props => props.theme.text};
+    }
+
+    @media screen and (max-width: 700px) {
+        height: 15vh;
     }
 `;
 
