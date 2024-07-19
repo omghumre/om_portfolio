@@ -165,8 +165,10 @@ const MySkillsPage = () => {
         </Title>
 
         <Description>
-          Those who cannot remember the past are condemned to repeat it.
+          <strong>Programming Language</strong>
+          <p>C/C++, Python, Java, Go</p>
         </Description>
+
         <Description>
           <strong>Leetcode</strong>
           <p>Listed in top 15% users with Rating of 1650+</p>
@@ -196,7 +198,7 @@ const MySkillsPage = () => {
 
         <Description>
           <strong>Tools</strong>
-          <p>VScode, Github, Codepen, Figma etc.</p>
+          <p>VScode, Git, Github, Codepen, Figma etc.</p>
         </Description>
       </Main>
 
@@ -212,7 +214,7 @@ const MySkillsPage = () => {
         A LoRA Model for Stable Diffusion to generate anime-style image.
         </Description>
         <Description>
-          Paper presented at ICACEBD 2024
+          Paper presented at ICACEBD 2024,
           Published in scopus indexed journal
         </Description>
 

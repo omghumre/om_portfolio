@@ -14,9 +14,10 @@ import { motion } from 'framer-motion';
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
-  height: 400vh;
-  display: flex;
-  align-items: center;
+  height: 800vh;
+  width: 100%;
+    flex-direction: column;
+    justify-content: center;
   @media (max-width: 700px) {
     width: 100%;
     height: auto;
@@ -26,12 +27,14 @@ const Box = styled.div`
 `;
 
 const Main = styled(motion.ul)`
-  position: fixed;
+  position: relative;
   top: 10rem;
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
+  flex-direction: column;
   color: white;
+  height: auto;
 
   @media (max-width: 700px) {
     top: 7rem;
@@ -39,7 +42,7 @@ const Main = styled(motion.ul)`
     left: 0;
     flex-direction: column;
     height: auto;
-    overflow-y: hidden;
+    // overflow-y: hidden;
   }
 `;
 
@@ -78,7 +81,7 @@ const ProjectPage = () => {
 
     const rotate = () => {
       if (window.innerWidth > 700) {
-        element.style.transform = `translateX(${-window.pageYOffset}px)`;
+        element.style.transform = `translateY(${-window.pageYOffset}px)`;
         yinyang.current.style.transform = `rotate(` + -window.pageYOffset + `deg)`;
       } else {
         element.style.transform = `translateY(${-window.pageYOffset}px)`;
@@ -96,9 +99,11 @@ const ProjectPage = () => {
       <Box>
         <LogoComponent theme='dark' />
         <PowerButton theme='dark' />
+
         <Main ref={ref} variants={Container} initial='hidden' animate='show'>
           {Work.map(d => <Card key={d.id} data={d} />)}
         </Main>
+        
         <Rotate ref={yinyang}>
           <YinYang width={80} height={80} fill={DarkTheme.text} />
         </Rotate>
