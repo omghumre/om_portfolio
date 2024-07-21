@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom';
 // import Github from "../assets/svg/github-brands.svg"
 import {Github} from '../components/Allsvg'
 import { motion } from 'framer-motion';
+import jobsync from '../assets/Images/jobsync.png'
 
 const Box = styled(motion.li)`
-    width: 40rem;
-    // height: 35rem;
-    height: auto;  
+    width: 30rem;
+    height: 30rem;
+    // height: auto;  
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
     padding: 1.5rem 2rem;
@@ -140,7 +141,7 @@ const Card = (props) => {
     return (
     <Box key={id}  variants={Item}>
         <Title>{name}</Title>
-        <Image img={imgSrc} alt="thumbnail" />
+        <Image img={jobsync} alt="thumbnail" />
         <Description>
             {description}
         </Description>
@@ -151,11 +152,14 @@ const Card = (props) => {
                 })
             }
         </Tags>
+        {/* <Tags>
+            {tags}
+        </Tags> */}
         <Footer>
-            <Link to={{pathname: `${demo}`}} target="_blank">
+            <Link to='${demo}' target="_blank">
                 Visit
             </Link>
-            <Git to={{pathname: `${demo}`}} target="_blank">
+            <Git to={demo} target="_blank">
                 <Github width={30} height={30} />
             </Git>
         </Footer>
