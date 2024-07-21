@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
-    width: 30rem;
+    width: 60rem;
     height: auto;
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};
@@ -26,37 +26,28 @@ const Box = styled(motion.li)`
     }
 
     @media (max-width: 768px) {
-        margin-right: 20px;
-        margin-left: 20px;
+        width: 18rem;
+        // margin-right: 20px;
+        margin-left: 30px;
     }
 `
 
 const Title = styled.h2`
-    font-size: calc(1em + 0.5vw);
+    font-size: calc(1.3em + 1.5vw);
+    font-family: "Poppins", sans-serif;
+`
+
+const Subtitle = styled.h2`
+    font-size: calc(1.2em + 0.5vw);
+    font-family: "Poppins", sans-serif;
 `
 
 const Description = styled.p`
-    font-size: calc(0.8em + 0.3vw);
+    font-size: calc(0.9em + 0.5vw);
     font-family: 'Karla', sans-serif;
     font-weight: 500;
     flex-grow: 1;
     margin-top: 0.5rem;
-`
-
-const Tags = styled.div`
-    border-top: 2px solid ${props => props.theme.body};
-    padding-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    
-    ${Box}:hover & {
-        border-top: 2px solid ${props => props.theme.text};
-    }
-`
-
-const Tag = styled.span`
-    margin-right: 1rem;
-    font-size: calc(0.8em + 0.3vw);
 `
 
 const Item = {
@@ -73,17 +64,18 @@ const Item = {
 }
 
 const Wcard = (props) => {
-    const { id, name, description, tags, demo, github } = props.data;
+    const { id, name, description, subtitle} = props.data;
 
     return (
         <Box key={id} variants={Item}>
             <Title>{name}</Title>
+            <Subtitle>{subtitle}</Subtitle>
             <Description>{description}</Description>
-            <Tags>
+            {/* <Tags>
                 {tags.map((t, id) => (
-                    <Tag key={id}>#{t}</Tag>
+                    <Tag key={id}>{t}</Tag>
                 ))}
-            </Tags>
+            </Tags> */}
             
         </Box>
     )

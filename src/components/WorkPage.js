@@ -17,7 +17,7 @@ const Box = styled.div`
   height: auto;
   position: relative;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   overflow: hidden;
   scroll-behavior: smooth;
@@ -38,7 +38,8 @@ const Main = styled(motion.ul)`
   top: 10rem;
   width: 100vw;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  // flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: white;
