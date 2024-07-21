@@ -136,7 +136,7 @@ const Image = styled.div`
 
 const Card = (props) => {
   
-  const {id, name, description, tags, demo, imgSrc} = props.data ;
+  const {id, name, description, tags, demo, github} = props.data ;
 
     return (
     <Box key={id}  variants={Item}>
@@ -156,10 +156,10 @@ const Card = (props) => {
             {tags}
         </Tags> */}
         <Footer>
-            <Link to='${demo}' target="_blank">
+            <Link to={demo} target="_blank">
                 Visit
             </Link>
-            <Git to={demo} target="_blank">
+            <Git to={github} target="_blank">
                 <Github width={30} height={30} />
             </Git>
         </Footer>
