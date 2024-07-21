@@ -1,4 +1,4 @@
-
+import jobsync from '../assets/Images/jobsync.png'
 
 export const Work = [
     {
@@ -7,7 +7,7 @@ export const Work = [
         description:"This project is a company recommendation platform developed during the HackNitr hackathon. The platform assists users in finding suitable companies to apply to based on the content of their resumes. ",
         tags:["NLTK","ML","Pandas","Numpy","Joblib","Streamlit","Hackthon-Finalist","HackNITR"],
         // tags:"NLTK ML Pandss dhs hduish dfhsjf fhsndfh fjdbh  fidsf dhfsh hdsh  fbhdbf fdfhbs dfhsdb fjdbfh jdfshdjks" ,
-        imgSrc:"",
+        imgSrc:'../assets/Images/portfolio.png',
         demo:"https://jobsync.streamlit.app/",
         github:"https://github.com/omghumre/JobSync"
     },
@@ -39,7 +39,8 @@ export const Work = [
         demo:"https://omghumre.github.io/Tic-Tac-OHH/",
         github:"https://github.com/omghumre/Tic-Tac-OHH"
 
-    },{
+    },
+    {
         id:5,
         name:"Space Fighter",
         description:"Simple Space invader game.",
@@ -51,6 +52,16 @@ export const Work = [
     },
     {
         id:6,
+        name:"Static Portfolio",
+        description:"Simple static and responsive Portfolio template",
+        tags:["HTML","responsive","CSS","Javascript","static"],
+        imgSrc:"",
+        demo:"https://omghumre.github.io/Portfolio/",
+        github:"https://github.com/omghumre/Portfolio"
+        
+    },
+    {
+        id:7,
         name:"ATS Resume Checker",
         description:"Simple and Free ATS Resume Checker which compare your Resume with the company Job description gives Score out of 100. In addition it also provide you tips to update your resume.",
         tags:["Generative_AI","Machine_Learning","Streamlit","API","Resume"],
@@ -60,7 +71,7 @@ export const Work = [
         
     },
     {
-        id:7,
+        id:8,
         name:"Password Generator",
         description:"Generator strong and random passwords.",
         tags:["Javascript","HTML","CSS","Security","Password_Generator"],
@@ -70,7 +81,17 @@ export const Work = [
         
     },
     {
-        id:8,
+        id:9,
+        name:"Secret Code Language",
+        description:"Text encryption and decryption web page",
+        tags:["Javascript","HTML","CSS","Website"],
+        imgSrc:"",
+        demo:"https://omghumre.github.io/secret-code/",
+        github:"https://github.com/omghumre/secret-code"
+        
+    },
+    {
+        id:10,
         name:"Weather Forecast Application",
         description:"This is a simple Weather Forecast desktop Application built using Python",
         tags:["Python","Tkinter","OpenWeather_API","Desktop_App","Weather-forecast"],
@@ -80,7 +101,7 @@ export const Work = [
         
     },
     {
-        id:8,
+        id:11,
         name:"URL Shortner",
         description:"A Simple URL Shortner build on Django Framework",
         tags:["Python","Django","HTML","CSS","Website"],
@@ -89,5 +110,7 @@ export const Work = [
         github:"https://github.com/omghumre/Url_Shortner"
         
     },
+    
+
 
 ] 

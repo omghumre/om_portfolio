@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
-  height: 800vh;
+  height: 900vh;
   display: flex;
   align-items: center;
   @media (max-width: 700px) {
@@ -34,7 +34,6 @@ const Main = styled(motion.ul)`
   color: white;
 
   @media (max-width: 700px) {
-    top: 7rem;
     position: relative;
     left: 0;
     flex-direction: column;
