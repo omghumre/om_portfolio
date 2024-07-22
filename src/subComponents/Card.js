@@ -114,7 +114,7 @@ const Item = {
 const Image = styled.div`
     background-image: ${props => `url(${props.img})`};
     width: 100%;
-    height: 25vh;
+    height: 100%;
     background-size: cover;
     border: 1px solid transparent;
     border-radius: 10px;

@@ -275,7 +275,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Hire Me
+            Resume
           </motion.h6>
         </Contact>
 
