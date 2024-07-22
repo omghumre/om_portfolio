@@ -262,7 +262,7 @@ const Main = () => {
           <span>Click here</span>
         </Center>
 
-        <Contact target="_blank" to="mailto:omghumre74@gmail.com">
+        <Contact to="/resume">
           <motion.h6
             initial={{
               y: -200,

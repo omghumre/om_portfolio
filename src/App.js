@@ -17,6 +17,7 @@ const MySkillsPage = lazy(() => import("./components/MySkillsPage"));
 const WorkPage = lazy(() => import("./components/WorkPage"));
 const Certificates = lazy(() => import("./components/Certificates"));
 const ProjectPage = lazy(() => import("./components/ProjectPage"));
+const Resume = lazy(() => import("./components/Resume"));
 
 function App() {
   const location = useLocation();
@@ -53,6 +54,11 @@ function App() {
                 <Route path="/" element={
                   <Suspense fallback={<div>Loading...</div>}>
                     <Main />
+                  </Suspense>
+                } />
+                <Route path="/resume" element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Resume />
                   </Suspense>
                 } />
                 <Route path="/about" element={
