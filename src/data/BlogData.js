@@ -3,19 +3,19 @@ import soon from "../assets/Images/soon.jpg"
 export const Blogs = [
     {
         id:1,
-        name:"Build Website with ReactJS, Styled-components and GSAP for Scrolling Animations",
-        tags:["react","gsap","styled-components"],
-        date:"13 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--sBeV06Xc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2yrzy75q4dzibqz6rf82.png",
-        link:"https://dev.to/codebucks/build-website-with-reactjs-styled-components-and-gsap-for-scrolling-animations-2f10"
+        name:"Crafting Visual Art from Text: A Generative Approach Using LORA and Stable Diffusion",
+        tags:["LLM","Stable_Diffusion","LoRA","text_to_image"],
+        date:"Jun 23, 2024",
+        imgSrc:"",
+        link:"https://medium.com/@omghumre/crafting-visual-art-from-text-a-generative-approach-using-lora-and-stable-diffusion-3963d6db857a"
     },
     {
         id:2,
-        name:"How to create React Hamburger Menu using Styled-Components",
-        tags:["react","styled-components"],
-        date:"5 July, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625479747640%2F7KzwP9nmj.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/react-hamburger-menu"
+        name:"Building an ATS Resume Matching Tool with Google Generative AI",
+        tags:["resume","NLP","learning"],
+        date:"17 July, 2024",
+        imgSrc:"",
+        link:"https://dev.to/omghumre/building-an-ats-resume-matching-tool-with-google-generative-ai-684"
     },
     {
         id:20,

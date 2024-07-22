@@ -7,7 +7,7 @@ export const Work = [
         description:"This project is a company recommendation platform developed during the HackNitr hackathon. The platform assists users in finding suitable companies to apply to based on the content of their resumes. ",
         tags:["NLTK","ML","Pandas","Numpy","Joblib","Streamlit","Hackthon-Finalist","HackNITR"],
         // tags:"NLTK ML Pandss dhs hduish dfhsjf fhsndfh fjdbh  fidsf dhfsh hdsh  fbhdbf fdfhbs dfhsdb fjdbfh jdfshdjks" ,
-        imgSrc:'../assets/Images/portfolio.png',
+        imgSrc:"./",
         demo:"https://jobsync.streamlit.app/",
         github:"https://github.com/omghumre/JobSync"
     },
@@ -24,10 +24,10 @@ export const Work = [
     {
         id:3,
         name:"Prompt-to-Image",
-        description:"",
-        tags:[""],
+        description:"This is a text to image generator build on Stable Diffusion using Low Rank addaption",
+        tags:["LLM","Stable_Diffusion","LoRA","text_to_image"],
         imgSrc:"",
-        demo:"",
+        demo:"https://omghumre.medium.com/crafting-visual-art-from-text-a-generative-approach-using-lora-and-stable-diffusion-3963d6db857a",
         github:""
     },
     {
