@@ -22,6 +22,11 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+    @media screen and (max-width: 700px) {
+    padding-top: 6rem;
+    height: 50vh;
+    left:2rem;
+  }
 `
 
 const Resume = () => {
