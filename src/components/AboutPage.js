@@ -29,8 +29,8 @@ const float = keyframes`
 
 const Spaceman = styled.div`
     position: absolute;
-    top: 5%;
-    right: 2%;
+    top: 2%;
+    right: 5%;
     width: 17vw;
     animation: ${float} 4s ease infinite;
 
@@ -43,7 +43,7 @@ const Spaceman = styled.div`
 const Main = styled.div`
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
-    padding: 1.5rem;
+    padding: 1rem;
     width: 70vw;
     height: auto;
     z-index: 3;
@@ -53,7 +53,7 @@ const Main = styled.div`
     justify-content: center;
     align-items: center;
     font-size: calc(0.6rem + 1vw);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
 
     position: absolute;
     left: calc(5rem + 2vw);
@@ -63,8 +63,10 @@ const Main = styled.div`
     font-style: italic;
 
     @media screen and (max-width: 700px) {
-    left: 2.5rem;
-    top: 10rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: 6rem;
+    width: auto;
     height: auto;
   }
 `
