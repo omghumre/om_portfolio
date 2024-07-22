@@ -1,4 +1,4 @@
-import soon from "../assets/Images/soon.jpg"
+
 
 export const Blogs = [
     {
@@ -22,7 +22,7 @@ export const Blogs = [
         name:"Comming soon...",
         tags:[" "],
         date:"202X",
-        imgSrc:{soon},
+        imgSrc:"",
         link:""
     },
     {
@@ -30,7 +30,7 @@ export const Blogs = [
         name:"Comming soon...",
         tags:[" "],
         date:"202X",
-        imgSrc:{soon},
+        imgSrc:"",
         link:""
     },
 ] 

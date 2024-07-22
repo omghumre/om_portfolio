@@ -1,4 +1,4 @@
-import jobsync from '../assets/Images/jobsync.png'
+
 
 export const Work = [
     {
@@ -7,7 +7,7 @@ export const Work = [
         description:"This project is a company recommendation platform developed during the HackNitr hackathon. The platform assists users in finding suitable companies to apply to based on the content of their resumes. ",
         tags:["NLTK","ML","Pandas","Numpy","Joblib","Streamlit","Hackthon-Finalist","HackNITR"],
         // tags:"NLTK ML Pandss dhs hduish dfhsjf fhsndfh fjdbh  fidsf dhfsh hdsh  fbhdbf fdfhbs dfhsdb fjdbfh jdfshdjks" ,
-        imgSrc:"./",
+        imgSrc:"./Project-Images/jobsync.png",
         demo:"https://jobsync.streamlit.app/",
         github:"https://github.com/omghumre/JobSync"
     },
@@ -16,7 +16,7 @@ export const Work = [
         name:"omghumre.com",
         description:"Check my Portfolio here !",
         tags:["react.js","HTML","gsap","css","framermotion","javascript ","vercel"],
-        imgSrc:"",
+        imgSrc:"./Project-Images/portfolio.png",
         demo:"",
         github:"https://github.com/omghumre/om_portfolio"
         

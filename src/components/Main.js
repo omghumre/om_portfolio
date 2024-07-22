@@ -20,18 +20,8 @@ position: fixed;
 h2,h3,h4,h5{
   font-family:'Karla', sans-serif ;
   font-weight:500;
-  // font-size: 2rem;
 }
 
-h3{
-  font-family:'Karla', sans-serif ;
-  font-weight:500;
-  font-size: 2.5rem;
-}
-
-h2{
-font-size: 1.2rem;
-}
 
 `
     

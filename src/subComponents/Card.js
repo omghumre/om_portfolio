@@ -141,10 +141,7 @@ const Card = (props) => {
     return (
     <Box key={id}  variants={Item}>
         <Title>{name}</Title>
-        <Image>
-            <img src={imgSrc} alt="thumbnail" />
-            {/* <iframe style="border:0" src={imgSrc} allow="autoplay"></iframe> */}
-        </Image>
+        <Image img={imgSrc} alt="thumbnail"/>
         <Description>
             {description}
         </Description>
