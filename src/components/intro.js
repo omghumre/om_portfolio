@@ -74,7 +74,7 @@ const SubBox = styled.div`
 `;
 
 const Text = styled.div`
-font-size: calc(1em + 1.8vw);
+font-size: calc(1em + 2.3vw);
 color: ${props => props.theme.body};
 padding: 2rem;
 cursor: pointer;
@@ -85,7 +85,7 @@ justify-content: space-evenly;
 
 &>*:last-child{
     color: ${props => `rgba(${props.theme.bodyRgba},0.6)` };
-    font-size: calc(0.5rem + 2vw);
+    font-size: calc(0.5rem + 2.2vw);
     font-weight:300;
     padding-bottom: 0rem;
 }
