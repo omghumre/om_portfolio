@@ -135,8 +135,8 @@ const Certificates = () => {
                         ))}
                     </Grid>
                 </Center>
-                {/* <BigTitle text="Certificates" top='10%' right='80%' />
-                <BigTitle text="f i c a t e s" top='83%' right='20%' /> */}
+                <BigTitle text="Certificates" top='10%' right='90%' />
+                <BigTitle text="f i c a t e s" top='83%' right='30%' />
             </Container>
         </MainContainer>
     )
