@@ -6,7 +6,7 @@ export const Blogs = [
         name:"Crafting Visual Art from Text: A Generative Approach Using LORA and Stable Diffusion",
         tags:["LLM","Stable_Diffusion","LoRA","text_to_image"],
         date:"Jun 23, 2024",
-        imgSrc:"",
+        imgSrc:"./blog-images/text-image.webp",
         link:"https://medium.com/@omghumre/crafting-visual-art-from-text-a-generative-approach-using-lora-and-stable-diffusion-3963d6db857a"
     },
     {
@@ -14,7 +14,7 @@ export const Blogs = [
         name:"Building an ATS Resume Matching Tool with Google Generative AI",
         tags:["resume","NLP","learning"],
         date:"17 July, 2024",
-        imgSrc:"",
+        imgSrc:"./blog-images/ats-resume.png",
         link:"https://dev.to/omghumre/building-an-ats-resume-matching-tool-with-google-generative-ai-684"
     },
     {
