@@ -24,10 +24,10 @@ export const Work = [
     {
         id:3,
         name:"Prompt-to-Image",
-        description:"This is a text to image generator build on Stable Diffusion using Low Rank addaption",
+        description:"This is a text to image generator build on Stable Diffusion using Low Rank addaption. Research paper published in scopus indexed journal",
         tags:["LLM","Stable_Diffusion","LoRA","text_to_image"],
         imgSrc:"./Project-Images/image-generator.png",
-        demo:"https://omghumre.medium.com/crafting-visual-art-from-text-a-generative-approach-using-lora-and-stable-diffusion-3963d6db857a",
+        demo:"https://drive.google.com/file/d/1AROKlJwll88dRF80SYvUB2GIoi4orZfq/view?usp=sharing",
         github:"https://omghumre.medium.com/crafting-visual-art-from-text-a-generative-approach-using-lora-and-stable-diffusion-3963d6db857a"
     },
     {

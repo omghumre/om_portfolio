@@ -3,11 +3,11 @@ import soon from "../assets/Images/soon.jpg"
 export const Certificate = [
     {
         id:1,
-        name:"Build Website with ReactJS, Styled-components and GSAP for Scrolling Animations",
+        name:"Attended International conference on advanced communications , energy and big data",
         tags:["react","gsap","styled-components"],
         date:"13 May, 2021",
-        imgSrc:"./Certificate/aws.png",
-        link:"https://dev.to/codebucks/build-website-with-reactjs-styled-components-and-gsap-for-scrolling-animations-2f10"
+        imgSrc:"./Certificate/icacebd.png",
+        link:"https://drive.google.com/file/d/1AROKlJwll88dRF80SYvUB2GIoi4orZfq/view?usp=sharing"
     },
     {
         id:2,
@@ -15,7 +15,7 @@ export const Certificate = [
         tags:["react","styled-components"],
         date:"5 July, 2021",
         imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625479747640%2F7KzwP9nmj.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/react-hamburger-menu"
+        link:"https://drive.google.com/file/d/1AROKlJwll88dRF80SYvUB2GIoi4orZfq/view?usp=sharing"
     },
     {
         id:2,

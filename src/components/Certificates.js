@@ -107,8 +107,8 @@ const Certificates = () => {
         setNumbers(parseInt(num));
     }, []);
 
-    const regularBlogs = Certificate.filter(Certificate => Certificate.key !== 20);
-    const specialBlogs = Certificate.filter(Certificate => Certificate.key === 20);
+    const regularBlogs = Certificate.filter(certi => certi.key !== 20);
+    const specialBlogs = Certificate.filter(certi => certi.key === 20);
 
     return (
         <MainContainer
@@ -127,16 +127,16 @@ const Certificates = () => {
                 <AnchorComponent numbers={numbers} />
                 <Center>
                     <Grid>
-                        {regularBlogs.map(Certificate => (
-                            <CertiComponent key={Certificate.id} blog={Certificate} />
+                        {regularBlogs.map(certi => (
+                            <CertiComponent key={certi.id} certi={certi} />
                         ))}
-                        {specialBlogs.map(Certificate => (
-                            <CertiComponent key={Certificate.id} blog={Certificate} />
+                        {specialBlogs.map(certi => (
+                            <CertiComponent key={certi.id} certi={certi} />
                         ))}
                     </Grid>
                 </Center>
-                <BigTitle text="Certificates" top='10%' right='80%' />
-                <BigTitle text="f i c a t e s" top='83%' right='20%' />
+                {/* <BigTitle text="Certificates" top='10%' right='80%' />
+                <BigTitle text="f i c a t e s" top='83%' right='20%' /> */}
             </Container>
         </MainContainer>
     )

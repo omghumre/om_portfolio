@@ -77,10 +77,10 @@ const Item = {
 };
 
 const CertiComponent = (props) => {
-  const { name, tags, date, imgSrc, link } = props.blog;
+  const { name, tags, date, imgSrc, link } = props.certi;
   return (
     <Container variants={Item}>
-      <Box target="_blank" href={`${link}`}>
+      <Box href={link} target="_blank" rel="noopener noreferrer">
         <Image img={imgSrc} />
         <Title>{name}</Title>
         <HashTags>
