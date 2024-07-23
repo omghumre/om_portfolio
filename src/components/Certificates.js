@@ -4,7 +4,7 @@ import PowerButton from '../subComponents/PowerButton'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import img from '../assets/Images/wall.jpg'
-
+import AnchorComponent from '../subComponents/Anchor'
 import { Certificate } from '../data/CertiData'
 import CertiComponent from './CertiComponent'
 import BigTitle from '../subComponents/BigTitle'
@@ -124,6 +124,7 @@ const Certificates = () => {
                 <LogoComponent />
                 <PowerButton />
                 <SocialIcon />
+                <AnchorComponent numbers={numbers} />
                 <Center>
                     <Grid>
                         {regularBlogs.map(Certificate => (
