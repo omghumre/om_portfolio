@@ -3,28 +3,24 @@ export const Work = [
         id:1,
         name:"ACM RCOEM Chapter",
         description:"I was the club secretary of the ACM RCOEM Chapter, I had the privilege of leading a vibrant community of over 300 active members. We successfully organized workshop on game development and version control in collaboration with the Microsoft Learn Student Ambassador, providing invaluable learning experiences. Additionally, We organized several competitive coding tournaments that challenged and inspired participants. One of our flagship events, ACM Technofrenzy, combined technical challenges with fun activities. All this activities attracted more than 500 participants These initiatives not only enhanced the skills of our members but also fostered a strong sense of community and collaboration within the chapter.",
-        tags:["react","gsap","styledComponents"],
         subtitle:"Club Secretary"
     },
     {
         id:2,
         name:"Asterisc Technocrat",
         description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
-        tags:["react","sass"],
         subtitle:"Python Developer"
     },
     {
         id:3,
         name:"Blockchain RCOEM Chapter",
-        description:"I was the club secretary of the ACM RCOEM Chapter, I had the privilege of leading a vibrant community of over 300 active members. We successfully organized workshop on game development and version control in collaboration with the Microsoft Learn Student Ambassador, providing invaluable learning experiences. Additionally, We organized several competitive coding tournaments that challenged and inspired participants. One of our flagship events, ACM Technofrenzy, combined technical challenges with fun activities. All this activities attracted more than 500 participants These initiatives not only enhanced the skills of our members but also fostered a strong sense of community and collaboration within the chapter.",
-        tags:["react","api","sass"],
+        description:"As a member of the technical team at the Blockchain RCOEM Chapter, I collaborated with my group to design and launch the official club website. This effort led to a notable increase in user engagement and rise in online sign-ups within the first three months. Together, we conducted many hands-on workshops on blockchain basics and volunteered in some guest lectures, contributing to the club's mission of spreading knowledge and fostering a community around blockchain technology.",
         subtitle:"Technical Team member"
     },
     {
         id:4,
         name:"Internshala",
         description:"A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-        tags:["react","styledComponents","react-router"],
         subtitle:"Internshala Student Partner"
     },
     // {

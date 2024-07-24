@@ -22,7 +22,7 @@ export const Blogs = [
         name:"Comming soon...",
         tags:[" "],
         date:"202X",
-        imgSrc:"",
+        imgSrc:"./Certificate/soon.jpg",
         link:""
     },
     {
@@ -30,7 +30,7 @@ export const Blogs = [
         name:"Comming soon...",
         tags:[" "],
         date:"202X",
-        imgSrc:"",
+        imgSrc:"./Certificate/soon.jpg",
         link:""
     },
 ] 

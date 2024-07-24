@@ -1,4 +1,4 @@
-import soon from "../assets/Images/soon.jpg"
+
 
 export const Certificate = [
     {
@@ -144,5 +144,21 @@ export const Certificate = [
         date:"30 May 2023",
         imgSrc:"./Certificate/linkedin.png",
         link:"https://drive.google.com/file/d/1MKaaoiKfmpx-IxOBCnEUplM0nLZD_VWn/view?usp=drive_link"
+    },
+    {
+        id:19,
+        name:"Comming soon...",
+        tags:["comming_soon"],
+        date:"202X",
+        imgSrc:"./Certificate/soon.jpg",
+        link:""
+    },
+    {
+        id:20,
+        name:"Comming soon...",
+        tags:["comming_soon"],
+        date:"202X",
+        imgSrc:"./Certificate/soon.jpg",
+        link:""
     },
 ] 
