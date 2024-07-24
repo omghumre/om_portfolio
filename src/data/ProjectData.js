@@ -23,7 +23,7 @@ export const Work = [
     },
     {
         id:3,
-        name:"Prompt-to-Image",
+        name:"Crafting Visual Art from Text: A Generative approach",
         description:"This is a text to image generator build on Stable Diffusion using Low Rank addaption. Research paper published in scopus indexed journal",
         tags:["LLM","Stable_Diffusion","LoRA","text_to_image"],
         imgSrc:"./Project-Images/image-generator.png",
