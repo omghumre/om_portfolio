@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import Github from "../assets/svg/github-brands.svg"
 import {Github} from '../components/Allsvg'
 import { motion } from 'framer-motion';
-import jobsync from '../assets/Images/portfolio.png'
+
 
 const Box = styled(motion.li)`
     width: 30rem;
