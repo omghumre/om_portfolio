@@ -18,7 +18,7 @@ const Icons = styled.div`
   filter: invert(1);
   
   & > *:not(:last-child) {
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
   }
 
   @media screen and (max-width: 700px) {
