@@ -23,8 +23,9 @@ export const Work = [
     {
         id:4,
         name:"Internshala",
-        description:"A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-        subtitle:"Internshala Student Partner"
+        link:"https://drive.google.com/file/d/1JgPzlzTLGwAPBZBJodY1MohewBVDMoXq/view?usp=sharing",
+        description:"During my two-month tenure as an Internshala Student Partner, I played a pivotal role in promoting internship opportunities within my college. As part of this student ambassador program, I successfully guided three friends in securing internships and facilitated over 500 registrations for Internshala. This experience allowed me to develop strong communication and networking skills while helping my peers access valuable career development opportunities.",
+        subtitle:"Internshala Student Partner 🔗"
     },
     // {
     //     id:6,
