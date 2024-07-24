@@ -15,9 +15,9 @@ import ParticleComponent from '../subComponents/ParticleComponent'
 const Box=styled.div`
     background-color: ${props => props.theme.body};
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     position: fixed;
-    overflow: hidden;
+    // overflow: visible;
 
 `
 
@@ -28,7 +28,7 @@ const float = keyframes`
 `;
 
 const Spaceman = styled.div`
-    position: absolute;
+    position: fixed;
     top: 2%;
     right: 5%;
     width: 17vw;
@@ -55,7 +55,7 @@ const Main = styled.div`
     font-size: calc(0.6rem + 1vw);
     backdrop-filter: blur(1px);
 
-    position: absolute;
+    position: fixed;
     left: calc(5rem + 2vw);
     top: 8rem;
 
