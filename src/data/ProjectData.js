@@ -6,7 +6,7 @@ export const Work = [
         name:"JobSync: Company Recommendation Platform",
         description:"This project is a company recommendation platform developed during the HackNitr hackathon. The platform assists users in finding suitable companies to apply to based on the content of their resumes. ",
         tags:["NLTK","ML","Pandas","Numpy","Joblib","Streamlit","Hackthon-Finalist","HackNITR"],
-        imgSrc:"./Project-Images/jobsync.png",
+        imgSrc:"./blog-images/jobsync.png",
         demo:"https://devfolio.co/projects/jobsync-5ed7",
         github:"https://github.com/omghumre/JobSync"
     },
