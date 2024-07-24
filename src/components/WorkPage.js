@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import PowerButton from "../subComponents/PowerButton";
 
 import { Work } from "../data/WorkData";
 import Card from "../subComponents/Wcard";
-import { YinYang } from "./Allsvg";
+
 import BigTitlte from "../subComponents/BigTitle";
 
 const Box = styled.div`

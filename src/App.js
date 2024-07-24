@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
 import { lightTheme } from "./components/Themes";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Route, Routes, useLocation } from "react-router-dom";
 import './index.css';
 
 import SoundBar from "./subComponents/SoundBar";
