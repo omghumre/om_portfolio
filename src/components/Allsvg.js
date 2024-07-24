@@ -46,7 +46,7 @@ export const PowerBtn = (props) => {
         data-icon="power-off"
         className="prefix__svg-inline--fa prefix__fa-github prefix__fa-w-16"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
+        viewBox="0 0 576 512"
         {...props}
       >
         <path

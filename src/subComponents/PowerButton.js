@@ -40,7 +40,7 @@ const PowerButton = () => {
   return (
     <Power>
         <NavLink style={{color:'inherit'}} to="/">
-        <PowerBtn width={25} height={25} fill='currentColor'/>            
+        <PowerBtn width={30} height={30} fill='currentColor'/>            
         </NavLink>
     </Power>
   )
