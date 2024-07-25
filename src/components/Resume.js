@@ -37,7 +37,7 @@ const Resume = () => {
         <SocialIcon theme='dark' />
 
         <Container>
-        <iframe src="https://drive.google.com/file/d/1MDY8_ZQGheGt8m_gnjqJmGyhQEHHkqbr/preview" width="56%" height="90%" top="5rem" allow="autoplay"></iframe>
+        <iframe src="https://drive.google.com/file/d/1p_MZHcgXS6ZSD4OQdN8Z4Nh2bPDI0GEi/preview" width="56%" height="90%" top="5rem" allow="autoplay"></iframe>
         </Container>
     
     </MainContainer>
