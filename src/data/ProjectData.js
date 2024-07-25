@@ -16,7 +16,7 @@ export const Work = [
         description:"Check my Portfolio here !",
         tags:["react.js","HTML","gsap","css","framermotion","javascript ","vercel"],
         imgSrc:"./blog-images/portfolio.png",
-        demo:"",
+        demo:"https://omghumre.vercel.app/",
         github:"https://github.com/omghumre/om_portfolio"
         
     },
