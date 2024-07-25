@@ -10,6 +10,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Suspense, lazy, useState, useEffect } from "react";
 import LoadingPage from "./components/LoadingPage";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const Main = lazy(() => import("./components/Main"));
 const AboutPage = lazy(() => import("./components/AboutPage"));
 const BlogPage = lazy(() => import("./components/BlogPage"));
@@ -97,6 +99,7 @@ function App() {
           )}
         </AnimatePresence>
       </ThemeProvider>
+      <Analytics />
     </>
   );
 }
