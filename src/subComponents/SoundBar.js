@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import music from"../assets/audio/Post Malone, Swae Lee - Sunflower (Spider-Man_ Into the Spider-Verse).mp3"
+import music from "../assets/audio/Post Malone, Swae Lee - Sunflower (Spider-Man_ Into the Spider-Verse).mp3"
+import svgIcon from "../assets/svg/music.svg"; // Replace with your SVG file path
 
 const Box = styled.div`
     display: flex;
     cursor: pointer;
     position: fixed;
-    left: 11rem;
+    left: 14rem;
     top: 3rem;
     z-index: 10;
 
@@ -25,24 +26,24 @@ const Box = styled.div`
     &>*:nth-child(5){
         animation-delay: 0.8s;
     }
-    
-     @media screen and (max-width: 700px){
+
+    @media screen and (max-width: 700px){
         transform: translateY(0px);
-        left: calc(55%);
+        top: 2.5rem;
+        left: calc(60%);
         position: fixed;
         align-items: center;
-        // top: 5rem;
     }
 `
 
 const play = keyframes`
-        0%{
+    0%{
         transform: scaleY(1);
     }
-        50%{
+    50%{
         transform: scaleY(2);
     }
-        100%{
+    100%{
         transform: scaleY(1);
     }
 `
@@ -50,23 +51,22 @@ const play = keyframes`
 const Line = styled.span`
     background: ${props => props.theme.text};
     border: 1px solid ${props => props.theme.body};
-
     animation: ${play} 1s ease infinite;
     animation-play-state: ${props => props.click ? "running" : "paused"};
     height: 1rem;
     width: 4px;
-    margin: 0 0.1rem
+    margin: 0 0.1rem;
+`
 
-    //  @media screen and (max-width: 700px){
-    //     transform: translateY(20px);
-    // }
+const Icon = styled.img`
+    height: 1.5rem; // Adjust as necessary
+    width: 1.5rem; // Adjust as necessary
 `
 
 const SoundBar = () => {
-  
     const ref = useRef(null);
-    const [click, setClick] = useState(false);    
-  
+    const [click, setClick] = useState(false);
+
     const handleClick = () => {
         setClick(!click);
 
@@ -78,16 +78,21 @@ const SoundBar = () => {
     }
 
     return (
-    <Box onClick={() => handleClick()}>
-        <Line click={click} />
-        <Line click={click} />
-        <Line click={click} />
-        <Line click={click} />
-        <Line click={click} />
-
-        <audio src={music} ref = {ref} loop />
-    </Box>
-  )
+        <Box onClick={handleClick}>
+            {click ? (
+                <>
+                    <Line click={click} />
+                    <Line click={click} />
+                    <Line click={click} />
+                    <Line click={click} />
+                    <Line click={click} />
+                </>
+            ) : (
+                <Icon src={svgIcon} alt="Music Icon" />
+            )}
+            <audio src={music} ref={ref} loop />
+        </Box>
+    )
 }
 
 export default SoundBar
