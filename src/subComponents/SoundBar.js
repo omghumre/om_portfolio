@@ -61,6 +61,7 @@ const Line = styled.span`
 const Icon = styled.img`
     height: 1.5rem; // Adjust as necessary
     width: 1.5rem; // Adjust as necessary
+    mix-blend-mode: difference; filter: invert(0.5);
 `
 
 const SoundBar = () => {
