@@ -239,6 +239,18 @@ const DarkDiv = styled.div`
   }
 `;
 
+const StyledYinYang = styled(YinYang)`
+  width: ${props => (props.click ? '110px' : '190px')};
+  height: ${props => (props.click ? '110px' : '190px')};
+  fill: currentColor;
+
+  @media screen and (max-width: 700px) {
+    width: ${props => (props.click ? '70px' : '120px')};
+    height: ${props => (props.click ? '70px' : '120px')};
+  }
+`;
+
+
 const Main = () => {
   const [click, setClick] = useState(false);
 
@@ -252,15 +264,10 @@ const Main = () => {
         <LogoComponent  />
         <SocialIcon />
 
-        <Center click={click}>
-          <YinYang
-            onClick={() => handleClick()}
-            width={click ? 110 : 190}
-            height={click ? 110 : 190}
-            fill='currentColor'
-          />
-          <span>Click here</span>
-        </Center>
+        <Center onClick={handleClick} click={click}>
+      <StyledYinYang click={click} />
+      <span>Click here</span>
+    </Center>
 
         <Contact to="/resume">
           <motion.h6
