@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Me from '../assets/Images/profile2.png';
+import Me from '../assets/Images/om4.png';
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -55,13 +55,15 @@ const SubBox = styled.div`
 
   .pic {
     width: auto;
-    height: 51vh;
+    height: 62vh;
     overflow: hidden;
+    transform: translateY(4px);
 
     @media screen and (max-width: 700px) {
       height: 16rem;
       z-index: 10;
       overflow: visible;
+      transform: translateY(8px);
     }
   }
 
