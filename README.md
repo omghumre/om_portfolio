@@ -1,4 +1,3 @@
-# Let's generate the README.md content and save it to a file.
 
 # Demo - https://omghumre.vercel.app/
 # Portfolio Website
