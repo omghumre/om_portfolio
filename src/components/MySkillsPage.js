@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import {DarkTheme} from '../components/Themes'
 import {Coding, Develope, Design, Machine} from './Allsvg'
@@ -118,7 +118,38 @@ const Grid = styled.div`
 `
 
 
+
 const MySkillsPage = () => {
+
+    const [records, setRecords] = useState(null);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      // Fetching data from the API
+      fetch('https://alfa-leetcode-api.onrender.com/userContestRankingInfo/omghumre') // Replace with your actual API endpoint
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setRecords(data.data.userContestRanking);
+        })
+        .catch((err) => {
+          setError(err);
+          console.log(err);
+        });
+    }, []);
+  
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
+  
+    if (!records) {
+      return <div>Loading...</div>;
+    }
+  
 
   
   return (
@@ -171,9 +202,10 @@ const MySkillsPage = () => {
 
         <Description>
           <strong>Leetcode</strong>
-          <p>Listed in top 15% users with Rating of 1650+</p>
+          <p>Listed in top {records.topPercentage}% users </p>
+          <p>Rating of {Math.ceil(records.rating)}</p>
           <p>Solved 300+ questions </p>
-          <p>Attended 25+ contest</p>
+          <p>Attended {records.attendedContestsCount} contest</p>
         </Description>
 
         <Description>
