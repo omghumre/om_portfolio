@@ -10,7 +10,7 @@ export const Work = [
         id:2,
         name:"Asterisc Technocrat",
         link:"https://drive.google.com/file/d/1649uh9SIsxgu0T29kMjZfnuWBMRYv6bp/view?usp=sharing",
-        description:"During my one-month virtual internship as a Python Developer at Asterisc Technocrat Pvt. Ltd, I had the opportunity to work on three diverse projects: Product Management Application, Task Management Application, and Quiz Application. This experience allowed me to hone my skills in Python and web development, as well as to understand the practical aspects of project management and collaboration in a professional setting. The internship was a valuable learning experience, where I applied my technical knowledge to real-world problems and gained insights into the workings of a tech company.",
+        description:"During my Python Developer internship at Asterisc Technocrat Pvt. Ltd., I contributed to a team developing a Task Management Application, specifically focusing on the task creation module. My role involved designing the task creation process, including assignment and priority levels, and integrating these features with the backend using RESTful APIs. This experience improved my skills in Python and backend development while enhancing the application's overall functionality and efficiency for managing tasks within teams.",
         subtitle:"Python Developer 🔗" 
     },
     {
