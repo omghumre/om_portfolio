@@ -119,36 +119,59 @@ const Grid = styled.div`
 
 
 
-const MySkillsPage = () => {
 
-    const [records, setRecords] = useState(null);
-    const [error, setError] = useState(null);
-  
-    useEffect(() => {
-      // Fetching data from the API
-      fetch('https://alfa-leetcode-api.onrender.com/userContestRankingInfo/omghumre') // Replace with your actual API endpoint
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setRecords(data.data.userContestRanking);
-        })
-        .catch((err) => {
-          setError(err);
-          console.log(err);
-        });
-    }, []);
-  
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    }
-  
-    if (!records) {
-      return <div>Loading...</div>;
-    }
+const MySkillsPage = () => {
+  // Fetching data from the API
+  const [ranking, setRanking] = useState(null);
+  const [problems, setProblems] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Fetching user contest ranking data
+    const fetchRanking = async () => {
+      try {
+        const response = await fetch('https://alfa-leetcode-api.onrender.com/userContestRankingInfo/omghumre');
+        if (!response.ok) {
+          const errorText = await response.text(); // Read response as text for debugging
+          throw new Error(`Network response was not ok: ${errorText}`);
+        }
+        const data = await response.json();
+        setRanking(data.data.userContestRanking);
+      } catch (err) {
+        setError(err);
+        console.log(err);
+      }
+    };
+
+    // Fetching solved problems data
+    const fetchProblems = async () => {
+      try {
+        const response = await fetch('https://alfa-leetcode-api.onrender.com/omghumre/solved');
+        if (!response.ok) {
+          const errorText = await response.text(); // Read response as text for debugging
+          throw new Error(`Network response was not ok: ${errorText}`);
+        }
+        const data = await response.json();
+        setProblems(data); // Assuming the response directly gives you the solved problems object
+      } catch (err) {
+        setError(err);
+        console.log(err);
+      }
+    };
+
+    // Call to fetch both ranking and problems
+    fetchRanking();
+    fetchProblems();
+  }, []); // Dependency array should be empty to run only once when component mounts
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!ranking || !problems) {
+    return <div>Loading...</div>;
+  }
+
   
 
   
@@ -202,10 +225,10 @@ const MySkillsPage = () => {
 
         <Description>
           <strong>Leetcode</strong>
-          <p>Listed in top {records.topPercentage}% users </p>
-          <p>Rating of {Math.ceil(records.rating)}</p>
-          <p>Solved 300+ questions </p>
-          <p>Attended {records.attendedContestsCount} contest</p>
+          <p>Listed in top {ranking.topPercentage}% users </p>
+          <p>Rating of {Math.ceil(ranking.rating)}</p>
+          <p>Solved {problems.solvedProblem} questions </p>
+          <p>Attended {ranking.attendedContestsCount} contest</p>
         </Description>
 
         <Description>
