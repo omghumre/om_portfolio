@@ -36,7 +36,7 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const Contact = styled(NavLink)`
+const Resume = styled(NavLink)`
   color: #000;
   mix-blend-mode: difference; filter: invert(1);
   position: absolute;
@@ -269,7 +269,7 @@ const Main = () => {
       <span>Click here</span>
     </Center>
 
-        <Contact to="/resume">
+        <Resume to="/resume">
           <motion.h6
             initial={{
               y: -200,
@@ -284,7 +284,7 @@ const Main = () => {
           >
             Resume
           </motion.h6>
-        </Contact>
+        </Resume>
 
         <BLOG to="/blog">
           <motion.h2

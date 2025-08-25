@@ -1,24 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { DarkTheme } from '../components/Themes';
-
 import PowerButton from '../subComponents/PowerButton';
 import LogoComponent from '../subComponents/LogoComponent';
-// import SocialIcon from '../subComponents/SocialIcon';
-
-import { Work } from "../data/ProjectData";
-import Card from "../subComponents/Card";
+import { Work } from '../data/ProjectData';
+import Card from '../subComponents/Card';
 import { YinYang } from './Allsvg';
 import BigTitle from '../subComponents/BigTitle';
 import { motion } from 'framer-motion';
 
 const Box = styled.div`
-  background-color: ${props => props.theme.body};
-  height: 1050vh;
+  background-color: ${({ theme }) => theme.body};
+  height: ${({ $height }) => $height};
+  width: 100%;
   display: flex;
   align-items: center;
+
   @media (max-width: 700px) {
-    width: 100%;
     height: auto;
     flex-direction: column;
     justify-content: center;
@@ -29,83 +27,92 @@ const Main = styled(motion.ul)`
   position: fixed;
   top: 7rem;
   left: calc(10rem + 15vw);
-  height: auto;
   display: flex;
+  gap: 5rem;
   color: white;
 
   @media (max-width: 700px) {
     position: relative;
     left: 0;
     flex-direction: column;
-    height: auto;
-    overflow-y: hidden;
   }
 `;
 
 const Rotate = styled.span`
-  display: block;
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   width: 80px;
   height: 80px;
   z-index: 1;
+
   @media (max-width: 700px) {
     display: none;
   }
 `;
 
-
-
 const Container = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      duration: 0.5,
-    }
-  }
+  show: { opacity: 1, transition: { staggerChildren: 0.5, duration: 0.5 } }
 };
 
 const ProjectPage = () => {
-  const ref = useRef(null);
-  const yinyang = useRef(null);
+  const listRef = useRef(null);
+  const yinRef = useRef(null);
+  const [boxHeight, setBoxHeight] = useState('100vh');
 
+  // resize Box height to fit any number of projects
+  useLayoutEffect(() => {
+    const update = () => {
+      if (!listRef.current) return;
+      const horiz = listRef.current.scrollWidth;
+      const vert = listRef.current.scrollHeight;
+      setBoxHeight(window.innerWidth > 700 ? `${horiz}px` : 'auto');
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  // scroll → translate() / rotate()
   useEffect(() => {
-    let element = ref.current;
-
-    const rotate = () => {
+    const handleScroll = () => {
+      if (!listRef.current || !yinRef.current) return;
+      const offset = -window.pageYOffset;
       if (window.innerWidth > 700) {
-        element.style.transform = `translateX(${-window.pageYOffset}px)`;
-        yinyang.current.style.transform = `rotate(` + -window.pageYOffset + `deg)`;
+        listRef.current.style.transform = `translateX(${offset}px)`;
       } else {
-        element.style.transform = `translateY(${-window.pageYOffset}px)`;
-        yinyang.current.style.transform = `rotate(` + -window.pageYOffset + `deg)`;
+        listRef.current.style.transform = `translateY(${offset}px)`;
       }
-    }
-
-    window.addEventListener('scroll', rotate);
-
-    return () => window.removeEventListener('scroll', rotate);
+      yinRef.current.style.transform = `rotate(${offset}deg)`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Box>
+      <Box $height={boxHeight}>
         <LogoComponent theme='dark' />
         <PowerButton theme='dark' />
-        <Main ref={ref} variants={Container} initial='hidden' animate='show'>
-          {Work.map(d => <Card key={d.id} data={d} />)}
+
+        <Main ref={listRef} variants={Container} initial='hidden' animate='show'>
+          {[...Work]
+            .sort((a, b) => b.id - a.id)
+            .map((d) => (
+              <Card key={d.id} data={d} />
+            ))}
         </Main>
-        <Rotate ref={yinyang}>
+
+
+        <Rotate ref={yinRef}>
           <YinYang width={80} height={80} fill={DarkTheme.text} />
         </Rotate>
-        <BigTitle text="Projects" top='5%' right='10%' />
-        {/* <StyledSocialIcon theme='dark' /> */}
+
+        <BigTitle text='Projects' top='5%' right='10%' />
       </Box>
     </ThemeProvider>
   );
-}
+};
 
 export default ProjectPage;

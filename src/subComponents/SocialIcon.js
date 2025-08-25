@@ -9,16 +9,17 @@ const Icons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  justify-content: flex-end;
   position: fixed;
-  bottom: 0;
+  bottom: 0rem;
   left: 2rem;
   z-index: 10;
-  mix-blend-mode: difference;
-  filter: invert(1);
-  
-  & > *:not(:last-child) {
-    margin: 0.2rem 0;
+
+  & > * {
+    margin: 0.01rem 0;  /* consistent spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media screen and (max-width: 700px) {

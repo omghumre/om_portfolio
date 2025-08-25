@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
     width: 30rem;
-    height: 30rem;
+    height: 26rem;
     // height: auto;  
     background-color: ${props => props.theme.text};
     color: ${props => props.theme.body};

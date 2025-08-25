@@ -21,6 +21,7 @@ const Certificates = lazy(() => import("./components/Certificates"));
 const ProjectPage = lazy(() => import("./components/ProjectPage"));
 const Resume = lazy(() => import("./components/Resume"));
 
+
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
